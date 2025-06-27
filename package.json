@@ -1,0 +1,33 @@
+{
+  "name": "molecule-ui",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "fumadocs-ui": "15.5.5",
+    "fumadocs-core": "15.5.5",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/core": "^0.9.1",
+    "@content-collections/next": "^0.2.6",
+    "@fumadocs/content-collections": "1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3",
+    "@types/mdx": "^2.0.13",
+    "@tailwindcss/postcss": "^4.1.10",
+    "tailwindcss": "^4.1.10",
+    "postcss": "^8.5.6",
+    "eslint": "^8",
+    "eslint-config-next": "15.3.4"
+  }
+}
