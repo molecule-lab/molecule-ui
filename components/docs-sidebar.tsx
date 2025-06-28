@@ -1,0 +1,70 @@
+"use client";
+import { source } from "@/lib/source";
+import { Slot } from "@radix-ui/react-slot";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupItem,
+  SidebarGroupLabel,
+  SidebarGroupLink,
+} from "./sidebar";
+
+interface SidebarProps {
+  tree: typeof source.pageTree;
+  asChild?: boolean;
+}
+
+interface SidebarItemsProps {
+  items: typeof source.pageTree.children;
+}
+
+export function DocsSidebar({ tree, asChild }: SidebarProps) {
+  return (
+    <aside className='h-full'>
+      <Sidebar>
+        <SidebarContent>
+          <div className='h-4' />
+          {tree.children.map((root) => (
+            <SidebarGroup key={root.$id}>
+              <SidebarGroupLabel>{root.name}</SidebarGroupLabel>
+
+              <SidebarGroupContent>
+                {root.type === "folder" && root.children && (
+                  <SidebarItems
+                    items={[
+                      ...(root.index ? [root.index] : []),
+                      ...root.children,
+                    ]}
+                  />
+                )}
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
+        </SidebarContent>
+      </Sidebar>
+    </aside>
+  );
+}
+
+function SidebarItems({ items }: SidebarItemsProps) {
+  const pathname = usePathname();
+  return items.map((item) => {
+    return (
+      item.type === "page" && (
+        <SidebarGroupItem key={item.$id}>
+          <SidebarGroupLink
+            key={item.url}
+            href={item.url}
+            isActive={pathname === item.url}
+          >
+            {item.name}
+          </SidebarGroupLink>
+        </SidebarGroupItem>
+      )
+    );
+  });
+}
