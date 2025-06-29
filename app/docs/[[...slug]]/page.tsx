@@ -29,50 +29,55 @@ export default async function Page(props: {
   const neighbors = await findNeighbour(source.pageTree, page.url);
 
   return (
-    <div className='flex flex-col gap-4 h-full pt-12'>
-      <div className='flex flex-col gap-2'>
-        <div className='scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl flex items-center justify-between'>
-          <div>{page.data.title}</div>
-          <div className='flex gap-1'>
-            {neighbors.previous && (
-              <Button variant='secondary' size='icon'>
-                <ArrowLeft />
-              </Button>
-            )}
-            {neighbors.next && (
-              <Button variant='secondary' size='icon'>
-                <ArrowRight />
-              </Button>
-            )}
+    <div className='flex gap-4 h-full pt-12 '>
+      <div className='flex-1 flex flex-col gap-4'>
+        {" "}
+        <div className='flex flex-col gap-2'>
+          <div className='scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl flex items-center justify-between'>
+            <div>{page.data.title}</div>
+            <div className='flex gap-1'>
+              {neighbors.previous && (
+                <Button variant='secondary' size='icon'>
+                  <ArrowLeft />
+                </Button>
+              )}
+              {neighbors.next && (
+                <Button variant='secondary' size='icon'>
+                  <ArrowRight />
+                </Button>
+              )}
+            </div>
+          </div>
+          <div className='text-muted-foreground text-[1.05rem] text-balance sm:text-base'>
+            {page.data.description}
           </div>
         </div>
-        <div className='text-muted-foreground text-[1.05rem] text-balance sm:text-base'>
-          {page.data.description}
+        <div className='flex flex-col gap-4'>
+          <MDXContent
+            code={page.data.body}
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
         </div>
-      </div>
-      <MDXContent
-        code={page.data.body}
-        components={getMDXComponents({
-          // this allows you to link to other pages with relative file paths
-          a: createRelativeLink(source, page),
-        })}
-      />
-      <div className='mt-auto flex flex-col pb-12'>
-        <div
-          className={` flex items-center ${
-            neighbors.previous?.name && neighbors.next?.name
-              ? "justify-between"
-              : neighbors.previous?.name
-                ? "justify-start"
-                : "justify-end"
-          }`}
-        >
-          {neighbors.previous?.name && (
-            <Button variant='outline'>{neighbors.previous?.name}</Button>
-          )}
-          {neighbors.next?.name && (
-            <Button variant='outline'>{neighbors.next?.name}</Button>
-          )}
+        <div className='mt-auto flex flex-col pb-12'>
+          <div
+            className={` flex items-center ${
+              neighbors.previous?.name && neighbors.next?.name
+                ? "justify-between"
+                : neighbors.previous?.name
+                  ? "justify-start"
+                  : "justify-end"
+            }`}
+          >
+            {neighbors.previous?.name && (
+              <Button variant='outline'>{neighbors.previous?.name}</Button>
+            )}
+            {neighbors.next?.name && (
+              <Button variant='outline'>{neighbors.next?.name}</Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
