@@ -22,15 +22,17 @@ interface SidebarItemsProps {
   items: typeof source.pageTree.children;
 }
 
-export function DocsSidebar({ tree, asChild }: SidebarProps) {
+export function DocsSidebar({ tree }: SidebarProps) {
   return (
-    <aside className='h-full'>
+    <div className="h-full">
       <Sidebar>
         <SidebarContent>
-          <div className='h-4' />
+          <div className="h-4" />
           {tree.children.map((root) => (
             <SidebarGroup key={root.$id}>
-              <SidebarGroupLabel>{root.name}</SidebarGroupLabel>
+              <SidebarGroupLabel>
+                {root.name === "Installation" ? "Getting Started" : root.name}
+              </SidebarGroupLabel>
 
               <SidebarGroupContent>
                 {root.type === "folder" && root.children && (
@@ -46,7 +48,7 @@ export function DocsSidebar({ tree, asChild }: SidebarProps) {
           ))}
         </SidebarContent>
       </Sidebar>
-    </aside>
+    </div>
   );
 }
 

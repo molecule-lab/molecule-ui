@@ -17,36 +17,38 @@
       "cssVars": {}
     },
     {
-      "name": "button",
+      "name": "swipeable-item",
       "type": "registry:ui",
-      "title": "Button",
+      "title": "Swipeable Item",
       "author": "Rushil Dhinoja",
-      "description": "Example",
+      "description": "Swipeable List Item",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/molecule-ui/button.tsx",
+          "path": "registry/molecule-ui/swipeable-item.tsx",
           "type": "registry:ui",
-          "target": "components/molecule-ui/button.tsx"
+          "target": "components/molecule-ui/swipeable-item.tsx"
         }
       ]
     },
     {
-      "name": "button-demo",
+      "name": "swipe-preview-demo",
       "type": "registry:example",
-      "title": "Button Demo",
+      "title": "Swipeable Item Demo",
       "author": "Rushil Dhinoja",
-      "description": "Example Demo",
+      "description": "Swipeable Item Demo",
       "dependencies": [],
       "registryDependencies": [
-        "http://localhost:3000/r/button"
+        "http://localhost:3000/r/swipeable-item"
       ],
       "files": [
         {
-          "path": "registry/example/button-demo.tsx",
+          "path": "registry/example/swipe-preview-demo.tsx",
           "type": "registry:ui",
-          "target": "components/molecule-ui/button-demo.tsx"
+          "target": "components/molecule-ui/swipe-preview-demo.tsx"
         }
       ]
     },

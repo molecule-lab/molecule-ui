@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "swipe-preview-demo",
+  "type": "registry:example",
+  "title": "Swipeable Item Demo",
+  "author": "Rushil Dhinoja",
+  "description": "Swipeable Item Demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://localhost:3000/r/swipeable-item"
+  ],
+  "files": [
+    {
+      "path": "registry/example/swipe-preview-demo.tsx",
+      "content": "import { SwipeableItem } from \"@/registry/molecule-ui/swipeable-item\";\nimport { Archive, Heart } from \"lucide-react\";\n\nexport function SwipePreviewDemo() {\n  return (\n    <div className=\"w-2/3\">\n      <SwipeableItem\n        rightActions={<RightSwipeActions />}\n        leftActions={<LeftSwipeActions />}\n      >\n        <div>\n          <div className=\"flex items-center justify-between\">\n            <div>Swipe Left</div>\n            <div>Swipe Right</div>\n          </div>\n        </div>\n      </SwipeableItem>\n    </div>\n  );\n}\n\nfunction RightSwipeActions() {\n  return (\n    <>\n      <button className=\"h-full px-6 bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors\">\n        <Archive size={20} />\n      </button>\n    </>\n  );\n}\n\nfunction LeftSwipeActions() {\n  return (\n    <>\n      <button className=\"h-full px-6 bg-yellow-500 text-white flex items-center justify-center hover:bg-yellow-600 transition-colors\">\n        <Heart size={20} />\n      </button>{\" \"}\n    </>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/swipe-preview-demo.tsx"
+    }
+  ]
+}

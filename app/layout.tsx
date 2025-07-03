@@ -11,14 +11,8 @@ const inter = Inter({
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="h-screen overflow-hidden flex flex-col">
-        <RootProvider>
-          <Navbar />
-          <main className="flex-1 flex overflow-hidden container">
-            {/* This is the scrolling area (child layout decides how to scroll) */}
-            {children}
-          </main>
-        </RootProvider>
+      <body className="relative flex w-full flex-col justify-center overflow-x-hidden  scroll-smooth bg-background font-sans antialiased">
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );

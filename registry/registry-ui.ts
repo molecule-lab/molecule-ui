@@ -2,18 +2,18 @@ import { type Registry } from "shadcn/registry";
 
 export const ui: Registry["items"] = [
   {
-    name: "button",
+    name: "swipeable-item",
     type: "registry:ui",
-    title: "Button",
-    description: "Example",
+    title: "Swipeable Item",
+    description: "Swipeable List Item",
     dependencies: [],
-    registryDependencies: [],
+    registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
       {
-        path: "registry/molecule-ui/button.tsx",
+        path: "registry/molecule-ui/swipeable-item.tsx",
         type: "registry:ui",
-        target: "components/molecule-ui/button.tsx",
+        target: "components/molecule-ui/swipeable-item.tsx",
       },
     ],
   },

@@ -1,14 +1,17 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
-import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Callout } from "./components/callout";
 import Link from "next/link";
 import { cn } from "./lib/utils";
-import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { CodeBlockCommand } from "./components/code-command-block";
 import { CopyButton } from "./components/copy-button";
-// use this function to get MDX components, you will need it for rendering MDX
+import { ComponentPreview } from "./components/component-preview";
+import { createGenerator } from "fumadocs-typescript";
+import { AutoTypeTable } from "fumadocs-typescript/ui";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ComponentSource } from "@/components/component-source";
+
+const generator = createGenerator();
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -25,7 +28,7 @@ const CustomLink = (props: any) => {
     return <a {...props} />;
   }
 
-  return <a target='_blank' rel='noopener noreferrer' {...props} />;
+  return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
@@ -33,24 +36,54 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     ...components,
     Callout,
+    ComponentPreview,
+    ComponentSource,
+    Tabs,
+    TabsList: ({ ...props }) => (
+      <TabsList
+        className="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0"
+        {...props}
+      />
+    ),
+    TabsTrigger: ({ ...props }) => (
+      <TabsTrigger
+        {...props}
+        className=' relative
+                  h-7 
+                  border 
+                  border-transparent 
+                  pt-0.5 
+                  data-[state=active]:border-none 
+                  data-[state=active]:after:absolute 
+                  data-[state=active]:after:bottom-0 
+                  data-[state=active]:after:left-0 
+                  data-[state=active]:after:h-[2px] 
+                  data-[state=active]:after:w-full 
+                  data-[state=active]:after:bg-primary 
+                  data-[state=active]:after:content-[""]
+                 dark:data-[state=active]:bg-transparent
+                 data-[state=active]:bg-transparent'
+      />
+    ),
+    TabsContent,
     a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
       <CustomLink
         className={cn("font-medium underline underline-offset-4", className)}
         {...props}
       />
     ),
-    Steps: ({ ...props }) => (
-      <div
-        className='[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent'
+    Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+      <h3
+        className={cn(
+          "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+          className,
+        )}
         {...props}
       />
     ),
-    Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+    Steps: ({ ...props }) => (
       <div
-        className={cn(
-          "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
-          className
-        )}
+        className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
         {...props}
       />
     ),
@@ -60,7 +93,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <pre
           className={cn(
             "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0",
-            className
+            className,
           )}
           {...props}
         >
@@ -90,7 +123,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <figcaption
           className={cn(
             "text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70",
-            className
+            className,
           )}
           {...props}
         >
@@ -122,7 +155,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
           <code
             className={cn(
               "bg-muted relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] outline-none",
-              className
+              className,
             )}
             {...props}
           />
@@ -150,5 +183,17 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         </>
       );
     },
+    AutoTypeTable: (props) => (
+      <AutoTypeTable {...props} generator={generator} />
+    ),
+    h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h2
+        className={cn(
+          "font-heading scroll-m-20 2 text-2xl font-semibold tracking-tight ",
+          className,
+        )}
+        {...props}
+      />
+    ),
   };
 }

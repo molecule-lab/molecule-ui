@@ -1,23 +1,13 @@
 import { source } from "@/lib/source";
-import {
-  DocsPage,
-  DocsBody,
-  DocsTitle,
-  DocsDescription,
-} from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { MDXContent } from "@content-collections/mdx/react";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { getMDXComponents } from "@/mdx-components";
 import { findNeighbour } from "fumadocs-core/server";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviation-top";
+import { DocsFooter } from "@/components/docs-footer";
+import { TableOfContents } from "@/components/table-of-content";
+import { date } from "zod";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -29,58 +19,35 @@ export default async function Page(props: {
   const neighbors = await findNeighbour(source.pageTree, page.url);
 
   return (
-    <div className='flex gap-4 h-full pt-12 '>
-      <div className='flex-1 flex flex-col gap-4'>
-        {" "}
-        <div className='flex flex-col gap-2'>
-          <div className='scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl flex items-center justify-between'>
+    <main className="h-full relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px] ">
+      <div className="flex-1 flex flex-col gap-4 pt-12 min-w-0 overflow-hidden">
+        <div className="flex flex-col gap-2">
+          <div className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl flex items-center justify-between">
             <div>{page.data.title}</div>
-            <div className='flex gap-1'>
-              {neighbors.previous && (
-                <Button variant='secondary' size='icon'>
-                  <ArrowLeft />
-                </Button>
-              )}
-              {neighbors.next && (
-                <Button variant='secondary' size='icon'>
-                  <ArrowRight />
-                </Button>
-              )}
-            </div>
+            <DocsNeighborsNavigationTop neighbors={neighbors} />
           </div>
-          <div className='text-muted-foreground text-[1.05rem] text-balance sm:text-base'>
+          <div className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
             {page.data.description}
           </div>
         </div>
-        <div className='flex flex-col gap-4'>
+        <div className="flex flex-col gap-4  min-w-0">
           <MDXContent
             code={page.data.body}
             components={getMDXComponents({
-              // this allows you to link to other pages with relative file paths
               a: createRelativeLink(source, page),
             })}
           />
         </div>
-        <div className='mt-auto flex flex-col pb-12'>
-          <div
-            className={` flex items-center ${
-              neighbors.previous?.name && neighbors.next?.name
-                ? "justify-between"
-                : neighbors.previous?.name
-                  ? "justify-start"
-                  : "justify-end"
-            }`}
-          >
-            {neighbors.previous?.name && (
-              <Button variant='outline'>{neighbors.previous?.name}</Button>
-            )}
-            {neighbors.next?.name && (
-              <Button variant='outline'>{neighbors.next?.name}</Button>
-            )}
+        <DocsFooter neighbors={neighbors} />
+      </div>
+      {page.data.toc && (
+        <div className="hidden border-l border-border py-6 pl-6 text-sm xl:block">
+          <div className="sticky top-[90px] h-[calc(100vh-3.5rem)] space-y-4">
+            <TableOfContents toc={page.data.toc} />
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </main>
   );
 }
 
@@ -107,7 +74,7 @@ export async function generateMetadata(props: {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            page.data.title
+            page.data.title,
           )}&description=${encodeURIComponent(page.data.description || "")}`,
         },
       ],
@@ -119,7 +86,7 @@ export async function generateMetadata(props: {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            page.data.title
+            page.data.title,
           )}&description=${encodeURIComponent(page.data.description!)}`,
         },
       ],
