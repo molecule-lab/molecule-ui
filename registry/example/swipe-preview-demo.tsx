@@ -32,7 +32,7 @@ export function SwipePreviewDemo() {
 function LeftActions() {
   return (
     <>
-      <button className='h-full px-6 bg-blue-500 text-white flex items-center justify-center hover:bg-yellow-600 transition-colors'>
+      <button className='h-full px-6 bg-blue-500 text-white flex items-center justify-center transition-colors'>
         <Heart size={20} />
       </button>{" "}
     </>
@@ -42,7 +42,7 @@ function LeftActions() {
 function RightActions() {
   return (
     <>
-      <button className='h-full px-6 bg-red-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors'>
+      <button className='h-full px-6 bg-red-500 text-white flex items-center justify-center transition-colors'>
         <Trash size={20} />
       </button>
     </>

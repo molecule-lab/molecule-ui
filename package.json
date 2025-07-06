@@ -11,7 +11,8 @@
     "build:registry": "npx tsx ./scripts/build-registry.mts && pnpm format:fix",
     "shadcn:build": "shadcn build",
     "format:fix": "prettier --write \"**/*.{ts,tsx,mdx,mts}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
+    "prepare": "husky"
   },
   "dependencies": {
     "@content-collections/core": "^0.9.1",
@@ -57,6 +58,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.3.4",
     "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
     "postcss": "^8.5.6",
     "prettier": "^3.3.3",
     "tailwindcss": "^4.1.10",
