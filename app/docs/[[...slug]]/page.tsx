@@ -90,7 +90,7 @@ export async function generateMetadata(props: {
           )}&description=${encodeURIComponent(page.data.description!)}`,
         },
       ],
-      creator: "@shadcn",
+      creator: "@rushildhinoja17",
     },
   };
 }

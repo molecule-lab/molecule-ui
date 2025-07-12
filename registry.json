@@ -1,6 +1,6 @@
 {
-  "name": "shadcn/ui",
-  "homepage": "https://ui.shadcn.com",
+  "name": "Molecule UI",
+  "homepage": "https://moleculeui.design",
   "items": [
     {
       "name": "index",
@@ -17,38 +17,120 @@
       "cssVars": {}
     },
     {
-      "name": "swipeable-item",
+      "name": "swipe-row",
       "type": "registry:ui",
-      "title": "Swipeable Item",
+      "title": "Swipe Row",
       "author": "Rushil Dhinoja",
-      "description": "Swipeable List Item",
+      "description": "A swipe row for providing actions of swipe of left and right",
       "dependencies": [],
       "registryDependencies": [
         "utils"
       ],
       "files": [
         {
-          "path": "registry/molecule-ui/swipeable-item.tsx",
+          "path": "registry/molecule-ui/swipe-row.tsx",
           "type": "registry:ui",
-          "target": "components/molecule-ui/swipeable-item.tsx"
+          "target": "components/molecule-ui/swipe-row.tsx"
         }
       ]
     },
     {
-      "name": "swipe-preview-demo",
+      "name": "swipe-row-demo",
       "type": "registry:example",
-      "title": "Swipeable Item Demo",
+      "title": "Swipe row demo",
       "author": "Rushil Dhinoja",
-      "description": "Swipeable Item Demo",
-      "dependencies": [],
+      "description": "A preview component for swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
-        "http://localhost:3000/r/swipeable-item"
+        "http://localhost:3000/r/swipe-row",
+        "avatar"
       ],
       "files": [
         {
-          "path": "registry/example/swipe-preview-demo.tsx",
+          "path": "registry/example/swipe-row-demo.tsx",
           "type": "registry:ui",
-          "target": "components/molecule-ui/swipe-preview-demo.tsx"
+          "target": "components/molecule-ui/example/swipe-row-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-left-demo",
+      "type": "registry:example",
+      "title": "Swipe row left demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for adding actions only to left swipe in swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-left-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-left-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-right-demo",
+      "type": "registry:example",
+      "title": "Swipe row right demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for adding actions only to right swipe in swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-right-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-right-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-list-demo",
+      "type": "registry:example",
+      "title": "Swipe row list demo",
+      "author": "Rushil Dhinoja",
+      "description": "A group of Swipe Row representing a list view",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-list-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-list-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "discussion-demo",
+      "type": "registry:example",
+      "title": "Discussion Demo",
+      "author": "Rushil Dhinoja",
+      "description": "Preview component for discussion demo",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/discussion-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/discussion-demo.tsx"
         }
       ]
     },

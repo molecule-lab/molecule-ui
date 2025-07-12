@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "discussion-demo",
+  "type": "registry:example",
+  "title": "Discussion Demo",
+  "author": "Rushil Dhinoja",
+  "description": "Preview component for discussion demo",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/example/discussion-demo.tsx",
+      "content": "import { Discussion } from \"@/registry/molecule-ui/discussion\";\n\nexport function CommentTreeDemo() {\n  return <Discussion />;\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/discussion-demo.tsx"
+    }
+  ]
+}

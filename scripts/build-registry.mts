@@ -7,8 +7,8 @@ import { promises as fs } from "fs";
 import { exec } from "child_process";
 
 const registry = {
-  name: "shadcn/ui",
-  homepage: "https://ui.shadcn.com",
+  name: "Molecule UI",
+  homepage: "https://moleculeui.design",
   items: z.array(registryItemSchema).parse([
     {
       name: "index",

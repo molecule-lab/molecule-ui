@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "swipe-row",
+  "type": "registry:ui",
+  "title": "Swipe Row",
+  "author": "Rushil Dhinoja",
+  "description": "A swipe row for providing actions of swipe of left and right",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/swipe-row.tsx",
+      "content": "\"use client\";\nimport React from \"react\";\nimport { motion, type PanInfo } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nconst DRAG_THRESHOLD = 100;\nconst ACTIONS_VIEW_THRESHOLD = 50;\n\nexport interface SwipeableItemProps {\n  rightActions?: React.ReactElement;\n  leftActions?: React.ReactElement;\n}\n\nexport function SwipeRow({\n  className,\n  children,\n  rightActions,\n  leftActions,\n}: React.ComponentProps<\"div\"> & SwipeableItemProps) {\n  const [dragX, setDragX] = React.useState(0);\n\n  const actionRefLeft = React.useRef<HTMLDivElement>(null);\n  const actionRefRight = React.useRef<HTMLDivElement>(null);\n\n  const handleDragEnd = (\n    _: MouseEvent | TouchEvent | PointerEvent,\n    info: PanInfo\n  ) => {\n    const absoluteOffset = Math.abs(info.offset.x);\n\n    if (\n      actionRefLeft.current &&\n      absoluteOffset > DRAG_THRESHOLD &&\n      info.offset.x > 0\n    ) {\n      setDragX(actionRefLeft.current.offsetWidth);\n    } else if (\n      actionRefRight.current &&\n      absoluteOffset > DRAG_THRESHOLD &&\n      info.offset.x < 0\n    ) {\n      setDragX(-actionRefRight.current.offsetWidth);\n    } else {\n      setDragX(0);\n    }\n  };\n\n  const handleDrag = (\n    _: MouseEvent | TouchEvent | PointerEvent,\n    info: PanInfo\n  ) => {\n    setDragX(info.offset.x);\n  };\n\n  return (\n    <div\n      role='group'\n      aria-roledescription='swipeable-list-item'\n      aria-label='swipeable-item'\n      className={cn(\"relative overflow-hidden w-full\", className)}\n    >\n      {leftActions && (\n        <motion.div\n          role='region'\n          aria-label='left-actions'\n          ref={actionRefLeft}\n          className={cn(\"absolute left-0 top-0 h-full flex items-center\")}\n          initial={{ opacity: 0 }}\n          animate={{\n            opacity: dragX > ACTIONS_VIEW_THRESHOLD && actionRefLeft ? 1 : 0,\n            x:\n              dragX > 0 && actionRefLeft\n                ? 0\n                : -(actionRefLeft.current?.offsetWidth || 0),\n          }}\n          transition={{ stiffness: 300 }}\n        >\n          {leftActions}\n        </motion.div>\n      )}\n      {rightActions && (\n        <motion.div\n          role='region'\n          aria-label='right-actions'\n          ref={actionRefRight}\n          className={cn(\"absolute right-0 top-0 h-full flex items-center\")}\n          initial={{ opacity: 0 }}\n          animate={{\n            opacity: dragX < -ACTIONS_VIEW_THRESHOLD && actionRefRight ? 1 : 0,\n            x:\n              dragX < 0 && actionRefRight\n                ? 0\n                : actionRefRight.current?.offsetWidth || 0,\n          }}\n          transition={{ stiffness: 300 }}\n        >\n          {rightActions}\n        </motion.div>\n      )}\n\n      <motion.div\n        aria-label='swipeable-item-content'\n        tabIndex={0}\n        className={cn(\n          \"relative  p-4 cursor-grab active:cursor-grabbing select-none\"\n        )}\n        drag='x'\n        dragConstraints={{\n          left: actionRefLeft.current\n            ? -actionRefLeft.current?.offsetWidth || 0\n            : 0,\n          right: actionRefRight ? actionRefRight.current?.offsetWidth : 0,\n        }}\n        dragElastic={0.1}\n        onDrag={handleDrag}\n        onDragEnd={handleDragEnd}\n        animate={{ x: dragX }}\n        transition={{ stiffness: 300 }}\n      >\n        {children}\n      </motion.div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/swipe-row.tsx"
+    }
+  ]
+}

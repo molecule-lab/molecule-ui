@@ -15,20 +15,20 @@ export const Index: Record<string, any> = {
     component: null,
     meta: undefined,
   },
-  "swipeable-item": {
-    name: "swipeable-item",
-    description: "Swipeable List Item",
+  "swipe-row": {
+    name: "swipe-row",
+    description: "A swipe row for providing actions of swipe of left and right",
     type: "registry:ui",
     registryDependencies: ["utils"],
     files: [
       {
-        path: "registry/molecule-ui/swipeable-item.tsx",
+        path: "registry/molecule-ui/swipe-row.tsx",
         type: "registry:ui",
-        target: "components/molecule-ui/swipeable-item.tsx",
+        target: "components/molecule-ui/swipe-row.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/molecule-ui/swipeable-item.tsx");
+      const mod = await import("@/registry/molecule-ui/swipe-row.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -38,20 +38,114 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  "swipe-preview-demo": {
-    name: "swipe-preview-demo",
-    description: "Swipeable Item Demo",
+  "swipe-row-demo": {
+    name: "swipe-row-demo",
+    description: "A preview component for swipe row",
     type: "registry:example",
-    registryDependencies: ["http://localhost:3000/r/swipeable-item"],
+    registryDependencies: ["http://localhost:3000/r/swipe-row", "avatar"],
     files: [
       {
-        path: "registry/example/swipe-preview-demo.tsx",
+        path: "registry/example/swipe-row-demo.tsx",
         type: "registry:ui",
-        target: "components/molecule-ui/swipe-preview-demo.tsx",
+        target: "components/molecule-ui/example/swipe-row-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/example/swipe-preview-demo.tsx");
+      const mod = await import("@/registry/example/swipe-row-demo.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  "swipe-row-left-demo": {
+    name: "swipe-row-left-demo",
+    description:
+      "A demo component for adding actions only to left swipe in swipe row",
+    type: "registry:example",
+    registryDependencies: ["http://localhost:3000/r/swipe-row", "avatar"],
+    files: [
+      {
+        path: "registry/example/swipe-row-left-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/swipe-row-left-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/swipe-row-left-demo.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  "swipe-row-right-demo": {
+    name: "swipe-row-right-demo",
+    description:
+      "A demo component for adding actions only to right swipe in swipe row",
+    type: "registry:example",
+    registryDependencies: ["http://localhost:3000/r/swipe-row", "avatar"],
+    files: [
+      {
+        path: "registry/example/swipe-row-right-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/swipe-row-right-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/swipe-row-right-demo.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  "swipe-row-list-demo": {
+    name: "swipe-row-list-demo",
+    description: "A group of Swipe Row representing a list view",
+    type: "registry:example",
+    registryDependencies: ["http://localhost:3000/r/swipe-row", "avatar"],
+    files: [
+      {
+        path: "registry/example/swipe-row-list-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/swipe-row-list-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/swipe-row-list-demo.tsx");
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name;
+      return { default: mod.default || mod[exportName] };
+    }),
+    meta: undefined,
+  },
+  "discussion-demo": {
+    name: "discussion-demo",
+    description: "Preview component for discussion demo",
+    type: "registry:example",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/example/discussion-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/discussion-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/discussion-demo.tsx");
       const exportName =
         Object.keys(mod).find(
           (key) =>

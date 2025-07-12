@@ -1,0 +1,91 @@
+---
+title: Swipe Row
+description: "A swipe row for providing actions of swipe of left and right"
+---
+
+<ComponentPreview name='swipe-row-demo' />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/swipe-row"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title='components/molecule-ui/swipe-row.tsx'
+  name='swipe-row'
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import { SwipeRow } from "@/components/molecule-ui/swipe-row";
+```
+
+```tsx
+<SwipeRow>
+  <div>Molecule UI</div>
+<SwipeRow>
+```
+
+</div>
+
+## Examples
+
+<div>
+
+### Swipe row with left swipe actions
+
+<ComponentPreview name='swipe-row-left-demo' />
+
+### Swipe row with right swipe actions
+
+<ComponentPreview name='swipe-row-right-demo' />
+
+### Swipe row list
+
+<ComponentPreview name='swipe-row-list-demo' />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path='registry/molecule-ui/swipe-row.tsx'
+  name='SwipeableItemProps'
+/>
+
+</div>
