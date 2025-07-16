@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbital-loader-demo",
+  "type": "registry:example",
+  "title": "Orbital loader demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo component showcasing a orbital loading indicator",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/orbital-loader"
+  ],
+  "files": [
+    {
+      "path": "registry/example/orbital-loader-demo.tsx",
+      "content": "import { OrbitalLoader } from \"../molecule-ui/orbital-loader\";\n\nexport function OrbitalLoaderDemo() {\n  return <OrbitalLoader />;\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/orbital-loader-demo.tsx"
+    }
+  ]
+}

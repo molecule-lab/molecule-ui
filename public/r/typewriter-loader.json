@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typewriter-loader",
+  "type": "registry:ui",
+  "title": "Typewriter Loader",
+  "author": "Rushil Dhinoja",
+  "description": "A customizable typewriter loader component for indicating loading states in your application. Features smooth typing animations and customizable text content.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/typewriter-loader.tsx",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { HTMLMotionProps, motion } from \"motion/react\";\n\nexport interface TypewriterLoaderProps {\n  /**\n   * The text to display with the typewriter effect.\n   * @default Loading...\n   */\n  typingText?: string;\n  /**\n   * The speed of the typewriter effect in milliseconds between each character.\n   * @default 200\n   */\n  typingSpeed?: number;\n}\n\nconst DIVIDER = 400;\n\nexport function TypewriterLoader({\n  className,\n  typingText = \"Loading...\",\n  typingSpeed = 200,\n  ...props\n}: HTMLMotionProps<\"div\"> & TypewriterLoaderProps) {\n  const [displayText, setDisplayText] = React.useState(\"\");\n\n  React.useEffect(() => {\n    let index = 0;\n    const interval = setInterval(() => {\n      if (index <= typingText.length) {\n        setDisplayText(typingText.slice(0, index));\n        index++;\n      } else {\n        index = 0;\n      }\n    }, typingSpeed);\n    return () => clearInterval(interval);\n  }, []);\n\n  return (\n    <div className=\"font-mono text-lg\">\n      {displayText}\n      <motion.span\n        animate={{ opacity: [1, 0] }}\n        transition={{\n          duration: typingSpeed / DIVIDER,\n          repeat: Number.POSITIVE_INFINITY,\n        }}\n        className={cn(\"ml-1\", className)}\n        {...props}\n      >\n        |\n      </motion.span>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/typewriter-loader.tsx"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+---
+title: Morphing Square
+description: "A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages."
+---
+
+<ComponentPreview name="morphing-square-demo" />
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/morphing-circle"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/spinning-circle.tsx"
+  name="morphing-square"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+## Usage
+
+```tsx
+import { MorphingSquare } from "@/components/molecule-ui/morphing-square";
+```
+
+```tsx
+<MorphingSquare />
+```
+
+</div>
+
+## Examples
+
+<div>
+### With message
+
+<ComponentPreview name="morphing-square-with-message-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/morphing-square.tsx"
+  name="MorphingSquareProps"
+/>
+
+</div>

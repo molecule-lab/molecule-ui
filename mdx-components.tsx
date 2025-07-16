@@ -1,11 +1,11 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
-import { Callout } from "./components/callout";
+import { Callout } from "@/components/callout";
 import Link from "next/link";
-import { cn } from "./lib/utils";
-import { CodeBlockCommand } from "./components/code-command-block";
-import { CopyButton } from "./components/copy-button";
-import { ComponentPreview } from "./components/component-preview";
+import { cn } from "@/lib/utils";
+import { CodeBlockCommand } from "@/components/code-command-block";
+import { CopyButton } from "@/components/copy-button";
+import { ComponentPreview } from "@/components/component-preview";
 import { createGenerator } from "fumadocs-typescript";
 import { AutoTypeTable } from "fumadocs-typescript/ui";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -25,9 +25,11 @@ const CustomLink = (props: any) => {
   }
 
   if (href.startsWith("#")) {
+    /* eslint-disable  jsx-a11y/anchor-has-content */
     return <a {...props} />;
   }
 
+  /* eslint-disable  jsx-a11y/anchor-has-content */
   return <a target='_blank' rel='noopener noreferrer' {...props} />;
 };
 
@@ -41,7 +43,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Tabs: ({ ...props }) => <Tabs className='mb-6' {...props} />,
     TabsList: ({ ...props }) => (
       <TabsList
-        className='justify-start gap-4 rounded-none bg-transparent px-2 md:px-0'
+        className='justify-start gap-4 rounded-none bg-transparent px-2 md:px-0 '
         {...props}
       />
     ),
@@ -73,6 +75,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       />
     ),
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+      /* eslint-disable  jsx-a11y/heading-has-content */
       <h3
         className={cn(
           "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
@@ -104,7 +107,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
       return (
         <figure
-          className={cn(" bg-zinc-950 dark:bg-zinc-900", className)}
+          className={cn(" bg-zinc-50 dark:bg-zinc-900", className)}
           {...props}
         />
       );
@@ -187,6 +190,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <AutoTypeTable {...props} generator={generator} />
     ),
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      /* eslint-disable  jsx-a11y/heading-has-content */
       <h2
         className={cn(
           "font-heading scroll-m-20  text-2xl font-semibold tracking-tight border-b pb-1",
@@ -196,6 +200,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       />
     ),
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      /* eslint-disable  jsx-a11y/heading-has-content */
       <h3
         className={cn(
           "font-heading scroll-m-20 mt-4 text-xl font-semibold tracking-tight",

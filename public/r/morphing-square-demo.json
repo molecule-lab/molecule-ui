@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "morphing-square-demo",
+  "type": "registry:example",
+  "title": "Morphing square demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo component showcasing a morphing square loading indicator",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/morphing-square"
+  ],
+  "files": [
+    {
+      "path": "registry/example/morphing-square-demo.tsx",
+      "content": "import { MorphingSquare } from \"../molecule-ui/morphing-square\";\n\nexport function MorphingSquareDemo() {\n  return <MorphingSquare />;\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/morphing-square-demo.tsx"
+    }
+  ]
+}

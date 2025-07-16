@@ -99,6 +99,8 @@ export function CodeBlockCommand({
                   data-[state=active]:after:content-[""]
                  dark:data-[state=active]:bg-transparent
                  data-[state=active]:bg-transparent
+                       dark:data-[state=active]:shadow-none
+                 data-[state=active]:shadow-none
                 '
                 >
                   {key}

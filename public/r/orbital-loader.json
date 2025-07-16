@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbital-loader",
+  "type": "registry:ui",
+  "title": "Orbital Loader",
+  "author": "Rushil Dhinoja",
+  "description": "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/orbital-loader.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { cva } from \"class-variance-authority\";\nimport { motion } from \"motion/react\";\nimport React from \"react\";\n\nconst orbitalLoaderVariants = cva(\"flex gap-2 items-center justify-center\", {\n  variants: {\n    messagePlacement: {\n      bottom: \"flex-col\",\n      top: \"flex-col-reverse\",\n      right: \"flex-row\",\n      left: \"flex-row-reverse\",\n    },\n  },\n  defaultVariants: {\n    messagePlacement: \"bottom\",\n  },\n});\n\nexport interface OrbitalLoaderProps {\n  message?: string;\n  /**\n   * Position of the message relative to the spinner.\n   * @default bottom\n   */\n  messagePlacement?: \"top\" | \"bottom\" | \"left\" | \"right\";\n}\n\nexport function OrbitalLoader({\n  className,\n  message,\n  messagePlacement,\n  ...props\n}: React.ComponentProps<\"div\"> & OrbitalLoaderProps) {\n  return (\n    <div className={cn(orbitalLoaderVariants({ messagePlacement }))}>\n      <div className={cn(\"relative w-16 h-16\", className)} {...props}>\n        <motion.div\n          className=\"absolute inset-0 border-2 border-transparent border-t-foreground rounded-full\"\n          animate={{ rotate: 360 }}\n          transition={{\n            duration: 1,\n            repeat: Number.POSITIVE_INFINITY,\n            ease: \"linear\",\n          }}\n        />\n        <motion.div\n          className=\"absolute inset-2 border-2 border-transparent border-t-foreground rounded-full\"\n          animate={{ rotate: -360 }}\n          transition={{\n            duration: 1.5,\n            repeat: Number.POSITIVE_INFINITY,\n            ease: \"linear\",\n          }}\n        />\n        <motion.div\n          className=\"absolute inset-4 border-2 border-transparent border-t-foreground rounded-full\"\n          animate={{ rotate: 360 }}\n          transition={{\n            duration: 0.8,\n            repeat: Number.POSITIVE_INFINITY,\n            ease: \"linear\",\n          }}\n        />\n      </div>\n      {message && <div>{message}</div>}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/orbital-loader.tsx"
+    }
+  ]
+}

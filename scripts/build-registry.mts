@@ -1,4 +1,5 @@
 import { registryItemSchema, type Registry } from "shadcn/registry";
+/* eslint-disable no-relative-import-paths/no-relative-import-paths */
 import { componentRegistry } from "../registry/index";
 import { z } from "zod";
 import path from "path";
@@ -44,8 +45,6 @@ export const Index: Record<string, any> = {`;
     const componentPath = item.files?.[0]?.path
       ? `@/${item.files[0].path}`
       : "";
-
-    console.log(componentPath);
 
     index += `
   "${item.name}": {
@@ -105,7 +104,7 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(path.join(process.cwd(), `registry.json`), registryJson);
   await fs.writeFile(
     path.join(process.cwd(), `public/registry.json`),
-    registryJson,
+    registryJson
   );
 }
 

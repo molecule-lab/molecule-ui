@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-menu-demo",
+  "type": "registry:example",
+  "title": "Todo",
+  "author": "Rushil Dhinoja",
+  "description": "Todo",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/example/profile-menu-demo.tsx",
+      "content": "import { ProfileMenu } from \"../molecule-ui/profile-menu\";\n\nexport function ProfileMenuDemo() {\n  return <ProfileMenu />;\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/profile-menu-demo.tsx"
+    }
+  ]
+}

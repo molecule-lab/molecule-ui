@@ -1,0 +1,80 @@
+---
+title: Spinning Circle
+description: "A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages."
+---
+
+<ComponentPreview name="spinning-circle-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/spinning-circle"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/spinning-circle.tsx"
+  name="spinning-circle"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import { SpinningCircle } from "@/components/molecule-ui/spinning-circle";
+```
+
+```tsx
+<SpinningCircle />
+```
+
+</div>
+## Examples
+
+<div>
+### With message
+
+<ComponentPreview name="spinning-circle-with-message-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/spinning-circle.tsx"
+  name="SpinningCircleProps"
+/>
+
+</div>

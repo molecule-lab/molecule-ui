@@ -1,0 +1,80 @@
+---
+title: Typewriter
+description: "A customizable typewriter loader component for indicating loading states in your application. Features smooth typing animations and customizable text content."
+---
+
+<ComponentPreview name="typewriter-loader-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/typewriter-loader"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/typewriter-loader.tsx"
+  name="typewriter-loader"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import { TypewriterLoader } from "@/components/molecule-ui/typewriter-loader";
+```
+
+```tsx
+<TypewriterLoader />
+```
+
+</div>
+
+## Examples
+
+<div>
+### With custom text
+
+<ComponentPreview name="typewriter-loader-with-custom-text-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/typewriter-loader.tsx"
+  name="TypewriterLoaderProps"
+/>
+
+</div>

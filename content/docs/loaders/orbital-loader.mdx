@@ -1,0 +1,81 @@
+---
+title: "Orbital Loader"
+description: "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages."
+---
+
+<ComponentPreview name="orbital-loader-demo" />
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/orbital-loader"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/orbital-loader.tsx"
+  name="orbital-loader"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+## Usage
+
+```tsx
+import { OrbitalLoader } from "@/components/molecule-ui/orbital-loader";
+```
+
+```tsx
+<OrbitalLoader />
+```
+
+</div>
+
+## Examples
+
+<div>
+### With message
+
+<ComponentPreview name="orbital-loader-with-message-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/orbital-loader.tsx"
+  name="OrbitalLoaderProps"
+/>
+
+</div>

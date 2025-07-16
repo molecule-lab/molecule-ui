@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SwipeRow } from "../molecule-ui/swipe-row";
+import { SwipeRow } from "@/registry/molecule-ui/swipe-row";
 import { Heart, Trash } from "lucide-react";
 
 const dummyListData = [
@@ -25,14 +25,14 @@ const dummyListData = [
 
 export function SwipeRowListDemo() {
   return (
-    <div className="w-2/3 rounded-md overflow-hidden divide-y divide-input bg-muted ">
+    <div className='w-full md:w-2/3 rounded-md overflow-hidden divide-y divide-input bg-muted '>
       {dummyListData.map((item) => (
         <SwipeRow
           key={item.id}
           rightActions={<RightActions />}
           leftActions={<LeftActions />}
         >
-          <div className="flex items-center gap-4">
+          <div className='flex items-center gap-4'>
             <div>
               <Avatar>
                 <AvatarImage src={item.avatar} alt={item.fallback} />
@@ -41,7 +41,7 @@ export function SwipeRowListDemo() {
             </div>
             <div>
               <h3>{item.name}</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className='text-sm text-muted-foreground'>
                 Swipe to see actions
               </p>
             </div>
@@ -55,7 +55,7 @@ export function SwipeRowListDemo() {
 function LeftActions() {
   return (
     <>
-      <button className="h-full px-6 bg-blue-500 text-white flex items-center justify-center transition-colors">
+      <button className='h-full px-6 bg-blue-500 text-white flex items-center justify-center transition-colors'>
         <Heart size={20} />
       </button>{" "}
     </>
@@ -65,7 +65,7 @@ function LeftActions() {
 function RightActions() {
   return (
     <>
-      <button className="h-full px-6 bg-red-500 text-white flex items-center justify-center transition-colors">
+      <button className='h-full px-6 bg-red-500 text-white flex items-center justify-center transition-colors'>
         <Trash size={20} />
       </button>
     </>

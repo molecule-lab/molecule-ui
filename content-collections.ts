@@ -5,13 +5,28 @@ import {
   transformMDX,
 } from "@fumadocs/content-collections/configuration";
 import rehypePrettyCode from "rehype-pretty-code";
-import { transformers } from "./lib/transformers";
+import { transformers } from "@/lib/transformers";
 
 const docs = defineCollection({
   name: "docs",
   directory: "content/docs",
   include: "**/*.mdx",
-  schema: createDocSchema,
+  schema: (z) => ({
+    title: z.string(),
+    description: z.string(),
+    published: z.boolean().default(true),
+    date: z.string().optional(),
+    links: z
+      .object({
+        doc: z.string().optional(),
+        api: z.string().optional(),
+      })
+      .optional(),
+    featured: z.boolean().optional().default(false),
+    component: z.boolean().optional().default(false),
+    toc: z.boolean().optional().default(true),
+    image: z.string().optional(),
+  }),
   transform: (document, context) =>
     transformMDX(document, context, {
       rehypePlugins: (plugins) => {
@@ -21,7 +36,7 @@ const docs = defineCollection({
           {
             theme: {
               dark: "github-dark",
-              light: "github-light-default",
+              light: "github-light",
             },
             transformers,
           },

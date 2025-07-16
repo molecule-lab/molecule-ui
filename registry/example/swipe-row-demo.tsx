@@ -4,7 +4,7 @@ import { Archive, Heart, Trash } from "lucide-react";
 
 export function SwipeRowDemo() {
   return (
-    <div className="w-2/3">
+    <div className="w-full md:w-2/3">
       <SwipeRow
         rightActions={<RightActions />}
         leftActions={<LeftActions />}
@@ -17,11 +17,11 @@ export function SwipeRowDemo() {
                 src="https://avatars.githubusercontent.com/u/1?v=4"
                 alt="MUI"
               />
-              <AvatarFallback>MUI</AvatarFallback>
+              <AvatarFallback>LM</AvatarFallback>
             </Avatar>
           </div>
           <div>
-            <h3>Molecule UI</h3>
+            <h3>Liam Patel</h3>
             <p className="text-sm text-muted-foreground">
               Swipe to see actions
             </p>

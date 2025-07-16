@@ -1,7 +1,5 @@
 "use client";
 import { source } from "@/lib/source";
-import { Slot } from "@radix-ui/react-slot";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Sidebar,
@@ -11,7 +9,7 @@ import {
   SidebarGroupItem,
   SidebarGroupLabel,
   SidebarGroupLink,
-} from "./sidebar";
+} from "@/components/sidebar";
 
 interface SidebarProps {
   tree: typeof source.pageTree;
@@ -24,14 +22,14 @@ interface SidebarItemsProps {
 
 export function DocsSidebar({ tree }: SidebarProps) {
   return (
-    <div className="h-full">
+    <div className='h-full'>
       <Sidebar>
         <SidebarContent>
-          <div className="h-4" />
+          <div className='h-4' />
           {tree.children.map((root) => (
             <SidebarGroup key={root.$id}>
               <SidebarGroupLabel>
-                {root.name === "Installation" ? "Getting Started" : root.name}
+                {root.name === "Introduction" ? "Getting Started" : root.name}
               </SidebarGroupLabel>
 
               <SidebarGroupContent>

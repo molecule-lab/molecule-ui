@@ -4,7 +4,7 @@ import { Archive, Heart, Trash } from "lucide-react";
 
 export function SwipeRowLeftDemo() {
   return (
-    <div className="w-2/3">
+    <div className="w-full md:w-2/3">
       <SwipeRow leftActions={<LeftActions />} className="rounded-md bg-muted">
         <div className="flex items-center gap-4">
           <div>

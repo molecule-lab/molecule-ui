@@ -1,6 +1,95 @@
 ---
 title: Discussion
-description: "A swipe row for providing actions of swipe of left and right"
+description: "A component for displaying nested discussions or comment threads."
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
 ---
 
-<ComponentPreview name='discussion-demo' />
+<ComponentPreview name="discussion-demo" />
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://molcuelui.design/r/discussion"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/discussion.tsx"
+  name="discussion"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import {
+  Discussion,
+  DiscussionItem,
+  DiscussionContent,
+  DiscussionReplies,
+  DiscussionTitle,
+  DiscussionBody,
+  DiscussionExpand,
+} from "@/components/molecule-ui/discussion";
+```
+
+```tsx
+<Discussion type="multiple" defaultValue={["item-1"]}>
+  <DiscussionItem value="item-1">
+    <DiscussionContent className="flex-col">
+      <DiscussionTitle>Jane Smith</DiscussionTitle>
+      <DiscussionBody>
+        This is a great article! Thanks for sharing your insights. I
+        particularly enjoyed the section about accessibility best practices.
+      </DiscussionBody>
+      <DiscussionExpand />
+    </DiscussionContent>
+    <DiscussionReplies>
+      <DiscussionItem value="item-1.1">
+        <DiscussionContent className="flex-col">
+          <DiscussionTitle>Liam Patel</DiscussionTitle>
+          <DiscussionBody>
+            I agree! The examples were particularly helpful. Do you have any
+            recommendations for further reading?
+          </DiscussionBody>
+        </DiscussionContent>
+      </DiscussionItem>
+    </DiscussionReplies>
+  </DiscussionItem>
+</Discussion>
+```
+
+</div>

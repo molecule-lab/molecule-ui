@@ -8,6 +8,8 @@ import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviatio
 import { DocsFooter } from "@/components/docs-footer";
 import { TableOfContents } from "@/components/table-of-content";
 import { date } from "zod";
+import { Button } from "@/components/ui/button";
+import { DocsLinks } from "@/components/docs-links";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -29,6 +31,10 @@ export default async function Page(props: {
           <div className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
             {page.data.description}
           </div>
+          <DocsLinks
+            apiLink={page.data.links?.api}
+            docLink={page.data.links?.doc}
+          />
         </div>
         <div className="flex flex-col gap-4  min-w-0">
           <MDXContent

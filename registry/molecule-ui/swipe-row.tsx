@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const DRAG_THRESHOLD = 100;
 const ACTIONS_VIEW_THRESHOLD = 50;
 
-export interface SwipeableItemProps {
+export interface SwipeRowProps {
   rightActions?: React.ReactElement;
   leftActions?: React.ReactElement;
 }
@@ -16,7 +16,7 @@ export function SwipeRow({
   children,
   rightActions,
   leftActions,
-}: React.ComponentProps<"div"> & SwipeableItemProps) {
+}: React.ComponentProps<"div"> & SwipeRowProps) {
   const [dragX, setDragX] = React.useState(0);
 
   const actionRefLeft = React.useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ export function SwipeRow({
 
   const handleDragEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
+    info: PanInfo
   ) => {
     const absoluteOffset = Math.abs(info.offset.x);
 
@@ -47,22 +47,22 @@ export function SwipeRow({
 
   const handleDrag = (
     _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
+    info: PanInfo
   ) => {
     setDragX(info.offset.x);
   };
 
   return (
     <div
-      role="group"
-      aria-roledescription="swipeable-list-item"
-      aria-label="swipeable-item"
+      role='group'
+      aria-roledescription='swipe-row-list-item'
+      aria-label='swipe-row-item'
       className={cn("relative overflow-hidden w-full", className)}
     >
       {leftActions && (
         <motion.div
-          role="region"
-          aria-label="left-actions"
+          role='region'
+          aria-label='left-actions'
           ref={actionRefLeft}
           className={cn("absolute left-0 top-0 h-full flex items-center")}
           initial={{ opacity: 0 }}
@@ -80,8 +80,8 @@ export function SwipeRow({
       )}
       {rightActions && (
         <motion.div
-          role="region"
-          aria-label="right-actions"
+          role='region'
+          aria-label='right-actions'
           ref={actionRefRight}
           className={cn("absolute right-0 top-0 h-full flex items-center")}
           initial={{ opacity: 0 }}
@@ -99,12 +99,12 @@ export function SwipeRow({
       )}
 
       <motion.div
-        aria-label="swipeable-item-content"
+        aria-label='swipe-row-item-content'
         tabIndex={0}
         className={cn(
-          "relative  p-4 cursor-grab active:cursor-grabbing select-none",
+          "relative  p-4 cursor-grab active:cursor-grabbing select-none"
         )}
-        drag="x"
+        drag='x'
         dragConstraints={{
           left: actionRefLeft.current
             ? -actionRefLeft.current?.offsetWidth || 0

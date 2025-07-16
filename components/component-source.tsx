@@ -22,8 +22,6 @@ export async function ComponentSource({
   language?: string;
   collapsible?: boolean;
 }) {
-  console.log("Calling this page");
-
   if (!name && !src) {
     return null;
   }
@@ -88,7 +86,7 @@ function ComponentCode({
   return (
     <figure
       data-rehype-pretty-code-figure=""
-      className="[&>pre]:max-h-96 bg-zinc-950 dark:bg-zinc-900"
+      className="[&>pre]:max-h-96 bg-zinc-50 dark:bg-zinc-900"
     >
       {title && (
         <figcaption

@@ -1,8 +1,7 @@
+import React from "react";
+import { ChevronDown } from "lucide-react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import React, { Children } from "react";
-import { ChevronDown, ChevronDownIcon } from "lucide-react";
 
 export function DiscussionItem({
   className,
@@ -12,7 +11,7 @@ export function DiscussionItem({
     <AccordionPrimitive.Item
       className={cn(
         "relative pl-4 mt-2 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-border before:via-border/60 before:to-border/40",
-        className
+        className,
       )}
       {...props}
     />
@@ -39,12 +38,12 @@ export function DiscussionExpand({
     <AccordionPrimitive.Trigger
       className={cn(
         "flex flex-1 items-center gap-1 text-muted-foreground text-xs font-medium transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180",
-        className
+        className,
       )}
       {...props}
     >
       Show Replies
-      <ChevronDown className='h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200' />
+      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   );
 }
@@ -82,7 +81,7 @@ export function DiscussionReplies({
     <AccordionPrimitive.Content
       className={cn(
         "pl-10 overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
-        className
+        className,
       )}
       {...props}
     >
@@ -94,5 +93,5 @@ export function DiscussionReplies({
 export function Discussion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
-  return <AccordionPrimitive.Root data-slot='accordion' {...props} />;
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
 }
