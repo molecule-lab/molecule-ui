@@ -1,4 +1,2 @@
-yarn.lock
-node_modules
-.next
-.content-collections
+# Exclude content directory from Prettier formatting
+content/**
