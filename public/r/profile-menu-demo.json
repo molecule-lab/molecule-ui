@@ -2,15 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "profile-menu-demo",
   "type": "registry:example",
-  "title": "Todo",
+  "title": "Profile Menu Demo",
   "author": "Rushil Dhinoja",
-  "description": "Todo",
+  "description": "Demo for the animated profile menu",
   "dependencies": [],
   "registryDependencies": [],
   "files": [
     {
       "path": "registry/example/profile-menu-demo.tsx",
-      "content": "import { ProfileMenu } from \"../molecule-ui/profile-menu\";\n\nexport function ProfileMenuDemo() {\n  return <ProfileMenu />;\n}\n",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\"\nimport { Separator } from \"@/components/ui/separator\"\nimport {\n  ProfileMenu,\n  ProfileMenuContent,\n  ProfileMenuGroup,\n  ProfileMenuHeader,\n  ProfileMenuHeaderContent,\n  ProfileMenuItem,\n  ProfileMenuTrigger,\n} from \"@/registry/molecule-ui/profile-menu\"\n\nexport function ProfileMenuDemo() {\n  return (\n    <div className=\"relative \">\n      <ProfileMenu>\n        <ProfileMenuHeader>\n          <ProfileMenuHeaderContent className=\"flex flex-col\">\n            <div>Molecule UI</div>\n          </ProfileMenuHeaderContent>\n          <ProfileMenuTrigger>\n            <div className=\"flex items-center justify-end\">\n              <Avatar className=\"\">\n                <AvatarImage\n                  src=\"https://avatars.githubusercontent.com/u/1?v=4\"\n                  alt=\"MUI\"\n                />\n                <AvatarFallback>MUI</AvatarFallback>\n              </Avatar>\n            </div>\n          </ProfileMenuTrigger>\n        </ProfileMenuHeader>\n        <ProfileMenuContent>\n          <ProfileMenuGroup className=\"w-40\">\n            <ProfileMenuItem>Menu</ProfileMenuItem>\n            <ProfileMenuItem>Community</ProfileMenuItem>\n            <ProfileMenuItem>Subscription</ProfileMenuItem>\n            <Separator className=\"my-0.5\" />\n            <ProfileMenuItem>Settings</ProfileMenuItem>\n          </ProfileMenuGroup>\n        </ProfileMenuContent>\n      </ProfileMenu>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/profile-menu-demo.tsx"
     }

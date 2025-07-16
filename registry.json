@@ -384,9 +384,9 @@
     {
       "name": "profile-menu-demo",
       "type": "registry:example",
-      "title": "Todo",
+      "title": "Profile Menu Demo",
       "author": "Rushil Dhinoja",
-      "description": "Todo",
+      "description": "Demo for the animated profile menu",
       "dependencies": [],
       "registryDependencies": [],
       "files": [

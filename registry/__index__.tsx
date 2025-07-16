@@ -478,7 +478,7 @@ export const Index: Record<string, any> = {
   },
   "profile-menu-demo": {
     name: "profile-menu-demo",
-    description: "Todo",
+    description: "Demo for the animated profile menu",
     type: "registry:example",
     registryDependencies: [],
     files: [

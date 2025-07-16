@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/spinning-circle-with-message-demo.tsx",
-      "content": "import { SpinningCircle } from \"../molecule-ui/spinning-circle\";\n\nexport function SpinningCircleWithMessageDemo() {\n  return <SpinningCircle message=\"Loading...\" />;\n}\n",
+      "content": "import { SpinningCircle } from \"@/registry/molecule-ui/spinning-circle\"\n\nexport function SpinningCircleWithMessageDemo() {\n  return <SpinningCircle message=\"Loading...\" />\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/spinning-circle-with-message-demo.tsx"
     }

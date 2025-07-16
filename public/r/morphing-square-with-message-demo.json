@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/morphing-square-with-message-demo.tsx",
-      "content": "import { MorphingSquare } from \"../molecule-ui/morphing-square\";\n\nexport function MorphingSquareWithMessageDemo() {\n  return <MorphingSquare message=\"Loading...\" />;\n}\n",
+      "content": "import { MorphingSquare } from \"@/registry/molecule-ui/morphing-square\"\n\nexport function MorphingSquareWithMessageDemo() {\n  return <MorphingSquare message=\"Loading...\" />\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/morphing-square-with-message-demo.tsx"
     }

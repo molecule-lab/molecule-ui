@@ -1,1 +1,3 @@
 pnpm lint
+pnpm format:fix
+pnpm build:registry
