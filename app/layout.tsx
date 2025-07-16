@@ -1,13 +1,16 @@
-import { Navbar } from "@/components/nav-bar";
-import "@/app/global.css";
-import { RootProvider } from "fumadocs-ui/provider";
-import { Inter } from "next/font/google";
-import type { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/nav-bar"
+
+import "@/app/global.css"
+
+import type { ReactNode } from "react"
+import { Inter } from "next/font/google"
+import { RootProvider } from "fumadocs-ui/provider"
+
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({
   subsets: ["latin"],
-});
+})
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -18,5 +21,5 @@ export default function Layout({ children }: { children: ReactNode }) {
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

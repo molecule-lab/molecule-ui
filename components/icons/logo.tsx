@@ -26,5 +26,5 @@ export function Logo() {
         fill="white"
       />
     </svg>
-  );
+  )
 }

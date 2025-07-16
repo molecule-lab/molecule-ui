@@ -1,10 +1,11 @@
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
-import type { ReactNode } from "react";
-import { baseOptions } from "@/app/layout.config";
-import { source } from "@/lib/source";
-import { DocsSidebar } from "@/components/docs-sidebar";
-import { Navbar } from "@/components/nav-bar";
-import { Footer } from "@/components/footer";
+import type { ReactNode } from "react"
+import { DocsLayout } from "fumadocs-ui/layouts/docs"
+
+import { source } from "@/lib/source"
+import { DocsSidebar } from "@/components/docs-sidebar"
+import { Footer } from "@/components/footer"
+import { Navbar } from "@/components/nav-bar"
+import { baseOptions } from "@/app/layout.config"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -13,5 +14,5 @@ export default function Layout({ children }: { children: ReactNode }) {
       <main className="flex-1">{children}</main>
       <Footer />
     </>
-  );
+  )
 }

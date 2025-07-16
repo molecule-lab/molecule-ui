@@ -1,23 +1,24 @@
-"use client";
+"use client"
 
-import React from "react";
-import { cn } from "@/lib/utils";
-import { HTMLMotionProps, motion } from "motion/react";
+import React from "react"
+import { HTMLMotionProps, motion } from "motion/react"
+
+import { cn } from "@/lib/utils"
 
 export interface TypewriterLoaderProps {
   /**
    * The text to display with the typewriter effect.
    * @default Loading...
    */
-  typingText?: string;
+  typingText?: string
   /**
    * The speed of the typewriter effect in milliseconds between each character.
    * @default 200
    */
-  typingSpeed?: number;
+  typingSpeed?: number
 }
 
-const DIVIDER = 400;
+const DIVIDER = 400
 
 export function TypewriterLoader({
   className,
@@ -25,23 +26,23 @@ export function TypewriterLoader({
   typingSpeed = 200,
   ...props
 }: HTMLMotionProps<"div"> & TypewriterLoaderProps) {
-  const [displayText, setDisplayText] = React.useState("");
+  const [displayText, setDisplayText] = React.useState("")
 
   React.useEffect(() => {
-    let index = 0;
+    let index = 0
     const interval = setInterval(() => {
       if (index <= typingText.length) {
-        setDisplayText(typingText.slice(0, index));
-        index++;
+        setDisplayText(typingText.slice(0, index))
+        index++
       } else {
-        index = 0;
+        index = 0
       }
-    }, typingSpeed);
-    return () => clearInterval(interval);
-  }, [typingSpeed, typingText]);
+    }, typingSpeed)
+    return () => clearInterval(interval)
+  }, [typingSpeed, typingText])
 
   return (
-    <div className='font-mono text-lg'>
+    <div className="font-mono text-lg">
       {displayText}
       <motion.span
         animate={{ opacity: [1, 0] }}
@@ -55,5 +56,5 @@ export function TypewriterLoader({
         |
       </motion.span>
     </div>
-  );
+  )
 }

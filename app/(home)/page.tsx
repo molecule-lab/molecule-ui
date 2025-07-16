@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Announcement } from "@/components/announcement";
-import { Examples } from "@/components/examples";
+import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { Announcement } from "@/components/announcement"
+import { Examples } from "@/components/examples"
 
 export default function HomePage() {
   return (
@@ -25,5 +26,5 @@ export default function HomePage() {
       </section>
       <Examples />
     </main>
-  );
+  )
 }

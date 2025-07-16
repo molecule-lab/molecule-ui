@@ -1,12 +1,14 @@
-"use client";
-import { nav } from "@/config/nav";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Logo } from "@/components/icons/logo";
+"use client"
+
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+import { nav } from "@/config/nav"
+import { cn } from "@/lib/utils"
+import { Logo } from "@/components/icons/logo"
 
 export function MainNav() {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <div className="hidden pl-4 md:p-2 md:flex gap-6 items-center text-sm font-medium ">
@@ -36,5 +38,5 @@ export function MainNav() {
         </Link>
       ))}
     </div>
-  );
+  )
 }

@@ -1,24 +1,25 @@
-import { source } from "@/lib/source";
-import { notFound } from "next/navigation";
-import { MDXContent } from "@content-collections/mdx/react";
-import { createRelativeLink } from "fumadocs-ui/mdx";
-import { getMDXComponents } from "@/mdx-components";
-import { findNeighbour } from "fumadocs-core/server";
-import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviation-top";
-import { DocsFooter } from "@/components/docs-footer";
-import { TableOfContents } from "@/components/table-of-content";
-import { date } from "zod";
-import { Button } from "@/components/ui/button";
-import { DocsLinks } from "@/components/docs-links";
+import { notFound } from "next/navigation"
+import { getMDXComponents } from "@/mdx-components"
+import { MDXContent } from "@content-collections/mdx/react"
+import { findNeighbour } from "fumadocs-core/server"
+import { createRelativeLink } from "fumadocs-ui/mdx"
+import { date } from "zod"
+
+import { source } from "@/lib/source"
+import { Button } from "@/components/ui/button"
+import { DocsFooter } from "@/components/docs-footer"
+import { DocsLinks } from "@/components/docs-links"
+import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviation-top"
+import { TableOfContents } from "@/components/table-of-content"
 
 export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ slug?: string[] }>
 }) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
-  if (!page) notFound();
+  const params = await props.params
+  const page = source.getPage(params.slug)
+  if (!page) notFound()
 
-  const neighbors = await findNeighbour(source.pageTree, page.url);
+  const neighbors = await findNeighbour(source.pageTree, page.url)
 
   return (
     <main className="h-full relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px] ">
@@ -54,19 +55,19 @@ export default async function Page(props: {
         </div>
       )}
     </main>
-  );
+  )
 }
 
 export function generateStaticParams() {
-  return source.generateParams();
+  return source.generateParams()
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ slug?: string[] }>
 }) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
-  if (!page) notFound();
+  const params = await props.params
+  const page = source.getPage(params.slug)
+  if (!page) notFound()
 
   return {
     title: page.data.title,
@@ -98,5 +99,5 @@ export async function generateMetadata(props: {
       ],
       creator: "@rushildhinoja17",
     },
-  };
+  }
 }

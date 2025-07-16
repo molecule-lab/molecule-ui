@@ -1,51 +1,52 @@
-"use client";
-import React from "react";
+"use client"
+
+import React from "react"
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState<string | null>(null);
+  const [activeId, setActiveId] = React.useState<string | null>(null)
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+            setActiveId(entry.target.id)
           }
         }
       },
       { rootMargin: "0% 0% -80% 0%" },
-    );
+    )
 
     for (const id of itemIds ?? []) {
-      const element = document.getElementById(id);
+      const element = document.getElementById(id)
       if (element) {
-        observer.observe(element);
+        observer.observe(element)
       }
     }
 
     return () => {
       for (const id of itemIds ?? []) {
-        const element = document.getElementById(id);
+        const element = document.getElementById(id)
         if (element) {
-          observer.unobserve(element);
+          observer.unobserve(element)
         }
       }
-    };
-  }, [itemIds]);
+    }
+  }, [itemIds])
 
-  return activeId;
+  return activeId
 }
 
 export function TableOfContents({ toc }) {
   const itemIds = React.useMemo(
     () => toc.map((item) => item.url.replace("#", "")),
     [toc],
-  );
+  )
 
-  const activeHeading = useActiveItem(itemIds);
+  const activeHeading = useActiveItem(itemIds)
 
   if (!toc?.length) {
-    return null;
+    return null
   }
 
   return (
@@ -64,8 +65,8 @@ export function TableOfContents({ toc }) {
           >
             {item.title}
           </a>
-        );
+        )
       })}
     </div>
-  );
+  )
 }

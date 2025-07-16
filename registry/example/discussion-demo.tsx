@@ -1,14 +1,14 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Discussion,
-  DiscussionItem,
+  DiscussionBody,
   DiscussionContent,
+  DiscussionExpand,
+  DiscussionItem,
   DiscussionReplies,
   DiscussionTitle,
-  DiscussionBody,
-  DiscussionExpand,
-} from "@/registry/molecule-ui/discussion";
+} from "@/registry/molecule-ui/discussion"
 
 export function CommentTreeDemo() {
   return (
@@ -143,5 +143,5 @@ export function CommentTreeDemo() {
         </Discussion>
       </ScrollArea>
     </div>
-  );
+  )
 }

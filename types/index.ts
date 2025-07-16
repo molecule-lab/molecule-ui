@@ -1,17 +1,17 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from "react"
 
 export type Item = {
-  $id?: string;
+  $id?: string
   /**
    * @internal
    */
   $ref?: {
-    file: string;
-  };
-  type: "page";
-  name: ReactNode;
-  url: string;
-  external?: boolean;
-  description?: ReactNode;
-  icon?: ReactElement;
-};
+    file: string
+  }
+  type: "page"
+  name: ReactNode
+  url: string
+  external?: boolean
+  description?: ReactNode
+  icon?: ReactElement
+}

@@ -1,11 +1,12 @@
-import { defineCollection, defineConfig } from "@content-collections/core";
+import { defineCollection, defineConfig } from "@content-collections/core"
 import {
-  createMetaSchema,
   createDocSchema,
+  createMetaSchema,
   transformMDX,
-} from "@fumadocs/content-collections/configuration";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformers } from "@/lib/transformers";
+} from "@fumadocs/content-collections/configuration"
+import rehypePrettyCode from "rehype-pretty-code"
+
+import { transformers } from "@/lib/transformers"
 
 const docs = defineCollection({
   name: "docs",
@@ -30,7 +31,7 @@ const docs = defineCollection({
   transform: (document, context) =>
     transformMDX(document, context, {
       rehypePlugins: (plugins) => {
-        plugins.shift();
+        plugins.shift()
         plugins.push([
           rehypePrettyCode,
           {
@@ -40,11 +41,11 @@ const docs = defineCollection({
             },
             transformers,
           },
-        ]);
-        return plugins;
+        ])
+        return plugins
       },
     }),
-});
+})
 
 const metas = defineCollection({
   name: "meta",
@@ -52,8 +53,8 @@ const metas = defineCollection({
   include: "**/meta.json",
   parser: "json",
   schema: createMetaSchema,
-});
+})
 
 export default defineConfig({
   collections: [docs, metas],
-});
+})

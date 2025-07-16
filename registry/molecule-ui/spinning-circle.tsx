@@ -1,8 +1,10 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { cva, VariantProps } from "class-variance-authority";
-import { HTMLMotionProps, motion } from "motion/react";
-import React from "react";
+"use client"
+
+import React from "react"
+import { cva, VariantProps } from "class-variance-authority"
+import { HTMLMotionProps, motion } from "motion/react"
+
+import { cn } from "@/lib/utils"
 
 const spinningCircleVariants = cva("flex gap-2 items-center justify-center", {
   variants: {
@@ -16,15 +18,15 @@ const spinningCircleVariants = cva("flex gap-2 items-center justify-center", {
   defaultVariants: {
     messagePlacement: "bottom",
   },
-});
+})
 
 export interface SpinningCircleProps {
-  message?: string;
+  message?: string
   /**
    * Position of the message relative to the spinner.
    * @default bottom
    */
-  messagePlacement?: "top" | "bottom" | "left" | "right";
+  messagePlacement?: "top" | "bottom" | "left" | "right"
 }
 
 export function SpinningCircle({
@@ -50,5 +52,5 @@ export function SpinningCircle({
       />
       {message && <div>{message}</div>}
     </div>
-  );
+  )
 }

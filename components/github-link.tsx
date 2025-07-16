@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Github } from "@/components/icons/github";
-import React from "react";
+import React from "react"
+import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { Github } from "@/components/icons/github"
 
 export function GithubLink() {
   return (
@@ -13,7 +14,7 @@ export function GithubLink() {
         </React.Suspense>
       </Link>
     </Button>
-  );
+  )
 }
 
 export async function StarsCount() {
@@ -22,8 +23,8 @@ export async function StarsCount() {
     {
       next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
     },
-  );
-  const json = await data.json();
+  )
+  const json = await data.json()
 
   return (
     <span className="text-muted-foreground text-xs tabular-nums">
@@ -31,5 +32,5 @@ export async function StarsCount() {
         ? `${(json.stargazers_count / 1000).toFixed(1)}k`
         : json.stargazers_count?.toLocaleString()}
     </span>
-  );
+  )
 }

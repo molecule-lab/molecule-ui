@@ -1,6 +1,8 @@
-"use client";
-import { source } from "@/lib/source";
-import { usePathname } from "next/navigation";
+"use client"
+
+import { usePathname } from "next/navigation"
+
+import { source } from "@/lib/source"
 import {
   Sidebar,
   SidebarContent,
@@ -9,23 +11,23 @@ import {
   SidebarGroupItem,
   SidebarGroupLabel,
   SidebarGroupLink,
-} from "@/components/sidebar";
+} from "@/components/sidebar"
 
 interface SidebarProps {
-  tree: typeof source.pageTree;
-  asChild?: boolean;
+  tree: typeof source.pageTree
+  asChild?: boolean
 }
 
 interface SidebarItemsProps {
-  items: typeof source.pageTree.children;
+  items: typeof source.pageTree.children
 }
 
 export function DocsSidebar({ tree }: SidebarProps) {
   return (
-    <div className='h-full'>
+    <div className="h-full">
       <Sidebar>
         <SidebarContent>
-          <div className='h-4' />
+          <div className="h-4" />
           {tree.children.map((root) => (
             <SidebarGroup key={root.$id}>
               <SidebarGroupLabel>
@@ -47,11 +49,11 @@ export function DocsSidebar({ tree }: SidebarProps) {
         </SidebarContent>
       </Sidebar>
     </div>
-  );
+  )
 }
 
 function SidebarItems({ items }: SidebarItemsProps) {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return items.map((item) => {
     return (
       item.type === "page" && (
@@ -65,6 +67,6 @@ function SidebarItems({ items }: SidebarItemsProps) {
           </SidebarGroupLink>
         </SidebarGroupItem>
       )
-    );
-  });
+    )
+  })
 }

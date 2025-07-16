@@ -1,10 +1,11 @@
-import { MoveUpRight, SquareArrowOutUpRight } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link"
+import { MoveUpRight, SquareArrowOutUpRight } from "lucide-react"
+
+import { Badge } from "@/components/ui/badge"
 
 interface DocsLinksProps {
-  docLink?: string;
-  apiLink?: string;
+  docLink?: string
+  apiLink?: string
 }
 
 export function DocsLinks({ docLink, apiLink }: DocsLinksProps) {
@@ -29,5 +30,5 @@ export function DocsLinks({ docLink, apiLink }: DocsLinksProps) {
         )}
       </div>
     </div>
-  );
+  )
 }

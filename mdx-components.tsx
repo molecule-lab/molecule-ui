@@ -1,37 +1,38 @@
-import defaultMdxComponents from "fumadocs-ui/mdx";
-import type { MDXComponents } from "mdx/types";
-import { Callout } from "@/components/callout";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { CodeBlockCommand } from "@/components/code-command-block";
-import { CopyButton } from "@/components/copy-button";
-import { ComponentPreview } from "@/components/component-preview";
-import { createGenerator } from "fumadocs-typescript";
-import { AutoTypeTable } from "fumadocs-typescript/ui";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ComponentSource } from "@/components/component-source";
+import Link from "next/link"
+import { createGenerator } from "fumadocs-typescript"
+import { AutoTypeTable } from "fumadocs-typescript/ui"
+import defaultMdxComponents from "fumadocs-ui/mdx"
+import type { MDXComponents } from "mdx/types"
 
-const generator = createGenerator();
+import { cn } from "@/lib/utils"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Callout } from "@/components/callout"
+import { CodeBlockCommand } from "@/components/code-command-block"
+import { ComponentPreview } from "@/components/component-preview"
+import { ComponentSource } from "@/components/component-source"
+import { CopyButton } from "@/components/copy-button"
+
+const generator = createGenerator()
 
 const CustomLink = (props: any) => {
-  const href = props.href;
+  const href = props.href
 
   if (href.startsWith("/")) {
     return (
       <Link {...props} href={href}>
         {props.children}
       </Link>
-    );
+    )
   }
 
   if (href.startsWith("#")) {
     /* eslint-disable  jsx-a11y/anchor-has-content */
-    return <a {...props} />;
+    return <a {...props} />
   }
 
   /* eslint-disable  jsx-a11y/anchor-has-content */
-  return <a target='_blank' rel='noopener noreferrer' {...props} />;
-};
+  return <a target="_blank" rel="noopener noreferrer" {...props} />
+}
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -40,10 +41,10 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Callout,
     ComponentPreview,
     ComponentSource,
-    Tabs: ({ ...props }) => <Tabs className='mb-6' {...props} />,
+    Tabs: ({ ...props }) => <Tabs className="mb-6" {...props} />,
     TabsList: ({ ...props }) => (
       <TabsList
-        className='justify-start gap-4 rounded-none bg-transparent px-2 md:px-0 '
+        className="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0 "
         {...props}
       />
     ),
@@ -79,14 +80,14 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <h3
         className={cn(
           "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
-          className
+          className,
         )}
         {...props}
       />
     ),
     Steps: ({ ...props }) => (
       <div
-        className='[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent'
+        className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
         {...props}
       />
     ),
@@ -96,13 +97,13 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <pre
           className={cn(
             "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0",
-            className
+            className,
           )}
           {...props}
         >
           {children}
         </pre>
-      );
+      )
     },
     figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
       return (
@@ -110,7 +111,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
           className={cn(" bg-zinc-50 dark:bg-zinc-900", className)}
           {...props}
         />
-      );
+      )
     },
     figcaption: ({
       className,
@@ -126,14 +127,14 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <figcaption
           className={cn(
             "text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70",
-            className
+            className,
           )}
           {...props}
         >
           {/* {iconExtension} */}
           {children}
         </figcaption>
-      );
+      )
     },
     code: ({
       className,
@@ -145,12 +146,12 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       __bun__,
       ...props
     }: React.ComponentProps<"code"> & {
-      __raw__?: string;
-      __src__?: string;
-      __npm__?: string;
-      __yarn__?: string;
-      __pnpm__?: string;
-      __bun__?: string;
+      __raw__?: string
+      __src__?: string
+      __npm__?: string
+      __yarn__?: string
+      __pnpm__?: string
+      __bun__?: string
     }) => {
       // Inline Code.
       if (typeof props.children === "string") {
@@ -158,15 +159,15 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
           <code
             className={cn(
               "bg-muted relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] outline-none",
-              className
+              className,
             )}
             {...props}
           />
-        );
+        )
       }
 
       // npm command.
-      const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
+      const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__
       if (isNpmCommand) {
         return (
           <CodeBlockCommand
@@ -175,7 +176,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
             __pnpm__={__pnpm__}
             __bun__={__bun__}
           />
-        );
+        )
       }
 
       // Default codeblock.
@@ -184,7 +185,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
           {__raw__ && <CopyButton value={__raw__} src={__src__} />}
           <code {...props} />
         </>
-      );
+      )
     },
     AutoTypeTable: ({ heading, ...props }) => (
       <AutoTypeTable {...props} generator={generator} />
@@ -194,7 +195,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <h2
         className={cn(
           "font-heading scroll-m-20  text-2xl font-semibold tracking-tight border-b pb-1",
-          className
+          className,
         )}
         {...props}
       />
@@ -204,10 +205,10 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <h3
         className={cn(
           "font-heading scroll-m-20 mt-4 text-xl font-semibold tracking-tight",
-          className
+          className,
         )}
         {...props}
       />
     ),
-  };
+  }
 }

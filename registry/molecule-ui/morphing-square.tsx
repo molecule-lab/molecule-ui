@@ -1,7 +1,9 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import { HTMLMotionProps, motion } from "motion/react";
+"use client"
+
+import { cva } from "class-variance-authority"
+import { HTMLMotionProps, motion } from "motion/react"
+
+import { cn } from "@/lib/utils"
 
 const morphingSquareVariants = cva("flex gap-2 items-center justify-center", {
   variants: {
@@ -15,15 +17,15 @@ const morphingSquareVariants = cva("flex gap-2 items-center justify-center", {
   defaultVariants: {
     messagePlacement: "bottom",
   },
-});
+})
 
 export interface MorphingSquareProps {
-  message?: string;
+  message?: string
   /**
    * Position of the message relative to the spinner.
    * @default bottom
    */
-  messagePlacement?: "top" | "bottom" | "left" | "right";
+  messagePlacement?: "top" | "bottom" | "left" | "right"
 }
 
 export function MorphingSquare({
@@ -49,5 +51,5 @@ export function MorphingSquare({
       />
       {message && <div>{message}</div>}
     </div>
-  );
+  )
 }

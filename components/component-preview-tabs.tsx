@@ -1,10 +1,11 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
+import { motion } from "framer-motion"
 
-import { cn } from "@/lib/utils";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+import { cn } from "@/lib/utils"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 export function ComponentPreviewTabs({
   className,
   align = "center",
@@ -13,12 +14,12 @@ export function ComponentPreviewTabs({
   source,
   ...props
 }: React.ComponentProps<"div"> & {
-  align?: "center" | "start" | "end";
-  hideCode?: boolean;
-  component: React.ReactNode;
-  source: React.ReactNode;
+  align?: "center" | "start" | "end"
+  hideCode?: boolean
+  component: React.ReactNode
+  source: React.ReactNode
 }) {
-  const [tab, setTab] = React.useState("preview");
+  const [tab, setTab] = React.useState("preview")
 
   return (
     <div
@@ -77,5 +78,5 @@ export function ComponentPreviewTabs({
         </div>
       </div>
     </div>
-  );
+  )
 }

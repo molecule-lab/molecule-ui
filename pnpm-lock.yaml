@@ -126,6 +126,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
+      '@ianvs/prettier-plugin-sort-imports':
+        specifier: ^4.5.1
+        version: 4.5.1(prettier@3.6.2)
       '@next/eslint-plugin-next':
         specifier: ^15.4.1
         version: 15.4.1
@@ -639,6 +642,18 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
+
+  '@ianvs/prettier-plugin-sort-imports@4.5.1':
+    resolution: {integrity: sha512-vOQwIyQHnHz0ikvHEQDzwUkNfX74o/7qNEpm9LiPtyBvCg/AU/DOkhwe1o92chPS1QzS6G7HeiO+OwIt8a358A==}
+    peerDependencies:
+      '@prettier/plugin-oxc': ^0.0.4
+      '@vue/compiler-sfc': 2.7.x || 3.x
+      prettier: 2 || 3 || ^4.0.0-0
+    peerDependenciesMeta:
+      '@prettier/plugin-oxc':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
 
   '@img/sharp-darwin-arm64@0.34.2':
     resolution: {integrity: sha512-OfXHZPppddivUJnqyKoi5YVeHRkkNE2zUFT2gbpKxp/JZCFYEYubnMg+gOp6lWfasPrTS+KPosKqdI+ELYVDtg==}
@@ -5298,6 +5313,17 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.3': {}
+
+  '@ianvs/prettier-plugin-sort-imports@4.5.1(prettier@3.6.2)':
+    dependencies:
+      '@babel/generator': 7.27.5
+      '@babel/parser': 7.27.7
+      '@babel/traverse': 7.27.7
+      '@babel/types': 7.27.7
+      prettier: 3.6.2
+      semver: 7.7.2
+    transitivePeerDependencies:
+      - supports-color
 
   '@img/sharp-darwin-arm64@0.34.2':
     optionalDependencies:

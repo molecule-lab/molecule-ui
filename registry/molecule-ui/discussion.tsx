@@ -1,7 +1,8 @@
-import React from "react";
-import { ChevronDown } from "lucide-react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { cn } from "@/lib/utils";
+import React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDown } from "lucide-react"
+
+import { cn } from "@/lib/utils"
 
 export function DiscussionItem({
   className,
@@ -15,7 +16,7 @@ export function DiscussionItem({
       )}
       {...props}
     />
-  );
+  )
 }
 
 export function DiscussionContent({
@@ -27,7 +28,7 @@ export function DiscussionContent({
     <AccordionPrimitive.Header className={cn("flex", className)} {...props}>
       {children}
     </AccordionPrimitive.Header>
-  );
+  )
 }
 
 export function DiscussionExpand({
@@ -45,7 +46,7 @@ export function DiscussionExpand({
       Show Replies
       <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
-  );
+  )
 }
 
 export function DiscussionTitle({
@@ -57,7 +58,7 @@ export function DiscussionTitle({
     <div className={cn("font-semibold text-sm", className)} {...props}>
       {children}
     </div>
-  );
+  )
 }
 
 export function DiscussionBody({
@@ -69,7 +70,7 @@ export function DiscussionBody({
     <div className={cn("text-sm leading-relaxed", className)} {...props}>
       {children}
     </div>
-  );
+  )
 }
 
 export function DiscussionReplies({
@@ -87,11 +88,11 @@ export function DiscussionReplies({
     >
       {children}
     </AccordionPrimitive.Content>
-  );
+  )
 }
 
 export function Discussion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
-  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }

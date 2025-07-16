@@ -1,5 +1,5 @@
-import { TypewriterLoader } from "@/registry/molecule-ui/typewriter-loader";
+import { TypewriterLoader } from "@/registry/molecule-ui/typewriter-loader"
 
 export function TypewriterLoaderDemo() {
-  return <TypewriterLoader />;
+  return <TypewriterLoader />
 }

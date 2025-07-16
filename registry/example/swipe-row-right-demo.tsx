@@ -1,6 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SwipeRow } from "@/registry/molecule-ui/swipe-row";
-import { Archive, Heart, Trash } from "lucide-react";
+import { Archive, Heart, Trash } from "lucide-react"
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { SwipeRow } from "@/registry/molecule-ui/swipe-row"
 
 export function SwipeRowRightDemo() {
   return (
@@ -25,7 +26,7 @@ export function SwipeRowRightDemo() {
         </div>
       </SwipeRow>
     </div>
-  );
+  )
 }
 
 function RightActions() {
@@ -38,5 +39,5 @@ function RightActions() {
         <Trash size={20} />
       </button>
     </>
-  );
+  )
 }

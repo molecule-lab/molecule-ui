@@ -1,8 +1,13 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { type DialogProps } from "@radix-ui/react-dialog";
-import React, { useState } from "react";
+"use client"
+
+import React, { useState } from "react"
+import { useRouter } from "next/navigation"
+import { type DialogProps } from "@radix-ui/react-dialog"
+import { FileIcon } from "lucide-react"
+
+import { source } from "@/lib/source"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
   CommandDialog,
   CommandEmpty,
@@ -10,23 +15,20 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
-import { source } from "@/lib/source";
-import { FileIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+} from "@/components/ui/command"
 
 interface CommandGroupItemProps {
-  items: typeof source.pageTree.children;
-  runCommand: (command: () => unknown) => unknown;
+  items: typeof source.pageTree.children
+  runCommand: (command: () => unknown) => unknown
 }
 
 export function Search({ ...props }: DialogProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const runCommand = React.useCallback((command: () => unknown) => {
-    setIsOpen(false);
-    command();
-  }, []);
+    setIsOpen(false)
+    command()
+  }, [])
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -37,17 +39,17 @@ export function Search({ ...props }: DialogProps) {
           e.target instanceof HTMLTextAreaElement ||
           e.target instanceof HTMLSelectElement
         ) {
-          return;
+          return
         }
 
-        e.preventDefault();
-        setIsOpen((open) => !open);
+        e.preventDefault()
+        setIsOpen((open) => !open)
       }
-    };
+    }
 
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, []);
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
 
   return (
     <>
@@ -90,18 +92,18 @@ export function Search({ ...props }: DialogProps) {
         </CommandList>
       </CommandDialog>
     </>
-  );
+  )
 }
 
 function CommandGroupItems({ items, runCommand }: CommandGroupItemProps) {
-  const router = useRouter();
+  const router = useRouter()
 
   return items.map((item) => {
     return (
       item.type === "page" && (
         <CommandItem
           onSelect={() => {
-            runCommand(() => router.push(item.url));
+            runCommand(() => router.push(item.url))
           }}
           key={item.url}
         >
@@ -109,6 +111,6 @@ function CommandGroupItems({ items, runCommand }: CommandGroupItemProps) {
           {item.name}
         </CommandItem>
       )
-    );
-  });
+    )
+  })
 }

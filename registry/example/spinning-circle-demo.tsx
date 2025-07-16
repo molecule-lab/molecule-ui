@@ -1,5 +1,5 @@
-import { SpinningCircle } from "@/registry/molecule-ui/spinning-circle";
+import { SpinningCircle } from "@/registry/molecule-ui/spinning-circle"
 
 export function SpinningCircleDemo() {
-  return <SpinningCircle />;
+  return <SpinningCircle />
 }

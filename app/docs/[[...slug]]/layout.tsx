@@ -1,6 +1,7 @@
-import { DocsSidebar } from "@/components/docs-sidebar";
-import { source } from "@/lib/source";
-import { ReactNode } from "react";
+import { ReactNode } from "react"
+
+import { source } from "@/lib/source"
+import { DocsSidebar } from "@/components/docs-sidebar"
 
 export default function DocsPageLayout({ children }: { children: ReactNode }) {
   return (
@@ -14,5 +15,5 @@ export default function DocsPageLayout({ children }: { children: ReactNode }) {
         {children}
       </div>
     </div>
-  );
+  )
 }
