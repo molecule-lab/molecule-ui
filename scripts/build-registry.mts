@@ -6,7 +6,7 @@ import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
 
 /* eslint-disable no-relative-import-paths/no-relative-import-paths */
-import { componentRegistry } from "../registry/index"
+import { componentRegistry } from "../registry/index.ts"
 
 const registry = {
   name: "Molecule UI",
