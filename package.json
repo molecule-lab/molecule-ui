@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prebuild": "pnpm build:registry",
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
@@ -34,7 +36,6 @@
     "cmdk": "^1.1.1",
     "framer-motion": "^12.19.2",
     "fumadocs-core": "15.5.5",
-    "fumadocs-docgen": "^2.0.1",
     "fumadocs-typescript": "^4.0.6",
     "fumadocs-ui": "15.5.5",
     "jotai": "^2.12.5",

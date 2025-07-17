@@ -37,7 +37,11 @@ function useActiveItem(itemIds: string[]) {
   return activeId
 }
 
-export function TableOfContents({ toc }) {
+export function TableOfContents({
+  toc,
+}: {
+  toc: { url: string; depth: number; title: string }[]
+}) {
   const itemIds = React.useMemo(
     () => toc.map((item) => item.url.replace("#", "")),
     [toc],

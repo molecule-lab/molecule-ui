@@ -47,32 +47,18 @@ function SidebarContent({
 function SidebarGroup({
   children,
   className,
-  "aria-labelledby": ariaLabelledBy,
   ...props
-}: React.ComponentProps<"div"> & {
-  "aria-labelledby"?: string
-}) {
-  const groupId = React.useId()
-
+}: React.ComponentProps<"div">) {
   return (
     <div
       role="group"
-      aria-labelledby={ariaLabelledBy || `${groupId}-label`}
       className={cn(
         "relative grid grid-flow-row auto-rows-max gap-0.5 text-sm",
         className,
       )}
       {...props}
     >
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child) && child.type === SidebarGroupLabel) {
-          return React.cloneElement(child, {
-            id: ariaLabelledBy || `${groupId}-label`,
-            ...child.props,
-          })
-        }
-        return child
-      })}
+      {children}
     </div>
   )
 }
