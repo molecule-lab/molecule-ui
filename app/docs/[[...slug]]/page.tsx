@@ -70,7 +70,7 @@ export async function generateMetadata(props: {
   if (!page) notFound()
 
   return {
-    title: page.data.title,
+    title: `${page.data.title} | Molecule UI`,
     description: page.data.description,
     url: page.url,
     openGraph: {

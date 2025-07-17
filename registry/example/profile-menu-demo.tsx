@@ -16,7 +16,7 @@ export function ProfileMenuDemo() {
       <ProfileMenu>
         <ProfileMenuHeader>
           <ProfileMenuHeaderContent className="flex flex-col">
-            <div>Molecule UI</div>
+            <div>Liam Patel</div>
           </ProfileMenuHeaderContent>
           <ProfileMenuTrigger>
             <div className="flex items-center justify-end">
