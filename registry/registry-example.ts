@@ -73,7 +73,11 @@ export const examples: Registry["items"] = [
     title: "Discussion demo",
     description: "Preview component for discussion demo",
     dependencies: [],
-    registryDependencies: [],
+    registryDependencies: [
+      "avatar",
+      "scroll-area",
+      "https://moleculeui.design/r/discussion",
+    ],
     author: "Rushil Dhinoja",
     files: [
       {
@@ -228,7 +232,11 @@ export const examples: Registry["items"] = [
     title: "Profile Menu Demo",
     description: "Demo for the animated profile menu",
     dependencies: [],
-    registryDependencies: [],
+    registryDependencies: [
+      "separator",
+      "avatar",
+      "https://moleculeui.design/r/profile-menu",
+    ],
     author: "Rushil Dhinoja",
     files: [
       {

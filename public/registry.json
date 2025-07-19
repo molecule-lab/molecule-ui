@@ -248,7 +248,11 @@
       "author": "Rushil Dhinoja",
       "description": "Preview component for discussion demo",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "scroll-area",
+        "https://moleculeui.design/r/discussion"
+      ],
       "files": [
         {
           "path": "registry/example/discussion-demo.tsx",
@@ -408,7 +412,11 @@
       "author": "Rushil Dhinoja",
       "description": "Demo for the animated profile menu",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "separator",
+        "avatar",
+        "https://moleculeui.design/r/profile-menu"
+      ],
       "files": [
         {
           "path": "registry/example/profile-menu-demo.tsx",

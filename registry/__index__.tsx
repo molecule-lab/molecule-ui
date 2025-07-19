@@ -278,7 +278,11 @@ export const Index: Record<string, any> = {
     name: "discussion-demo",
     description: "Preview component for discussion demo",
     type: "registry:example",
-    registryDependencies: [],
+    registryDependencies: [
+      "avatar",
+      "scroll-area",
+      "https://moleculeui.design/r/discussion",
+    ],
     files: [
       {
         path: "registry/example/discussion-demo.tsx",
@@ -504,7 +508,11 @@ export const Index: Record<string, any> = {
     name: "profile-menu-demo",
     description: "Demo for the animated profile menu",
     type: "registry:example",
-    registryDependencies: [],
+    registryDependencies: [
+      "separator",
+      "avatar",
+      "https://moleculeui.design/r/profile-menu",
+    ],
     files: [
       {
         path: "registry/example/profile-menu-demo.tsx",

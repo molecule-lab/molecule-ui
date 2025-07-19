@@ -10,7 +10,7 @@ import {
   DiscussionTitle,
 } from "@/registry/molecule-ui/discussion"
 
-export function CommentTreeDemo() {
+export function DiscussionDemo() {
   return (
     <div className="w-full md:w-3/4">
       <ScrollArea className="max-h-[400px] overflow-auto">
