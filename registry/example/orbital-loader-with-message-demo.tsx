@@ -1,5 +1,5 @@
 import { OrbitalLoader } from "@/registry/molecule-ui/orbital-loader"
 
-export function OrbitalLoaderDemo() {
+export function OrbitalLoaderWithMessageDemo() {
   return <OrbitalLoader message="Loading..." />
 }

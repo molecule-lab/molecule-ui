@@ -42,7 +42,7 @@ export function TypewriterLoader({
   }, [typingSpeed, typingText])
 
   return (
-    <div className="font-mono text-lg">
+    <div className="font-mono text-lg flex items-center justify-center">
       {displayText}
       <motion.span
         animate={{ opacity: [1, 0] }}
