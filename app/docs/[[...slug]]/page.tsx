@@ -3,10 +3,8 @@ import { getMDXComponents } from "@/mdx-components"
 import { MDXContent } from "@content-collections/mdx/react"
 import { findNeighbour } from "fumadocs-core/server"
 import { createRelativeLink } from "fumadocs-ui/mdx"
-import { date } from "zod"
 
 import { source } from "@/lib/source"
-import { Button } from "@/components/ui/button"
 import { DocsFooter } from "@/components/docs-footer"
 import { DocsLinks } from "@/components/docs-links"
 import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviation-top"
@@ -37,6 +35,7 @@ export default async function Page(props: {
             docLink={page.data.links?.doc}
           />
         </div>
+        <div></div>
         <div className="flex flex-col gap-4  min-w-0">
           <MDXContent
             code={page.data.body}

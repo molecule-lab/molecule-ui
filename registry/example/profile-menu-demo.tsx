@@ -12,7 +12,7 @@ import {
 
 export function ProfileMenuDemo() {
   return (
-    <div className="relative ">
+    <div className="relative">
       <ProfileMenu>
         <ProfileMenuHeader>
           <ProfileMenuHeaderContent className="flex flex-col">

@@ -6,14 +6,17 @@
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],
-  "plugins": ["no-relative-import-paths", "jsx-a11y"],
+  "plugins": ["no-relative-import-paths", "jsx-a11y", "unused-imports"],
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
     "no-relative-import-paths/no-relative-import-paths": [
       "error",
       { "allowSameFolder": false, "rootDir": "." }
     ],
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+
+    "no-unused-vars": "off", // turn off base rule
+    "unused-imports/no-unused-imports": "error"
   },
   "overrides": [
     {

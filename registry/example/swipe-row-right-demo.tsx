@@ -1,4 +1,4 @@
-import { Archive, Heart, Trash } from "lucide-react"
+import { Heart, Trash } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { SwipeRow } from "@/registry/molecule-ui/swipe-row"

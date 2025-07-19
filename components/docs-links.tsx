@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MoveUpRight, SquareArrowOutUpRight } from "lucide-react"
+import { MoveUpRight } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 
