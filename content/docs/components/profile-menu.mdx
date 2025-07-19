@@ -11,6 +11,7 @@ description: "An animated collapsible profile menu component with smooth transit
 
 <TabsList>
   <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -21,4 +22,60 @@ npx shadcn@latest add "https://molcuelui.design/r/profile-menu"
 
 </TabsContent>
 
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/profile-menu.tsx"
+  name="profile-menu"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
 </Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import {
+  ProfileMenu,
+  ProfileMenuContent,
+  ProfileMenuGroup,
+  ProfileMenuHeader,
+  ProfileMenuHeaderContent,
+  ProfileMenuItem,
+  ProfileMenuTrigger,
+} from "@/components/molecule-ui/profile-menu"
+```
+
+```tsx
+<ProfileMenu>
+  <ProfileMenuHeader>
+    <ProfileMenuHeaderContent />
+    <ProfileMenuTrigger />
+  <ProfileMenuHeader>
+  <ProfileMenuContent>
+    <ProfileMenuGroup>
+      <ProfileMenuItem />
+    </ProfileMenuGroup>
+  </ProfileMenuContent>
+</ProfileMenuHeader>
+```
+
+</div>

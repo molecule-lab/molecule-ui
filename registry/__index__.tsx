@@ -156,6 +156,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "profile-menu": {
+    name: "profile-menu",
+    description:
+      "An animated collapsible profile menu component with smooth transitions and customizable content sections.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/profile-menu.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/profile-menu.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/profile-menu.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",

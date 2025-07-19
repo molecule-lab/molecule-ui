@@ -138,6 +138,26 @@
       ]
     },
     {
+      "name": "profile-menu",
+      "type": "registry:ui",
+      "title": "Profile Menu",
+      "author": "Rushil Dhinoja",
+      "description": "An animated collapsible profile menu component with smooth transitions and customizable content sections.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/profile-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/profile-menu.tsx"
+        }
+      ]
+    },
+    {
       "name": "swipe-row-demo",
       "type": "registry:example",
       "title": "Swipe row demo",

@@ -102,4 +102,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "profile-menu",
+    type: "registry:ui",
+    title: "Profile Menu",
+    description:
+      "An animated collapsible profile menu component with smooth transitions and customizable content sections.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/profile-menu.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/profile-menu.tsx",
+      },
+    ],
+  },
 ]
