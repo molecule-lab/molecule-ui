@@ -246,4 +246,20 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "checkbox-demo",
+    type: "registry:example",
+    title: "Todo",
+    description: "A demo component showcasing the animated checkbox",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/checkbox"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/checkbox-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/checkbox-demo.tsx",
+      },
+    ],
+  },
 ]

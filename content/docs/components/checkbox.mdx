@@ -1,0 +1,76 @@
+---
+title: Checkbox
+description: "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives."
+links:
+  doc: https://www.radix-ui.com/primitives/docs/components/checkbox
+  api: https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference
+---
+
+<ComponentPreview name='checkbox-demo'/>
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@2.8.0 add "https://moleculeui.design/r/checkbox"
+```
+
+<Callout
+  title="Using Shadcn/UI v2.8.0 Recommended"
+  className='mt-6'
+>
+  Version 2.9.0 of Shadcn/UI includes a minor issue affecting the vendor registry.  
+  For now, we recommend using v2.8.0 to ensure expected behavior.  
+  You can follow the issue [here](https://github.com/shadcn-ui/ui/issues/7849).
+</Callout>
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+
+```bash
+npm install @radix-ui/react-accordion
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/checkbox.tsx"
+  name="checkbox"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import {Checkbox} from '@/components/molecule-ui/checkbox'
+```
+
+```tsx
+<Checkbox />
+```
+
+</div>

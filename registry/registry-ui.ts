@@ -119,4 +119,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "checkbox",
+    type: "registry:ui",
+    title: "Checkbox",
+    description:
+      "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/checkbox.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/checkbox.tsx",
+      },
+    ],
+  },
 ]

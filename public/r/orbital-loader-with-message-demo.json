@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/orbital-loader-with-message-demo.tsx",
-      "content": "import { OrbitalLoader } from \"@/registry/molecule-ui/orbital-loader\"\n\nexport function OrbitalLoaderDemo() {\n  return <OrbitalLoader message=\"Loading...\" />\n}\n",
+      "content": "import { OrbitalLoader } from \"@/registry/molecule-ui/orbital-loader\"\n\nexport function OrbitalLoaderWithMessageDemo() {\n  return <OrbitalLoader message=\"Loading...\" />\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/orbital-loader-with-message-demo.tsx"
     }

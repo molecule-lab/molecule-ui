@@ -180,6 +180,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  checkbox: {
+    name: "checkbox",
+    description:
+      "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/checkbox.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/checkbox.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/checkbox.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",
@@ -522,6 +546,29 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/profile-menu-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "checkbox-demo": {
+    name: "checkbox-demo",
+    description: "A demo component showcasing the animated checkbox",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/checkbox"],
+    files: [
+      {
+        path: "registry/example/checkbox-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/checkbox-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/checkbox-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

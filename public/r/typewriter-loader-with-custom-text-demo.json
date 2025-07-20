@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/typewriter-loader-with-custom-text-demo.tsx",
-      "content": "import { TypewriterLoader } from \"@/registry/molecule-ui/typewriter-loader\"\n\nexport function TypewriterLoaderDemo() {\n  return <TypewriterLoader typingText=\"Please Wait...\" />\n}\n",
+      "content": "import { TypewriterLoader } from \"@/registry/molecule-ui/typewriter-loader\"\n\nexport function TypewriterLoaderWithCustomTextDemo() {\n  return <TypewriterLoader typingText=\"Please Wait...\" />\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/typewriter-loader-with-custom-text-demo.tsx"
     }

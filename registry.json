@@ -158,6 +158,26 @@
       ]
     },
     {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "author": "Rushil Dhinoja",
+      "description": "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
       "name": "swipe-row-demo",
       "type": "registry:example",
       "title": "Swipe row demo",
@@ -422,6 +442,24 @@
           "path": "registry/example/profile-menu-demo.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/example/profile-menu-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "title": "Todo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the animated checkbox",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/example/checkbox-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/checkbox-demo.tsx"
         }
       ]
     },
