@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wave-loader-demo",
+  "type": "registry:example",
+  "title": "Wave loader demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo component showcasing the wave loader component",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/wave-loader"
+  ],
+  "files": [
+    {
+      "path": "registry/example/wave-loader-demo.tsx",
+      "content": "import { WaveLoader } from \"@/registry/molecule-ui/wave-loader\"\n\nexport function WaveLoaderDemo() {\n  return <WaveLoader />\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/wave-loader-demo.tsx"
+    }
+  ]
+}

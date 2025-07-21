@@ -249,7 +249,7 @@ export const examples: Registry["items"] = [
   {
     name: "checkbox-demo",
     type: "registry:example",
-    title: "Todo",
+    title: "Animated Checkbox Demo",
     description: "A demo component showcasing the animated checkbox",
     dependencies: [],
     registryDependencies: ["https://moleculeui.design/r/checkbox"],
@@ -259,6 +259,75 @@ export const examples: Registry["items"] = [
         path: "registry/example/checkbox-demo.tsx",
         type: "registry:ui",
         target: "components/molecule-ui/example/checkbox-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "bouncing-dots-demo",
+    type: "registry:example",
+    title: "Bouncing dots demo",
+    description:
+      "A demo component showcasing the bouncing dots loader component",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/bouncing-dots"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/bouncing-dots-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/bouncing-dots-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "bouncing-dots-with-message-demo",
+    type: "registry:example",
+    title: "Bouncing dots with message demo",
+    description:
+      "A demo component showcasing the bouncing dots loader component with message",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/bouncing-dots"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/bouncing-dots-with-message-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/bouncing-dots-with-message-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "wave-loader-demo",
+    type: "registry:example",
+    title: "Wave loader demo",
+    description: "A demo component showcasing the wave loader component",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/wave-loader"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/wave-loader-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/wave-loader-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "wave-loader-with-message-demo",
+    type: "registry:example",
+    title: "Wave loader with message demo",
+    description:
+      "A demo component showcasing the wave loader component with message",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/wave-loader"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/wave-loader-with-message-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/wave-loader-with-message-demo.tsx",
       },
     ],
   },

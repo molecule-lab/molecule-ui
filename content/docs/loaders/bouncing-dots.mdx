@@ -1,0 +1,91 @@
+---
+title: Bouncing Dots
+description: "An animated loading indicator featuring three bouncing dots with customizable colors and spacing."
+---
+
+<ComponentPreview name='bouncing-dots-demo'/>
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@2.8.0 add "https://moleculeui.design/r/bouncing-dots"
+```
+
+<Callout
+  title="Using Shadcn/UI v2.8.0 Recommended"
+  className='mt-6'
+>
+  Version 2.9.0 of Shadcn/UI includes a minor issue affecting the vendor registry.  
+  For now, we recommend using v2.8.0 to ensure expected behavior.  
+  You can follow the issue [here](https://github.com/shadcn-ui/ui/issues/7849).
+</Callout>
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/bouncing-dots.tsx"
+  name="bouncing-dots"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import { BouncingDots } from "@/components/molecule-ui/bouncing-dots"
+```
+
+```tsx
+<BouncingDots />
+```
+
+</div>
+
+## Examples
+
+<div>
+### With message
+
+<ComponentPreview name="bouncing-dots-with-message-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/bouncing-dots.tsx"
+  name="BouncingDotsProps"
+/>
+
+</div>

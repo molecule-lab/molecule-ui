@@ -1,0 +1,89 @@
+---
+title: Wave Loader
+description: "An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states."
+---
+
+<ComponentPreview name='wave-loader-demo'/>
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@2.8.0 add "https://moleculeui.design/r/spinning-circle"
+```
+
+<Callout
+  title="Using Shadcn/UI v2.8.0 Recommended"
+  className='mt-6'
+>
+  Version 2.9.0 of Shadcn/UI includes a minor issue affecting the vendor registry.  
+  For now, we recommend using v2.8.0 to ensure expected behavior.  
+  You can follow the issue [here](https://github.com/shadcn-ui/ui/issues/7849).
+</Callout>
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/wave-loader.tsx"
+  name="wave-loader"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import { WaveLoader } from "@/components/molecule-ui/wave-loader"
+```
+
+```tsx
+<WaveLoader />
+```
+
+</div>
+
+## Examples
+
+<div>
+### With message
+
+<ComponentPreview name="wave-loader-with-message-demo" />
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/wave-loader.tsx"
+  name="WaveLoaderProps"
+/>
+
+</div>

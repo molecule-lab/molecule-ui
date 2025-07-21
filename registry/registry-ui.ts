@@ -136,4 +136,38 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "bouncing-dots",
+    type: "registry:ui",
+    title: "Bouncing Dots",
+    description:
+      "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/bouncing-dots.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/bouncing-dots.tsx",
+      },
+    ],
+  },
+  {
+    name: "wave-loader",
+    type: "registry:ui",
+    title: "Wave Loader",
+    description:
+      "An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states.",
+    dependencies: ["motion", "class-variance-authority"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/wave-loader.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/wave-loader.tsx",
+      },
+    ],
+  },
 ]

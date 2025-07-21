@@ -178,6 +178,47 @@
       ]
     },
     {
+      "name": "bouncing-dots",
+      "type": "registry:ui",
+      "title": "Bouncing Dots",
+      "author": "Rushil Dhinoja",
+      "description": "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/bouncing-dots.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/bouncing-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader",
+      "type": "registry:ui",
+      "title": "Wave Loader",
+      "author": "Rushil Dhinoja",
+      "description": "An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/wave-loader.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/wave-loader.tsx"
+        }
+      ]
+    },
+    {
       "name": "swipe-row-demo",
       "type": "registry:example",
       "title": "Swipe row demo",
@@ -448,7 +489,7 @@
     {
       "name": "checkbox-demo",
       "type": "registry:example",
-      "title": "Todo",
+      "title": "Animated Checkbox Demo",
       "author": "Rushil Dhinoja",
       "description": "A demo component showcasing the animated checkbox",
       "dependencies": [],
@@ -460,6 +501,78 @@
           "path": "registry/example/checkbox-demo.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/example/checkbox-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bouncing-dots-demo",
+      "type": "registry:example",
+      "title": "Bouncing dots demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the bouncing dots loader component",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/bouncing-dots"
+      ],
+      "files": [
+        {
+          "path": "registry/example/bouncing-dots-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/bouncing-dots-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bouncing-dots-with-message-demo",
+      "type": "registry:example",
+      "title": "Bouncing dots with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the bouncing dots loader component with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/bouncing-dots"
+      ],
+      "files": [
+        {
+          "path": "registry/example/bouncing-dots-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/bouncing-dots-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader-demo",
+      "type": "registry:example",
+      "title": "Wave loader demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the wave loader component",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/wave-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/wave-loader-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/wave-loader-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader-with-message-demo",
+      "type": "registry:example",
+      "title": "Wave loader with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the wave loader component with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/wave-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/wave-loader-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/wave-loader-with-message-demo.tsx"
         }
       ]
     },

@@ -204,6 +204,54 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "bouncing-dots": {
+    name: "bouncing-dots",
+    description:
+      "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/bouncing-dots.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/bouncing-dots.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/bouncing-dots.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "wave-loader": {
+    name: "wave-loader",
+    description:
+      "An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/wave-loader.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/wave-loader.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/wave-loader.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",
@@ -569,6 +617,107 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/checkbox-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "bouncing-dots-demo": {
+    name: "bouncing-dots-demo",
+    description:
+      "A demo component showcasing the bouncing dots loader component",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/bouncing-dots"],
+    files: [
+      {
+        path: "registry/example/bouncing-dots-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/bouncing-dots-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/bouncing-dots-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "bouncing-dots-with-message-demo": {
+    name: "bouncing-dots-with-message-demo",
+    description:
+      "A demo component showcasing the bouncing dots loader component with message",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/bouncing-dots"],
+    files: [
+      {
+        path: "registry/example/bouncing-dots-with-message-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/bouncing-dots-with-message-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/bouncing-dots-with-message-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "wave-loader-demo": {
+    name: "wave-loader-demo",
+    description: "A demo component showcasing the wave loader component",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/wave-loader"],
+    files: [
+      {
+        path: "registry/example/wave-loader-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/wave-loader-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/wave-loader-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "wave-loader-with-message-demo": {
+    name: "wave-loader-with-message-demo",
+    description:
+      "A demo component showcasing the wave loader component with message",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/wave-loader"],
+    files: [
+      {
+        path: "registry/example/wave-loader-with-message-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/wave-loader-with-message-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/wave-loader-with-message-demo.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>

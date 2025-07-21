@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox-demo",
   "type": "registry:example",
-  "title": "Todo",
+  "title": "Animated Checkbox Demo",
   "author": "Rushil Dhinoja",
   "description": "A demo component showcasing the animated checkbox",
   "dependencies": [],
