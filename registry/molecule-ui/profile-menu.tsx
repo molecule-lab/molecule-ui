@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect } from "react"
+import React from "react"
 import { AnimatePresence, HTMLMotionProps, motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -59,7 +59,7 @@ export function ProfileMenu({
   const [_open, _setOpen] = React.useState(false)
   const open = openProp ?? _open
 
-  const setOpen = useCallback(
+  const setOpen = React.useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
       const openState = typeof value === "function" ? value(open) : value
       if (setOpenProp) {
@@ -76,7 +76,7 @@ export function ProfileMenu({
     [open, setOpen],
   )
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       if (
         open &&

@@ -1,33 +1,42 @@
 import { Heart, Trash } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { SwipeRow } from "@/registry/molecule-ui/swipe-row"
+import {
+  SwipeLeftActions,
+  SwipeRightActions,
+  SwipeRow,
+  SwipeRowContent,
+} from "@/registry/molecule-ui/swipe-row"
 
 export function SwipeRowDemo() {
   return (
     <div className="w-full md:w-2/3">
-      <SwipeRow
-        rightActions={<RightActions />}
-        leftActions={<LeftActions />}
-        className="rounded-md bg-muted"
-      >
-        <div className="flex items-center gap-4">
-          <div>
-            <Avatar>
-              <AvatarImage
-                src="https://avatars.githubusercontent.com/u/1?v=4"
-                alt="MUI"
-              />
-              <AvatarFallback>LM</AvatarFallback>
-            </Avatar>
+      <SwipeRow className="rounded-md bg-muted">
+        <SwipeLeftActions>
+          <LeftActions />
+        </SwipeLeftActions>
+        <SwipeRowContent>
+          <div className="flex items-center gap-4">
+            <div>
+              <Avatar>
+                <AvatarImage
+                  src="https://avatars.githubusercontent.com/u/1?v=4"
+                  alt="MUI"
+                />
+                <AvatarFallback>LM</AvatarFallback>
+              </Avatar>
+            </div>
+            <div>
+              <h3>Liam Patel</h3>
+              <p className="text-sm text-muted-foreground">
+                Swipe to see actions
+              </p>
+            </div>
           </div>
-          <div>
-            <h3>Liam Patel</h3>
-            <p className="text-sm text-muted-foreground">
-              Swipe to see actions
-            </p>
-          </div>
-        </div>
+        </SwipeRowContent>
+        <SwipeRightActions>
+          <RightActions />
+        </SwipeRightActions>
       </SwipeRow>
     </div>
   )

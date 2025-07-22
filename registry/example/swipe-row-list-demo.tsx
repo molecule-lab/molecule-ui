@@ -1,7 +1,12 @@
 import { Heart, Trash } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { SwipeRow } from "@/registry/molecule-ui/swipe-row"
+import {
+  SwipeLeftActions,
+  SwipeRightActions,
+  SwipeRow,
+  SwipeRowContent,
+} from "@/registry/molecule-ui/swipe-row"
 
 const dummyListData = [
   {
@@ -28,25 +33,29 @@ export function SwipeRowListDemo() {
   return (
     <div className="w-full md:w-2/3 rounded-md overflow-hidden divide-y divide-input bg-muted ">
       {dummyListData.map((item) => (
-        <SwipeRow
-          key={item.id}
-          rightActions={<RightActions />}
-          leftActions={<LeftActions />}
-        >
-          <div className="flex items-center gap-4">
-            <div>
-              <Avatar>
-                <AvatarImage src={item.avatar} alt={item.fallback} />
-                <AvatarFallback>{item.fallback}</AvatarFallback>
-              </Avatar>
+        <SwipeRow key={item.id}>
+          <SwipeLeftActions>
+            <LeftActions />
+          </SwipeLeftActions>
+          <SwipeRowContent>
+            <div className="flex items-center gap-4">
+              <div>
+                <Avatar>
+                  <AvatarImage src={item.avatar} alt={item.fallback} />
+                  <AvatarFallback>{item.fallback}</AvatarFallback>
+                </Avatar>
+              </div>
+              <div>
+                <h3>{item.name}</h3>
+                <p className="text-sm text-muted-foreground">
+                  Swipe to see actions
+                </p>
+              </div>
             </div>
-            <div>
-              <h3>{item.name}</h3>
-              <p className="text-sm text-muted-foreground">
-                Swipe to see actions
-              </p>
-            </div>
-          </div>
+          </SwipeRowContent>
+          <SwipeRightActions>
+            <RightActions />
+          </SwipeRightActions>
         </SwipeRow>
       ))}
     </div>
