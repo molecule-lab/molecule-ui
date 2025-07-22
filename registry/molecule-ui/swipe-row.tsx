@@ -29,10 +29,7 @@ export function useSwipeRowContext() {
   return ctx
 }
 
-export function SwipeRow({
-  className,
-  children,
-}: React.ComponentProps<"div"> & SwipeRowProps) {
+export function SwipeRow({ className, children }: React.ComponentProps<"div">) {
   const [dragX, setDragX] = React.useState<number>(0)
 
   const actionRefLeft = React.useRef<HTMLDivElement>(null)

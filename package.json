@@ -9,7 +9,7 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "lint": "next lint --dir .",
+    "lint": "next lint --dir . && tsc --noEmit",
     "lint:fix": "next lint --fix",
     "build:registry": "npx tsx ./scripts/build-registry.mts && pnpm format:fix",
     "shadcn:build": "shadcn build",

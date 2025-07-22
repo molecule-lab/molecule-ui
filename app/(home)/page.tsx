@@ -20,7 +20,7 @@ export default function HomePage() {
 
         <div className="flex flex-wrap gap-4 justify-center">
           <Button asChild size="sm">
-            <Link href="/docs/components/discussion">Browse Components</Link>
+            <Link href="/docs/components/checkbox">Browse Components</Link>
           </Button>
         </div>
       </section>
