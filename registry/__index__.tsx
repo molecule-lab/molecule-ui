@@ -871,6 +871,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "warp-overlay-demo": {
+    name: "warp-overlay-demo",
+    description: "Todo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/warp-overlay"],
+    files: [
+      {
+        path: "registry/example/warp-overlay-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/warp-overlay-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/warp-overlay-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   utils: {
     name: "utils",
     description: "",

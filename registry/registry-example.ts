@@ -392,4 +392,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "warp-overlay-demo",
+    type: "registry:example",
+    title: "Warp overlay demo",
+    description: "Todo",
+    registryDependencies: ["https://moleculeui.design/r/warp-overlay"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/warp-overlay-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/warp-overlay-demo.tsx",
+      },
+    ],
+  },
 ]

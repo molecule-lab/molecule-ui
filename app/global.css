@@ -343,3 +343,40 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* TEMP */
+
+.gradient-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+}
+
+.expanding-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(251, 148, 137, 0.8);
+  filter: blur(15px);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.gradient-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  width: 200%;
+  aspect-ratio: 1;
+  will-change: transform;
+}
+
+.top-left {
+  background: rgb(246, 63, 42, 0.9);
+}
+
+.bottom-right {
+  background: rgb(243, 92, 76, 0.9);
+}
