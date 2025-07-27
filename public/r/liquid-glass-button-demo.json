@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-glass-button-demo",
+  "type": "registry:example",
+  "title": "Liquid glass button demo",
+  "author": "Rushil Dhinoja",
+  "description": "demo",
+  "registryDependencies": [
+    "https://moleculeui.design/r/liquid-glass-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/liquid-glass-button-demo.tsx",
+      "content": "import { LiquidGlassButton } from \"@/registry/molecule-ui/liquid-glass-button\"\n\nexport function LiquidGlassButtonDemo() {\n  return <LiquidGlassButton>Click Me</LiquidGlassButton>\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/liquid-glass-button-demo.tsx"
+    }
+  ]
+}

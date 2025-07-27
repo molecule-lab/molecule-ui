@@ -37,7 +37,7 @@ export function MorphingSquare({
   return (
     <div className={cn(morphingSquareVariants({ messagePlacement }))}>
       <motion.div
-        className={cn("w-10 h-10 bg-foreground", className)}
+        className={cn("w-10 h-10 bg-primary", className)}
         animate={{
           borderRadius: ["6%", "50%", "6%"],
           rotate: [0, 180, 360],

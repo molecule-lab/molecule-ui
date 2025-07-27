@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "voice-input",
+  "type": "registry:ui",
+  "title": "Voice Input",
+  "author": "Rushil Dhinoja",
+  "description": "An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/voice-input.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { Mic } from \"lucide-react\"\nimport { AnimatePresence, motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface VoiceInputProps {\n  onStart?: () => void\n  onStop?: () => void\n}\n\nexport function VoiceInput({\n  className,\n  onStart,\n  onStop,\n  ...props\n}: React.ComponentProps<\"div\"> & VoiceInputProps) {\n  const [_listening, _setListening] = React.useState<boolean>(false)\n  const [_time, _setTime] = React.useState<number>(0)\n\n  React.useEffect(() => {\n    let intervalId: NodeJS.Timeout\n\n    if (_listening) {\n      onStart?.()\n      intervalId = setInterval(() => {\n        _setTime((t) => t + 1)\n      }, 1000)\n    } else {\n      onStop?.()\n      _setTime(0)\n    }\n\n    return () => clearInterval(intervalId)\n  }, [_listening, onStart, onStop])\n\n  const formatTime = (seconds: number) => {\n    const mins = Math.floor(seconds / 60)\n    const secs = seconds % 60\n    return `${mins.toString().padStart(2, \"0\")}:${secs.toString().padStart(2, \"0\")}`\n  }\n\n  const onClickHandler = () => {\n    _setListening(!_listening)\n  }\n\n  return (\n    <div\n      className={cn(\"flex flex-col items-center justify-center\", className)}\n      {...props}\n    >\n      <motion.div\n        className=\"flex p-2 border items-center justify-center rounded-full cursor-pointer\"\n        layout\n        transition={{\n          layout: {\n            duration: 0.4,\n          },\n        }}\n        onClick={onClickHandler}\n      >\n        <div className=\"h-6 w-6 items-center justify-center flex \">\n          {_listening ? (\n            <motion.div\n              className=\"w-4 h-4 bg-primary rounded-sm\"\n              animate={{\n                rotate: [0, 180, 360],\n              }}\n              transition={{\n                duration: 2,\n                repeat: Number.POSITIVE_INFINITY,\n                ease: \"easeInOut\",\n              }}\n            />\n          ) : (\n            <Mic />\n          )}\n        </div>\n        <AnimatePresence mode=\"wait\">\n          {_listening && (\n            <motion.div\n              initial={{ opacity: 0, width: 0, marginLeft: 0 }}\n              animate={{ opacity: 1, width: \"auto\", marginLeft: 8 }}\n              exit={{ opacity: 0, width: 0, marginLeft: 0 }}\n              transition={{\n                duration: 0.4,\n              }}\n              className=\"overflow-hidden flex gap-2 items-center justify-center\"\n            >\n              {/* Frequency Animation */}\n              <div className=\"flex gap-0.5 items-center justify-center\">\n                {[...Array(12)].map((_, i) => (\n                  <motion.div\n                    key={i}\n                    className=\"w-0.5 bg-primary rounded-full\"\n                    initial={{ height: 2 }}\n                    animate={{\n                      height: _listening\n                        ? [2, 3 + Math.random() * 10, 3 + Math.random() * 5, 2]\n                        : 2,\n                    }}\n                    transition={{\n                      duration: _listening ? 1 : 0.3,\n                      repeat: _listening ? Infinity : 0,\n                      delay: _listening ? i * 0.05 : 0,\n                      ease: \"easeInOut\",\n                    }}\n                  />\n                ))}\n              </div>\n              {/* Timer */}\n              <div className=\"text-xs text-muted-foreground w-10 text-center\">\n                {formatTime(_time)}\n              </div>\n            </motion.div>\n          )}\n        </AnimatePresence>\n      </motion.div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/voice-input.tsx"
+    }
+  ]
+}

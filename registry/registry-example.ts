@@ -331,4 +331,65 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "voice-input-demo",
+    type: "registry:example",
+    title: "Voice input demo",
+    description: "A demo of the animated voice input component",
+    registryDependencies: ["https://moleculeui.design/r/voice-input"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/voice-input-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/voice-input-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "liquid-glass-button-demo",
+    type: "registry:example",
+    title: "Liquid glass button demo",
+    description: "demo",
+    registryDependencies: ["https://moleculeui.design/r/liquid-glass-button"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/liquid-glass-button-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/liquid-glass-button-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "expandable-button-demo",
+    type: "registry:example",
+    title: "Expandable Button Demo",
+    description: "Todo",
+    registryDependencies: ["https://moleculeui.design/r/expandable-button"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/expandable-button-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/expandable-button-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "expandable-button-group-demo",
+    type: "registry:example",
+    title: "Expandable Button Group Demo",
+    description: "Todo",
+    registryDependencies: ["https://moleculeui.design/r/expandable-button"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/expandable-button-group-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/expandable-button-group-demo.tsx",
+      },
+    ],
+  },
 ]

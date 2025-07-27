@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expandable-button",
+  "type": "registry:ui",
+  "title": "Expandable Button",
+  "author": "Rushil Dhinoja",
+  "description": "todo",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/expandable-button.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { AnimatePresence, HTMLMotionProps, motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ExpandableButtonProps {\n  expanded?: boolean\n  onExpandedChange?: (open: boolean) => void\n  icon?: React.ReactNode\n}\n\nexport function ExpandableButton({\n  expanded: expandedProp,\n  onExpandedChange: setExpandedProp,\n  icon,\n  className,\n  onClick,\n  children,\n  ...props\n}: HTMLMotionProps<\"button\"> & ExpandableButtonPropsp) {\n  const [_expanded, _setExpanded] = React.useState(false)\n\n  const expanded = expandedProp ?? _expanded\n\n  const setExpanded = React.useCallback(\n    (value: boolean | ((value: boolean) => boolean)) => {\n      const expandedState =\n        typeof value === \"function\" ? value(expanded) : value\n\n      if (setExpandedProp) {\n        setExpandedProp(expandedState)\n      } else {\n        _setExpanded(expandedState)\n      }\n    },\n    [setExpandedProp, expanded],\n  )\n\n  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {\n    setExpanded(!expanded)\n    onClick?.(e)\n  }\n\n  return (\n    <motion.button\n      layout\n      onClick={onClickHandler}\n      className={cn(\n        \"relative flex items-center text-lg font-medium justify-center rounded-xl text-primary-foreground overflow-hidden h-10 bg-primary min-w-12 max-w-full flex-shrink-0\",\n        className,\n      )}\n      initial={false}\n      animate={{\n        flexGrow: expanded ? 1 : 0,\n        maxWidth: expanded ? \"100%\" : \"3rem\",\n      }}\n      transition={{\n        type: \"spring\",\n        stiffness: 300,\n        damping: 30,\n      }}\n      {...props}\n    >\n      <AnimatePresence mode=\"wait\">\n        {expanded ? (\n          <motion.div\n            key=\"active\"\n            className={cn(\"flex items-center justify-center w-full h-full\")}\n            initial={{ opacity: 0 }}\n            animate={{ opacity: 1 }}\n            exit={{ opacity: 0 }}\n            transition={{ duration: 0.2 }}\n          >\n            <div className=\"flex items-center gap-2 justify-center w-full\">\n              <motion.div\n                initial={{ scale: 1.2 }}\n                animate={{ scale: 1 }}\n                transition={{ duration: 0.2 }}\n              >\n                {icon}\n              </motion.div>\n              <motion.span\n                className=\"whitespace-nowrap\"\n                initial={{ opacity: 0, x: -5 }}\n                animate={{ opacity: 1, x: 0 }}\n              >\n                {children}\n              </motion.span>\n            </div>\n          </motion.div>\n        ) : (\n          <motion.div\n            key=\"inactive\"\n            className={cn(\"flex items-center justify-center\")}\n            initial={{ opacity: 0 }}\n            animate={{ opacity: 1 }}\n            exit={{ opacity: 0 }}\n            transition={{ duration: 0.1 }}\n          >\n            {icon}\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </motion.button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/expandable-button.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expandable-button-group-demo",
+  "type": "registry:example",
+  "title": "Expandable Button Group Demo",
+  "author": "Rushil Dhinoja",
+  "description": "Todo",
+  "registryDependencies": [
+    "https://moleculeui.design/r/expandable-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/expandable-button-group-demo.tsx",
+      "content": "import { ExpandableButton } from \"../molecule-ui/expandable-button\"\n\nexport function ExpandableGroupButtonDemo() {\n  return (\n    <div>\n      <ExpandableButton />\n      <ExpandableButton />\n      <ExpandableButton />\n      <ExpandableButton />\n      <ExpandableButton />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/expandable-button-group-demo.tsx"
+    }
+  ]
+}

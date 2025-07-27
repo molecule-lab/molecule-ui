@@ -6,6 +6,7 @@
   "author": "Rushil Dhinoja",
   "description": "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
   "dependencies": [
+    "@radix-ui/react-checkbox",
     "motion"
   ],
   "registryDependencies": [

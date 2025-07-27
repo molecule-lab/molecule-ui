@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "voice-input-demo",
+  "type": "registry:example",
+  "title": "Voice input demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo of the animated voice input component",
+  "registryDependencies": [
+    "https://moleculeui.design/r/voice-input"
+  ],
+  "files": [
+    {
+      "path": "registry/example/voice-input-demo.tsx",
+      "content": "import { VoiceInput } from \"@/registry/molecule-ui/voice-input\"\n\nexport function VoiceInputDemo() {\n  return <VoiceInput />\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/voice-input-demo.tsx"
+    }
+  ]
+}

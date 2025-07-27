@@ -252,6 +252,53 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "voice-input": {
+    name: "voice-input",
+    description:
+      "An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/voice-input.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/voice-input.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/voice-input.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "expandable-button": {
+    name: "expandable-button",
+    description: "todo",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/expandable-button.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/expandable-button.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/expandable-button.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",
@@ -717,6 +764,103 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         "@/registry/example/wave-loader-with-message-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "voice-input-demo": {
+    name: "voice-input-demo",
+    description: "A demo of the animated voice input component",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/voice-input"],
+    files: [
+      {
+        path: "registry/example/voice-input-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/voice-input-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/voice-input-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "liquid-glass-button-demo": {
+    name: "liquid-glass-button-demo",
+    description: "demo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/liquid-glass-button"],
+    files: [
+      {
+        path: "registry/example/liquid-glass-button-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/liquid-glass-button-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/liquid-glass-button-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "expandable-button-demo": {
+    name: "expandable-button-demo",
+    description: "Todo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/expandable-button"],
+    files: [
+      {
+        path: "registry/example/expandable-button-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/expandable-button-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/expandable-button-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "expandable-button-group-demo": {
+    name: "expandable-button-group-demo",
+    description: "Todo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/expandable-button"],
+    files: [
+      {
+        path: "registry/example/expandable-button-group-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/expandable-button-group-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/expandable-button-group-demo.tsx"
       )
       const exportName =
         Object.keys(mod).find(

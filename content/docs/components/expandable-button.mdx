@@ -1,11 +1,12 @@
 ---
-title: Bouncing Dots
-description: "An animated loading indicator featuring three bouncing dots with customizable colors and spacing."
+title: Expandable Button
+description: Todo
 ---
 
-<ComponentPreview name='bouncing-dots-demo'/>
+<ComponentPreview name='expandable-button-demo' />
 
 ## Installation
+
 
 <Tabs defaultValue='cli'>
 
@@ -17,7 +18,7 @@ description: "An animated loading indicator featuring three bouncing dots with c
 <TabsContent value='cli'>
 
 ```bash
-npx shadcn@latest add "https://moleculeui.design/r/bouncing-dots"
+npx shadcn@latest add "https://moleculeui.design/r/expandable-button"
 ```
 
 </TabsContent>
@@ -30,14 +31,13 @@ npx shadcn@latest add "https://moleculeui.design/r/bouncing-dots"
 
 ```bash
 npm install motion
-npm install class-variance-authority
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
 <ComponentSource
-  title="components/molecule-ui/bouncing-dots.tsx"
-  name="bouncing-dots"
+  title="components/molecule-ui/expandable-button.tsx"
+  name="expandable-button"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -46,6 +46,7 @@ npm install class-variance-authority
 
 </TabsContent>
 
+
 </Tabs>
 
 <div className='mb-6'>
@@ -53,11 +54,11 @@ npm install class-variance-authority
 ## Usage
 
 ```tsx
-import { BouncingDots } from "@/components/molecule-ui/bouncing-dots"
+import {ExpandableButton} from '@/components/molecule-ui/expandable-button'
 ```
 
 ```tsx
-<BouncingDots />
+<ExpandableButton />
 ```
 
 </div>
@@ -65,9 +66,10 @@ import { BouncingDots } from "@/components/molecule-ui/bouncing-dots"
 ## Examples
 
 <div>
-### With message
 
-<ComponentPreview name="bouncing-dots-with-message-demo" />
+### Expandable Button Group
+
+<ComponentPreview name='expandable-button-group-demo'/>
 
 </div>
 
@@ -75,8 +77,8 @@ import { BouncingDots } from "@/components/molecule-ui/bouncing-dots"
 ## Props
 
 <AutoTypeTable
-  path="registry/molecule-ui/bouncing-dots.tsx"
-  name="BouncingDotsProps"
+  path="registry/molecule-ui/expandable-button.tsx"
+  name="ExpandableButtonProps"
 />
 
 </div>

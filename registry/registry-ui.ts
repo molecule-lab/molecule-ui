@@ -125,7 +125,7 @@ export const ui: Registry["items"] = [
     title: "Checkbox",
     description:
       "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
-    dependencies: ["motion"],
+    dependencies: ["@radix-ui/react-checkbox", "motion"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -167,6 +167,39 @@ export const ui: Registry["items"] = [
         path: "registry/molecule-ui/wave-loader.tsx",
         type: "registry:ui",
         target: "components/molecule-ui/wave-loader.tsx",
+      },
+    ],
+  },
+  {
+    name: "voice-input",
+    type: "registry:ui",
+    title: "Voice Input",
+    description:
+      "An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.",
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/voice-input.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/voice-input.tsx",
+      },
+    ],
+  },
+  {
+    name: "expandable-button",
+    type: "registry:ui",
+    title: "Expandable Button",
+    description: "todo",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/expandable-button.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/expandable-button.tsx",
       },
     ],
   },

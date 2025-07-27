@@ -1,0 +1,73 @@
+---
+title: Voice Input
+description: An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.
+---
+
+<ComponentPreview name='voice-input-demo'/>
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://moleculeui.design/r/voice-input"
+```
+
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/voice-input.tsx"
+  name="voice-input"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+<div className='mb-6'>
+## Usage
+
+```tsx
+import { VoiceInput } from "@/components/molecule-ui/voice-input"
+```
+
+```tsx
+<VoiceInput />
+```
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/voice-input.tsx"
+  name="VoiceInputProps"
+/>
+
+</div>

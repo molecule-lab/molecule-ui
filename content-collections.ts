@@ -26,6 +26,7 @@ const docs = defineCollection({
     component: z.boolean().optional().default(false),
     toc: z.boolean().optional().default(true),
     image: z.string().optional(),
+    isActive: z.boolean().optional(),
   }),
   transform: (document, context) =>
     transformMDX(document, context, {
