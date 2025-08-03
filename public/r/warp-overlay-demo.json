@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "warp-overlay-demo",
+  "type": "registry:example",
+  "title": "Warp overlay demo",
+  "author": "Rushil Dhinoja",
+  "description": "Todo",
+  "registryDependencies": [
+    "https://moleculeui.design/r/warp-overlay"
+  ],
+  "files": [
+    {
+      "path": "registry/example/warp-overlay-demo.tsx",
+      "content": "export function WarpOverlayDemo() {\n  return <div className=\"bg-red-500 w-full h-full\"></div>\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/warp-overlay-demo.tsx"
+    }
+  ]
+}

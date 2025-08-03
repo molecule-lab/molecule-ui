@@ -1,0 +1,69 @@
+---
+title: Warp Dialog
+description: A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.
+---
+
+<ComponentPreview name='warp-dialog-demo' />
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://moleculeui.design/r/warp-dialog"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/warp-dialog.tsx"
+  name="warp-dialog"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div className='mb-6'>
+
+## Usage
+
+```tsx
+import {
+  WarpDialog,
+  WarpDialogContent,
+  WarpDialogTrigger,
+} from "@/registry/molecule-ui/warp-dialog"
+```
+
+```tsx
+<WarpDialog>
+   <WarpDialogTrigger />
+   <WarpDialogContent />
+</WarpDialogTrigger>
+```
+
+</div>

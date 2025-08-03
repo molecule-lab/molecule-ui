@@ -191,7 +191,8 @@ export const ui: Registry["items"] = [
     name: "expandable-button",
     type: "registry:ui",
     title: "Expandable Button",
-    description: "todo",
+    description:
+      " A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.",
     dependencies: ["motion"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
@@ -200,6 +201,23 @@ export const ui: Registry["items"] = [
         path: "registry/molecule-ui/expandable-button.tsx",
         type: "registry:ui",
         target: "components/molecule-ui/expandable-button.tsx",
+      },
+    ],
+  },
+  {
+    name: "warp-dialog",
+    type: "registry:ui",
+    title: "Warp Dialog",
+    description:
+      "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/warp-dialog.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/warp-dialog.tsx",
       },
     ],
   },
