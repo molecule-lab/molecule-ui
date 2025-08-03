@@ -365,7 +365,8 @@ export const examples: Registry["items"] = [
     name: "expandable-button-demo",
     type: "registry:example",
     title: "Expandable Button Demo",
-    description: "Todo",
+    description:
+      "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     author: "Rushil Dhinoja",
     files: [
@@ -380,7 +381,8 @@ export const examples: Registry["items"] = [
     name: "expandable-button-group-demo",
     type: "registry:example",
     title: "Expandable Button Group Demo",
-    description: "Todo",
+    description:
+      "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     author: "Rushil Dhinoja",
     files: [
@@ -393,17 +395,18 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "warp-overlay-demo",
+    name: "warp-dialog-demo",
     type: "registry:example",
-    title: "Warp overlay demo",
-    description: "Todo",
-    registryDependencies: ["https://moleculeui.design/r/warp-overlay"],
+    title: "Warp dialog demo",
+    description:
+      "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
+    registryDependencies: ["https://moleculeui.design/r/warp-dialog"],
     author: "Rushil Dhinoja",
     files: [
       {
-        path: "registry/example/warp-overlay-demo.tsx",
+        path: "registry/example/warp-dialog-demo.tsx",
         type: "registry:ui",
-        target: "components/molecule-ui/example/warp-overlay-demo.tsx",
+        target: "components/molecule-ui/example/warp-dialog-demo.tsx",
       },
     ],
   },

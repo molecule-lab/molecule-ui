@@ -245,7 +245,7 @@
       "type": "registry:ui",
       "title": "Expandable Button",
       "author": "Rushil Dhinoja",
-      "description": "todo",
+      "description": " A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.",
       "dependencies": [
         "motion"
       ],
@@ -257,6 +257,26 @@
           "path": "registry/molecule-ui/expandable-button.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/expandable-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "warp-dialog",
+      "type": "registry:ui",
+      "title": "Warp Dialog",
+      "author": "Rushil Dhinoja",
+      "description": "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/warp-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/warp-dialog.tsx"
         }
       ]
     },
@@ -657,7 +677,7 @@
       "type": "registry:example",
       "title": "Expandable Button Demo",
       "author": "Rushil Dhinoja",
-      "description": "Todo",
+      "description": "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
       "registryDependencies": [
         "https://moleculeui.design/r/expandable-button"
       ],
@@ -674,7 +694,7 @@
       "type": "registry:example",
       "title": "Expandable Button Group Demo",
       "author": "Rushil Dhinoja",
-      "description": "Todo",
+      "description": "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
       "registryDependencies": [
         "https://moleculeui.design/r/expandable-button"
       ],
@@ -687,19 +707,19 @@
       ]
     },
     {
-      "name": "warp-overlay-demo",
+      "name": "warp-dialog-demo",
       "type": "registry:example",
-      "title": "Warp overlay demo",
+      "title": "Warp dialog demo",
       "author": "Rushil Dhinoja",
-      "description": "Todo",
+      "description": "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
       "registryDependencies": [
-        "https://moleculeui.design/r/warp-overlay"
+        "https://moleculeui.design/r/warp-dialog"
       ],
       "files": [
         {
-          "path": "registry/example/warp-overlay-demo.tsx",
+          "path": "registry/example/warp-dialog-demo.tsx",
           "type": "registry:ui",
-          "target": "components/molecule-ui/example/warp-overlay-demo.tsx"
+          "target": "components/molecule-ui/example/warp-dialog-demo.tsx"
         }
       ]
     },

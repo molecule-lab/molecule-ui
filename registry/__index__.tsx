@@ -278,7 +278,8 @@ export const Index: Record<string, any> = {
   },
   "expandable-button": {
     name: "expandable-button",
-    description: "todo",
+    description:
+      " A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.",
     type: "registry:ui",
     registryDependencies: ["utils"],
     files: [
@@ -290,6 +291,30 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/molecule-ui/expandable-button.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "warp-dialog": {
+    name: "warp-dialog",
+    description:
+      "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/warp-dialog.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/warp-dialog.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/warp-dialog.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -824,7 +849,8 @@ export const Index: Record<string, any> = {
   },
   "expandable-button-demo": {
     name: "expandable-button-demo",
-    description: "Todo",
+    description:
+      "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
     type: "registry:example",
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     files: [
@@ -847,7 +873,8 @@ export const Index: Record<string, any> = {
   },
   "expandable-button-group-demo": {
     name: "expandable-button-group-demo",
-    description: "Todo",
+    description:
+      "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
     type: "registry:example",
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     files: [
@@ -871,20 +898,21 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  "warp-overlay-demo": {
-    name: "warp-overlay-demo",
-    description: "Todo",
+  "warp-dialog-demo": {
+    name: "warp-dialog-demo",
+    description:
+      "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
     type: "registry:example",
-    registryDependencies: ["https://moleculeui.design/r/warp-overlay"],
+    registryDependencies: ["https://moleculeui.design/r/warp-dialog"],
     files: [
       {
-        path: "registry/example/warp-overlay-demo.tsx",
+        path: "registry/example/warp-dialog-demo.tsx",
         type: "registry:ui",
-        target: "components/molecule-ui/example/warp-overlay-demo.tsx",
+        target: "components/molecule-ui/example/warp-dialog-demo.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/example/warp-overlay-demo.tsx")
+      const mod = await import("@/registry/example/warp-dialog-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

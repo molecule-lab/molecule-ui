@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Expandable Button",
   "author": "Rushil Dhinoja",
-  "description": "todo",
+  "description": " A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.",
   "dependencies": [
     "motion"
   ],
