@@ -6,7 +6,8 @@
   "author": "Rushil Dhinoja",
   "description": "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
   "dependencies": [
-    "motion"
+    "motion",
+    "class-variance-authority"
   ],
   "registryDependencies": [
     "utils"

@@ -367,6 +367,7 @@ export const examples: Registry["items"] = [
     title: "Expandable Button Demo",
     description:
       "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
+    dependencies: ["lucide-react"],
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     author: "Rushil Dhinoja",
     files: [
@@ -383,6 +384,7 @@ export const examples: Registry["items"] = [
     title: "Expandable Button Group Demo",
     description:
       "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
+    dependencies: ["lucide-react"],
     registryDependencies: ["https://moleculeui.design/r/expandable-button"],
     author: "Rushil Dhinoja",
     files: [
@@ -400,13 +402,34 @@ export const examples: Registry["items"] = [
     title: "Warp dialog demo",
     description:
       "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
-    registryDependencies: ["https://moleculeui.design/r/warp-dialog"],
+    dependencies: [],
+    registryDependencies: [
+      "https://moleculeui.design/r/warp-dialog",
+      '"button"',
+    ],
     author: "Rushil Dhinoja",
     files: [
       {
         path: "registry/example/warp-dialog-demo.tsx",
         type: "registry:ui",
         target: "components/molecule-ui/example/warp-dialog-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "word-rotate-demo",
+    type: "registry:example",
+    title: "Word rotate demo",
+    description:
+      "A demo component showcasing the word rotate text animation effect that cycles through different words smoothly.",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/word-rotate"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/word-rotate-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/word-rotate-demo.tsx",
       },
     ],
   },

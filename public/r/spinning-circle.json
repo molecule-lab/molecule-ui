@@ -6,7 +6,8 @@
   "author": "Rushil Dhinoja",
   "description": "A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages.",
   "dependencies": [
-    "motion"
+    "motion",
+    "class-variance-authority"
   ],
   "registryDependencies": [
     "utils"

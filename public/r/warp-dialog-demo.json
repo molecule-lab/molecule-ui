@@ -5,8 +5,10 @@
   "title": "Warp dialog demo",
   "author": "Rushil Dhinoja",
   "description": "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
+  "dependencies": [],
   "registryDependencies": [
-    "https://moleculeui.design/r/warp-dialog"
+    "https://moleculeui.design/r/warp-dialog",
+    "\"button\""
   ],
   "files": [
     {

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "word-rotate",
+  "type": "registry:ui",
+  "title": "Word Rotate",
+  "author": "Rushil Dhinoja",
+  "description": "A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/word-rotate.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { AnimatePresence, HTMLMotionProps, motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport function WordRotate({\n  words,\n  className,\n  duration,\n}: HTMLMotionProps<\"div\"> & {\n  words: string[]\n  duration?: number\n}) {\n  const [titleNumber, setTitleNumber] = React.useState(0)\n\n  React.useEffect(() => {\n    const timeoutId = setTimeout(() => {\n      if (titleNumber === words.length - 1) {\n        setTitleNumber(0)\n      } else {\n        setTitleNumber(titleNumber + 1)\n      }\n    }, 2000)\n    return () => clearTimeout(timeoutId)\n  }, [titleNumber, words])\n\n  return (\n    <div className=\"overflow-hidden p-2\">\n      <AnimatePresence mode=\"wait\">\n        <motion.div\n          key={words[titleNumber]}\n          initial={{ opacity: 0, y: 50 }}\n          animate={{ opacity: 1, y: 0 }}\n          exit={{ opacity: 0, y: -50 }}\n          transition={{ duration: 0.2, ease: \"easeInOut\" }}\n          className={cn(className)}\n        >\n          {words[titleNumber]}\n        </motion.div>\n      </AnimatePresence>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/word-rotate.tsx"
+    }
+  ]
+}

@@ -6,7 +6,8 @@
   "author": "Rushil Dhinoja",
   "description": "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.",
   "dependencies": [
-    "motion"
+    "motion",
+    "class-variance-authority"
   ],
   "registryDependencies": [
     "utils"

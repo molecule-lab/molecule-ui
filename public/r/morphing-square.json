@@ -6,7 +6,8 @@
   "author": "Rushil Dhinoja",
   "description": "A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages.",
   "dependencies": [
-    "motion"
+    "motion",
+    "class-variance-authority"
   ],
   "registryDependencies": [
     "utils"

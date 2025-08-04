@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "word-rotate-demo",
+  "type": "registry:example",
+  "title": "Word rotate demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo component showcasing the word rotate text animation effect that cycles through different words smoothly.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/word-rotate"
+  ],
+  "files": [
+    {
+      "path": "registry/example/word-rotate-demo.tsx",
+      "content": "import { WordRotate } from \"../molecule-ui/word-rotate\"\n\nexport function WordRotateDemo() {\n  return (\n    <WordRotate\n      className=\"text-5xl font-semibold\"\n      words={[\"Introducing\", \"Molecule\", \"UI\"]}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/word-rotate-demo.tsx"
+    }
+  ]
+}

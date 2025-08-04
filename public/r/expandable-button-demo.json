@@ -5,6 +5,9 @@
   "title": "Expandable Button Demo",
   "author": "Rushil Dhinoja",
   "description": "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "https://moleculeui.design/r/expandable-button"
   ],

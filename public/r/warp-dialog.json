@@ -6,7 +6,8 @@
   "author": "Rushil Dhinoja",
   "description": "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
   "dependencies": [
-    "motion"
+    "motion",
+    "@radix-ui/react-slot"
   ],
   "registryDependencies": [
     "utils"

@@ -6,6 +6,16 @@ import { AnimatePresence, motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Props for the WarpDialog component
+ */
+export interface WarpDialogProps {
+  /** Whether the dialog is open */
+  open?: boolean
+  /** Callback function called when the dialog's open state changes */
+  onOpenChange?: (open: boolean) => void
+}
+
 type WarpDialogContextType = {
   open: boolean
   setOpen: (open: boolean | ((prev: boolean) => boolean)) => void
@@ -26,10 +36,7 @@ export function WarpDialog({
   open: openProp,
   onOpenChange: setOpenProp,
   ...props
-}: React.ComponentProps<"div"> & {
-  open?: boolean
-  onOpenChange?: (open: boolean) => void
-}) {
+}: React.ComponentProps<"div"> & WarpDialogProps) {
   const [_open, _setOpen] = React.useState(false)
   const open = openProp ?? _open
 

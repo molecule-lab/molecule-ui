@@ -64,7 +64,8 @@
       "author": "Rushil Dhinoja",
       "description": "A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages.",
       "dependencies": [
-        "motion"
+        "motion",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -84,7 +85,8 @@
       "author": "Rushil Dhinoja",
       "description": "A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages.",
       "dependencies": [
-        "motion"
+        "motion",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -104,7 +106,8 @@
       "author": "Rushil Dhinoja",
       "description": "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.",
       "dependencies": [
-        "motion"
+        "motion",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -185,7 +188,8 @@
       "author": "Rushil Dhinoja",
       "description": "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
       "dependencies": [
-        "motion"
+        "motion",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -261,13 +265,35 @@
       ]
     },
     {
+      "name": "liquid-glass-button",
+      "type": "registry:ui",
+      "title": "Liquid Glass Button",
+      "author": "Rushil Dhinoja",
+      "description": "A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/liquid-glass-button.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/liquid-glass-button.tsx"
+        }
+      ]
+    },
+    {
       "name": "warp-dialog",
       "type": "registry:ui",
       "title": "Warp Dialog",
       "author": "Rushil Dhinoja",
       "description": "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
       "dependencies": [
-        "motion"
+        "motion",
+        "@radix-ui/react-slot"
       ],
       "registryDependencies": [
         "utils"
@@ -277,6 +303,26 @@
           "path": "registry/molecule-ui/warp-dialog.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/warp-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate",
+      "type": "registry:ui",
+      "title": "Word Rotate",
+      "author": "Rushil Dhinoja",
+      "description": "A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/word-rotate.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/word-rotate.tsx"
         }
       ]
     },
@@ -678,6 +724,9 @@
       "title": "Expandable Button Demo",
       "author": "Rushil Dhinoja",
       "description": "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "https://moleculeui.design/r/expandable-button"
       ],
@@ -695,6 +744,9 @@
       "title": "Expandable Button Group Demo",
       "author": "Rushil Dhinoja",
       "description": "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "https://moleculeui.design/r/expandable-button"
       ],
@@ -712,14 +764,34 @@
       "title": "Warp dialog demo",
       "author": "Rushil Dhinoja",
       "description": "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
+      "dependencies": [],
       "registryDependencies": [
-        "https://moleculeui.design/r/warp-dialog"
+        "https://moleculeui.design/r/warp-dialog",
+        "\"button\""
       ],
       "files": [
         {
           "path": "registry/example/warp-dialog-demo.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/example/warp-dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate-demo",
+      "type": "registry:example",
+      "title": "Word rotate demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the word rotate text animation effect that cycles through different words smoothly.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/word-rotate"
+      ],
+      "files": [
+        {
+          "path": "registry/example/word-rotate-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/word-rotate-demo.tsx"
         }
       ]
     },

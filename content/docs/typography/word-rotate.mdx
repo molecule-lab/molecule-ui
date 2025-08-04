@@ -1,0 +1,75 @@
+---
+title: Word Rotate
+description: A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.
+---
+
+<ComponentPreview name='word-rotate-demo'/>
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://moleculeui.design/r/word-rotate"
+```
+
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/word-rotate.tsx"
+  name="word-rotate"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+<div className='mb-6'>
+## Usage
+
+```tsx
+import { WordRotate } from "@/components/molecule-ui/word-rotate"
+```
+
+```tsx
+<WordRotate words={["Fast", "Smooth", "Beautiful"]} />
+```
+
+
+
+</div>
+
+<div>
+## Props
+
+<AutoTypeTable
+  path="registry/molecule-ui/word-rotate.tsx"
+  name="WordRotateProps"
+/>
+
+</div> 

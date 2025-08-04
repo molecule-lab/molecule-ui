@@ -40,7 +40,7 @@ export const ui: Registry["items"] = [
     title: "Spinning Circle",
     description:
       "A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages.",
-    dependencies: ["motion"],
+    dependencies: ["motion", "class-variance-authority"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -57,7 +57,7 @@ export const ui: Registry["items"] = [
     title: "Morphing Square",
     description:
       "A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages.",
-    dependencies: ["motion"],
+    dependencies: ["motion", "class-variance-authority"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -74,7 +74,7 @@ export const ui: Registry["items"] = [
     title: "Orbital Loader",
     description:
       "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.",
-    dependencies: ["motion"],
+    dependencies: ["motion", "class-variance-authority"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -142,7 +142,7 @@ export const ui: Registry["items"] = [
     title: "Bouncing Dots",
     description:
       "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
-    dependencies: ["motion"],
+    dependencies: ["motion", "class-variance-authority"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -205,12 +205,29 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "liquid-glass-button",
+    type: "registry:ui",
+    title: "Liquid Glass Button",
+    description:
+      "A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.",
+    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/liquid-glass-button.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/liquid-glass-button.tsx",
+      },
+    ],
+  },
+  {
     name: "warp-dialog",
     type: "registry:ui",
     title: "Warp Dialog",
     description:
       "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
-    dependencies: ["motion"],
+    dependencies: ["motion", "@radix-ui/react-slot"],
     registryDependencies: ["utils"],
     author: "Rushil Dhinoja",
     files: [
@@ -218,6 +235,23 @@ export const ui: Registry["items"] = [
         path: "registry/molecule-ui/warp-dialog.tsx",
         type: "registry:ui",
         target: "components/molecule-ui/warp-dialog.tsx",
+      },
+    ],
+  },
+  {
+    name: "word-rotate",
+    type: "registry:ui",
+    title: "Word Rotate",
+    description:
+      "A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/word-rotate.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/word-rotate.tsx",
       },
     ],
   },

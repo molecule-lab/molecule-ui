@@ -5,6 +5,9 @@
   "title": "Expandable Button Group Demo",
   "author": "Rushil Dhinoja",
   "description": "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "https://moleculeui.design/r/expandable-button"
   ],

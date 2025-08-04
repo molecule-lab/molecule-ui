@@ -300,6 +300,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "liquid-glass-button": {
+    name: "liquid-glass-button",
+    description:
+      "A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/liquid-glass-button.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/liquid-glass-button.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/liquid-glass-button.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "warp-dialog": {
     name: "warp-dialog",
     description:
@@ -315,6 +339,30 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/molecule-ui/warp-dialog.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "word-rotate": {
+    name: "word-rotate",
+    description:
+      "A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/word-rotate.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/word-rotate.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/word-rotate.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -903,7 +951,10 @@ export const Index: Record<string, any> = {
     description:
       "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
     type: "registry:example",
-    registryDependencies: ["https://moleculeui.design/r/warp-dialog"],
+    registryDependencies: [
+      "https://moleculeui.design/r/warp-dialog",
+      '"button"',
+    ],
     files: [
       {
         path: "registry/example/warp-dialog-demo.tsx",
@@ -913,6 +964,30 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/warp-dialog-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "word-rotate-demo": {
+    name: "word-rotate-demo",
+    description:
+      "A demo component showcasing the word rotate text animation effect that cycles through different words smoothly.",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/word-rotate"],
+    files: [
+      {
+        path: "registry/example/word-rotate-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/word-rotate-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/word-rotate-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
