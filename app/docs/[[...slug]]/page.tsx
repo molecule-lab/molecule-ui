@@ -79,7 +79,7 @@ export async function generateMetadata(props: {
       // url: absoluteUrl(page.url),
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
+          url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
             page.data.title,
           )}&description=${encodeURIComponent(page.data.description || "")}`,
         },
@@ -91,7 +91,7 @@ export async function generateMetadata(props: {
       description: page.data.description,
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
+          url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
             page.data.title,
           )}&description=${encodeURIComponent(page.data.description!)}`,
         },

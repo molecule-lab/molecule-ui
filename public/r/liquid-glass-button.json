@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-glass-button",
+  "type": "registry:ui",
+  "title": "Liquid Glass Button",
+  "author": "Rushil Dhinoja",
+  "description": "A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/molecule-ui/liquid-glass-button.tsx",
+      "content": "import { Slot } from \"@radix-ui/react-slot\"\nimport { cva, VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  \"relative rounded-xl border border-border/20 bg-background/10 text-foreground shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_1px_4px_rgba(0,0,0,0.25)] backdrop-blur-[20px] transition-all duration-200 ease-out hover:bg-background/15 active:scale-95 disabled:opacity-40 disabled:pointer-events-none flex items-center justify-center gap-2 font-medium dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_1px_4px_rgba(0,0,0,0.4)] dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/15\",\n  {\n    variants: {\n      variant: {\n        default: \"\",\n      },\n      size: {\n        default: \"h-10 px-5 py-2 text-base\",\n        sm: \"h-8 px-3 text-sm\",\n        lg: \"h-12 px-6 text-lg\",\n        icon: \"size-10 p-0\",\n      },\n    },\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n  },\n)\n\nexport function LiquidGlassButton({\n  className,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"button\"\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ size }), className)}\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/liquid-glass-button.tsx"
+    }
+  ]
+}

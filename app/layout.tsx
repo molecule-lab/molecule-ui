@@ -16,7 +16,7 @@ export const metadata: Metadata = constructMetadata({
   title: "Molecule UI",
   description:
     "A modern React component library focused on intuitive interactions and seamless user experiences.",
-  image: "/og",
+  image: `${process.env.NEXT_PUBLIC_APP_URL}/og`,
 })
 
 export default function Layout({ children }: { children: ReactNode }) {
