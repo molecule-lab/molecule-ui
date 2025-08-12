@@ -3,6 +3,7 @@ import "@/app/global.css"
 import type { ReactNode } from "react"
 import { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import { RootProvider } from "fumadocs-ui/provider"
 
 import { constructMetadata } from "@/lib/utils"
@@ -26,6 +27,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <ThemeProvider>
           <RootProvider search={{ enabled: false }}>{children}</RootProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
