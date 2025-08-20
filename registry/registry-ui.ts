@@ -255,4 +255,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "accordion",
+    type: "registry:ui",
+    title: "Accordion",
+    description:
+      "A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.",
+    dependencies: ["motion", "@radix-ui/react-accordion"],
+    registryDependencies: ["utils"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/accordion.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/accordion.tsx",
+      },
+    ],
+  },
 ]

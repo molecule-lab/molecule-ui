@@ -14,7 +14,7 @@ export function DocsFooter({ neighbors }: DocsFooterProps) {
   return (
     <div className="mt-auto flex flex-col pb-16">
       <div
-        className={` flex items-center ${
+        className={`flex items-center ${
           neighbors.previous?.name && neighbors.next?.name
             ? "justify-between"
             : neighbors.previous?.name

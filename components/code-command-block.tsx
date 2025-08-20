@@ -75,7 +75,7 @@ export function CodeBlockCommand({
       >
         <div className="border-border/50 flex items-center gap-2 border-b px-3 py-1">
           <div>
-            <TerminalIcon className=" size-3" />
+            <TerminalIcon className="size-3" />
           </div>
           <TabsList className="rounded-none bg-transparent p-0">
             {Object.entries(tabs).map(([key]) => {
@@ -83,25 +83,7 @@ export function CodeBlockCommand({
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className='
-                  relative
-                  h-7 
-                  border 
-                  border-transparent 
-                  pt-0.5 
-                  data-[state=active]:border-none 
-                  data-[state=active]:after:absolute 
-                  data-[state=active]:after:bottom-0 
-                  data-[state=active]:after:left-0 
-                  data-[state=active]:after:h-[2px] 
-                  data-[state=active]:after:w-full 
-                  data-[state=active]:after:bg-primary 
-                  data-[state=active]:after:content-[""]
-                 dark:data-[state=active]:bg-transparent
-                 data-[state=active]:bg-transparent
-                       dark:data-[state=active]:shadow-none
-                 data-[state=active]:shadow-none
-                '
+                  className='data-[state=active]:after:bg-primary relative h-7 border border-transparent pt-0.5 data-[state=active]:border-none data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:absolute data-[state=active]:after:bottom-0 data-[state=active]:after:left-0 data-[state=active]:after:h-[2px] data-[state=active]:after:w-full data-[state=active]:after:content-[""] dark:data-[state=active]:bg-transparent dark:data-[state=active]:shadow-none'
                 >
                   {key}
                 </TabsTrigger>

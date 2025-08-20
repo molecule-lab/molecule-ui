@@ -83,7 +83,7 @@ export function SwipeRow({ className, children }: React.ComponentProps<"div">) {
         role="group"
         aria-roledescription="swipe-row-list-item"
         aria-label="swipe-row-item"
-        className={cn("relative overflow-hidden w-full", className)}
+        className={cn("relative w-full overflow-hidden", className)}
       >
         {children}
       </div>
@@ -104,7 +104,7 @@ export function SwipeRowContent({
       aria-label="swipe-row-item-content"
       tabIndex={0}
       className={cn(
-        "relative p-4 cursor-grab active:cursor-grabbing select-none",
+        "relative cursor-grab p-4 select-none active:cursor-grabbing",
         className,
       )}
       drag="x"
@@ -138,7 +138,7 @@ export function SwipeLeftActions({
       aria-label="left-actions"
       ref={actionRefLeft}
       className={cn(
-        "absolute left-0 top-0 h-full flex items-center",
+        "absolute top-0 left-0 flex h-full items-center",
         className,
       )}
       initial={{ opacity: 0 }}
@@ -169,7 +169,7 @@ export function SwipeRightActions({
       aria-label="right-actions"
       ref={actionRefRight}
       className={cn(
-        "absolute right-0 top-0 h-full flex items-center",
+        "absolute top-0 right-0 flex h-full items-center",
         className,
       )}
       initial={{ opacity: 0 }}

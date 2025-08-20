@@ -31,7 +31,7 @@ const dummyListData = [
 
 export function SwipeRowListDemo() {
   return (
-    <div className="w-full md:w-2/3 rounded-md overflow-hidden divide-y divide-input bg-muted ">
+    <div className="divide-input bg-muted w-full divide-y overflow-hidden rounded-md md:w-2/3">
       {dummyListData.map((item) => (
         <SwipeRow key={item.id}>
           <SwipeLeftActions>
@@ -47,7 +47,7 @@ export function SwipeRowListDemo() {
               </div>
               <div>
                 <h3>{item.name}</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Swipe to see actions
                 </p>
               </div>
@@ -65,7 +65,7 @@ export function SwipeRowListDemo() {
 function LeftActions() {
   return (
     <>
-      <button className="h-full px-6 bg-blue-500 text-white flex items-center justify-center transition-colors">
+      <button className="flex h-full items-center justify-center bg-blue-500 px-6 text-white transition-colors">
         <Heart size={20} />
       </button>{" "}
     </>
@@ -75,7 +75,7 @@ function LeftActions() {
 function RightActions() {
   return (
     <>
-      <button className="h-full px-6 bg-red-500 text-white flex items-center justify-center transition-colors">
+      <button className="flex h-full items-center justify-center bg-red-500 px-6 text-white transition-colors">
         <Trash size={20} />
       </button>
     </>

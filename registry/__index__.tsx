@@ -372,6 +372,29 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  accordion: {
+    name: "accordion",
+    description: "Todo",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "registry/molecule-ui/accordion.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/accordion.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/accordion.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",
@@ -988,6 +1011,52 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/word-rotate-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "apple-watch-grid-demo": {
+    name: "apple-watch-grid-demo",
+    description: "todo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/apple-watch-grid"],
+    files: [
+      {
+        path: "registry/example/apple-watch-grid-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/apple-watch-grid-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/apple-watch-grid-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "accordion-demo": {
+    name: "accordion-demo",
+    description: "todo",
+    type: "registry:example",
+    registryDependencies: ["https://moleculeui.design/r/accodion-demo"],
+    files: [
+      {
+        path: "registry/example/accordion-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/accordion-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/accordion-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

@@ -14,7 +14,7 @@
   "files": [
     {
       "path": "registry/example/expandable-button-demo.tsx",
-      "content": "import { Inbox } from \"lucide-react\"\n\nimport { ExpandableButton } from \"@/registry/molecule-ui/expandable-button\"\n\nexport function ExpandableButtonDemo() {\n  return (\n    <div className=\"w-full flex items-center justify-center\">\n      <ExpandableButton icon={<Inbox className=\"w-5 h-5\" />}>\n        Inbox\n      </ExpandableButton>\n    </div>\n  )\n}\n",
+      "content": "import { Inbox } from \"lucide-react\"\n\nimport { ExpandableButton } from \"@/registry/molecule-ui/expandable-button\"\n\nexport function ExpandableButtonDemo() {\n  return (\n    <div className=\"flex w-full items-center justify-center\">\n      <ExpandableButton icon={<Inbox className=\"h-5 w-5\" />}>\n        Inbox\n      </ExpandableButton>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/expandable-button-demo.tsx"
     }

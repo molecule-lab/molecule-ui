@@ -10,12 +10,12 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navbar() {
   return (
-    <header className="bg-background sticky top-0 z-50 flex w-full items-center border-b h-14">
-      <div className="container h-full flex items-center gap-4">
+    <header className="bg-background sticky top-0 z-50 flex h-14 w-full items-center border-b">
+      <div className="container flex h-full items-center gap-4">
         <MobileSidebar />
-        <div className="flex items-center justify-between flex-1">
+        <div className="flex flex-1 items-center justify-between">
           <MainNav />
-          <div className="flex items-center md:justify-between flex-1 md:flex-none gap-2 ">
+          <div className="flex flex-1 items-center gap-2 md:flex-none md:justify-between">
             <div className="flex-1/2">
               <Search />
             </div>

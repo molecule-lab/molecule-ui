@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-demo",
+  "type": "registry:example",
+  "title": "Todo",
+  "author": "Rushil Dhinoja",
+  "description": "todo",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/accodion-demo"
+  ],
+  "files": [
+    {
+      "path": "registry/example/accordion-demo.tsx",
+      "content": "import { Plus } from \"lucide-react\"\n\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"../molecule-ui/accordion\"\n\nexport function AccordionDemo() {\n  return (\n    <Accordion className=\"w-full\" type=\"multiple\">\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>What is Molecule UI</AccordionTrigger>\n        <AccordionContent>\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat\n          autem consectetur saepe architecto, alias tenetur. Voluptatem natus\n          accusamus id ea, doloribus maxime iure nostrum, eveniet reprehenderit\n          reiciendis deserunt in consequuntur.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Hello World</AccordionTrigger>\n        <AccordionContent>\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni\n          sapiente et fugit eum totam aperiam recusandae tenetur, odit commodi\n          quae ullam expedita cum ipsa enim minus. Ipsa adipisci illum dolorum!\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/accordion-demo.tsx"
+    }
+  ]
+}

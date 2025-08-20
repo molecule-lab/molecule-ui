@@ -10,7 +10,7 @@ import {
 export function SwipeRowRightDemo() {
   return (
     <div className="w-full md:w-2/3">
-      <SwipeRow className="rounded-md bg-muted">
+      <SwipeRow className="bg-muted rounded-md">
         <SwipeRowContent>
           <div className="flex items-center gap-4">
             <div>
@@ -24,7 +24,7 @@ export function SwipeRowRightDemo() {
             </div>
             <div>
               <h3>Molecule UI</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Swipe to see actions
               </p>
             </div>
@@ -41,10 +41,10 @@ export function SwipeRowRightDemo() {
 function RightActions() {
   return (
     <>
-      <button className="h-full px-6 bg-blue-500 text-white flex items-center justify-center transition-colors">
+      <button className="flex h-full items-center justify-center bg-blue-500 px-6 text-white transition-colors">
         <Heart size={20} />
       </button>{" "}
-      <button className="h-full px-6 bg-red-500 text-white flex items-center justify-center transition-colors">
+      <button className="flex h-full items-center justify-center bg-red-500 px-6 text-white transition-colors">
         <Trash size={20} />
       </button>
     </>

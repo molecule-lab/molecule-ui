@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/checkbox-demo.tsx",
-      "content": "import { Checkbox } from \"@/registry/molecule-ui/checkbox\"\n\nexport function CheckboxExample() {\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox />\n        <div>Accept Terms and Condition</div>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <Checkbox defaultChecked />\n        <div>Accept Terms and Condition</div>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <Checkbox\n          defaultChecked\n          className=\"data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white \"\n        />\n        <div>Enable Notification</div>\n      </div>\n    </div>\n  )\n}\n",
+      "content": "import { Checkbox } from \"@/registry/molecule-ui/checkbox\"\n\nexport function CheckboxExample() {\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox />\n        <div>Accept Terms and Condition</div>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <Checkbox defaultChecked />\n        <div>Accept Terms and Condition</div>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <Checkbox\n          defaultChecked\n          className=\"data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white\"\n        />\n        <div>Enable Notification</div>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/checkbox-demo.tsx"
     }

@@ -4,6 +4,12 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+export function Discussion({
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Root>) {
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />
+}
+
 export function DiscussionItem({
   className,
   ...props
@@ -11,7 +17,7 @@ export function DiscussionItem({
   return (
     <AccordionPrimitive.Item
       className={cn(
-        "relative pl-4 mt-2 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-border before:via-border/60 before:to-border/40",
+        "before:from-border before:via-border/60 before:to-border/40 relative mt-2 pl-4 before:absolute before:top-0 before:bottom-0 before:left-0 before:w-0.5 before:bg-gradient-to-b",
         className,
       )}
       {...props}
@@ -38,13 +44,13 @@ export function DiscussionExpand({
   return (
     <AccordionPrimitive.Trigger
       className={cn(
-        "flex flex-1 items-center gap-1 text-muted-foreground text-xs font-medium transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180",
+        "text-muted-foreground flex flex-1 items-center gap-1 text-left text-xs font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
         className,
       )}
       {...props}
     >
       Show Replies
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      <ChevronDown className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   )
 }
@@ -55,7 +61,7 @@ export function DiscussionTitle({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("font-semibold text-sm", className)} {...props}>
+    <div className={cn("text-sm font-semibold", className)} {...props}>
       {children}
     </div>
   )
@@ -81,7 +87,7 @@ export function DiscussionReplies({
   return (
     <AccordionPrimitive.Content
       className={cn(
-        "pl-10 overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+        "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden pl-10 text-sm",
         className,
       )}
       {...props}
@@ -89,10 +95,4 @@ export function DiscussionReplies({
       {children}
     </AccordionPrimitive.Content>
   )
-}
-
-export function Discussion({
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Root>) {
-  return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }

@@ -60,7 +60,7 @@ export function ExpandableButton({
       layout
       onClick={onClickHandler}
       className={cn(
-        "relative flex items-center text-lg font-medium justify-center rounded-xl text-primary-foreground overflow-hidden h-10 bg-primary min-w-12 max-w-full flex-shrink-0",
+        "text-primary-foreground bg-primary relative flex h-10 max-w-full min-w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl text-lg font-medium",
         className,
       )}
       initial={false}
@@ -79,13 +79,13 @@ export function ExpandableButton({
         {expanded ? (
           <motion.div
             key="active"
-            className={cn("flex items-center justify-center w-full h-full")}
+            className={cn("flex h-full w-full items-center justify-center")}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex items-center gap-2 justify-center w-full">
+            <div className="flex w-full items-center justify-center gap-2">
               <motion.div
                 initial={{ scale: 1.2 }}
                 animate={{ scale: 1 }}

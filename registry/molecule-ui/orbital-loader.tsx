@@ -37,9 +37,9 @@ export function OrbitalLoader({
 }: React.ComponentProps<"div"> & OrbitalLoaderProps) {
   return (
     <div className={cn(orbitalLoaderVariants({ messagePlacement }))}>
-      <div className={cn("relative w-16 h-16", className)} {...props}>
+      <div className={cn("relative h-16 w-16", className)} {...props}>
         <motion.div
-          className="absolute inset-0 border-2 border-transparent border-t-foreground rounded-full"
+          className="border-t-foreground absolute inset-0 rounded-full border-2 border-transparent"
           animate={{ rotate: 360 }}
           transition={{
             duration: 1,
@@ -48,7 +48,7 @@ export function OrbitalLoader({
           }}
         />
         <motion.div
-          className="absolute inset-2 border-2 border-transparent border-t-foreground rounded-full"
+          className="border-t-foreground absolute inset-2 rounded-full border-2 border-transparent"
           animate={{ rotate: -360 }}
           transition={{
             duration: 1.5,
@@ -57,7 +57,7 @@ export function OrbitalLoader({
           }}
         />
         <motion.div
-          className="absolute inset-4 border-2 border-transparent border-t-foreground rounded-full"
+          className="border-t-foreground absolute inset-4 rounded-full border-2 border-transparent"
           animate={{ rotate: 360 }}
           transition={{
             duration: 0.8,

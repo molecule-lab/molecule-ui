@@ -2,8 +2,8 @@ import { ComponentPreview } from "@/components/component-preview"
 
 export function Examples() {
   return (
-    <div className="flex flex-col  w-full px-4 md:px-8 xl:px-12 md:w-2/3 xl:w-1/2 pb-6 items-center">
-      <h2 className="mb-4 text-foreground/80 text-center text-2xl md:text-3xl tracking-tight max-w-2xl">
+    <div className="flex w-full flex-col items-center px-4 pb-6 md:w-2/3 md:px-8 xl:w-1/2 xl:px-12">
+      <h2 className="text-foreground/80 mb-4 max-w-2xl text-center text-2xl tracking-tight md:text-3xl">
         Examples
       </h2>
       <div className="flex flex-col gap-4">

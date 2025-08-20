@@ -29,13 +29,13 @@ export function DiscussionDemo() {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex flex-col gap-1">
-                  <DiscussionTitle className="flex gap-2 items-center">
+                  <DiscussionTitle className="flex items-center gap-2">
                     <div>Jane Smith</div>
-                    <div className="text-muted-foreground text-xs ">
+                    <div className="text-muted-foreground text-xs">
                       @janesmith
                     </div>
                     <span className="text-muted-foreground text-xs">•</span>
-                    <div className="text-muted-foreground text-xs ">
+                    <div className="text-muted-foreground text-xs">
                       1 hour ago
                     </div>
                   </DiscussionTitle>
@@ -59,13 +59,13 @@ export function DiscussionDemo() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-1">
-                      <DiscussionTitle className="flex gap-2 items-center">
+                      <DiscussionTitle className="flex items-center gap-2">
                         <div>Liam Patel</div>
-                        <div className="text-muted-foreground text-xs ">
+                        <div className="text-muted-foreground text-xs">
                           @liampatel
                         </div>
                         <span className="text-muted-foreground text-xs">•</span>
-                        <div className="text-muted-foreground text-xs ">
+                        <div className="text-muted-foreground text-xs">
                           34 minutes ago
                         </div>
                       </DiscussionTitle>
@@ -88,15 +88,15 @@ export function DiscussionDemo() {
                       </div>
                       <div className="flex flex-col gap-2">
                         <div className="flex flex-col gap-1">
-                          <DiscussionTitle className="flex gap-2 items-center">
+                          <DiscussionTitle className="flex items-center gap-2">
                             <div>Alex Chen</div>
-                            <div className="text-muted-foreground text-xs ">
+                            <div className="text-muted-foreground text-xs">
                               @alexchen
                             </div>
                             <span className="text-muted-foreground text-xs">
                               •
                             </span>
-                            <div className="text-muted-foreground text-xs ">
+                            <div className="text-muted-foreground text-xs">
                               26 minutes ago
                             </div>
                           </DiscussionTitle>
@@ -120,13 +120,13 @@ export function DiscussionDemo() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-1">
-                      <DiscussionTitle className="flex gap-2 items-center">
+                      <DiscussionTitle className="flex items-center gap-2">
                         <div>Sarah Wilson</div>
-                        <div className="text-muted-foreground text-xs ">
+                        <div className="text-muted-foreground text-xs">
                           @sarahwilson
                         </div>
                         <span className="text-muted-foreground text-xs">•</span>
-                        <div className="text-muted-foreground text-xs ">
+                        <div className="text-muted-foreground text-xs">
                           14 minutes ago
                         </div>
                       </DiscussionTitle>

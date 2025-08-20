@@ -39,7 +39,7 @@ export function SpinningCircle({
     <div className={cn(spinningCircleVariants({ messagePlacement }))}>
       <motion.div
         className={cn(
-          "w-8 h-8 border-4 border-t-foreground rounded-full",
+          "border-t-foreground h-8 w-8 rounded-full border-4",
           className,
         )}
         animate={{ rotate: 360 }}

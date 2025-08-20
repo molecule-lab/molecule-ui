@@ -44,13 +44,13 @@ export function WaveLoader({
 }: HTMLMotionProps<"div"> & WaveLoaderProps) {
   return (
     <div className={cn(waveLoaderVariants({ messagePlacement }))}>
-      <div className={cn("flex gap-1 items-center justify-center")}>
+      <div className={cn("flex items-center justify-center gap-1")}>
         {Array(bars)
           .fill(undefined)
           .map((_, index) => (
             <motion.div
               key={index}
-              className={cn("w-2 h-5 bg-foreground origin-bottom", className)}
+              className={cn("bg-foreground h-5 w-2 origin-bottom", className)}
               animate={{ scaleY: [1, 1.5, 1] }}
               transition={{
                 duration: 1,

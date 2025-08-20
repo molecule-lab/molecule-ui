@@ -44,28 +44,14 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Tabs: ({ ...props }) => <Tabs className="mb-6" {...props} />,
     TabsList: ({ ...props }) => (
       <TabsList
-        className="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0 "
+        className="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0"
         {...props}
       />
     ),
     TabsTrigger: ({ ...props }) => (
       <TabsTrigger
         {...props}
-        className=' relative
-                  h-7 
-                  border 
-                  border-transparent 
-                  pt-0.5 
-                  data-[state=active]:border-none 
-                  data-[state=active]:after:absolute 
-                  data-[state=active]:after:bottom-0 
-                  data-[state=active]:after:left-0 
-                  data-[state=active]:after:h-[2px] 
-                  data-[state=active]:after:w-full 
-                  data-[state=active]:after:bg-primary 
-                  data-[state=active]:after:content-[""]
-                 dark:data-[state=active]:bg-transparent
-                 data-[state=active]:bg-transparent'
+        className='data-[state=active]:after:bg-primary relative h-7 border border-transparent pt-0.5 data-[state=active]:border-none data-[state=active]:bg-transparent data-[state=active]:after:absolute data-[state=active]:after:bottom-0 data-[state=active]:after:left-0 data-[state=active]:after:h-[2px] data-[state=active]:after:w-full data-[state=active]:after:content-[""] dark:data-[state=active]:bg-transparent'
       />
     ),
     TabsContent,
@@ -87,7 +73,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ),
     Steps: ({ ...props }) => (
       <div
-        className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
+        className="[&>h3]:step steps before:via-muted-foreground/50 relative mb-12 ml-4 pl-8 [counter-reset:step] before:absolute before:top-0 before:left-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:to-transparent"
         {...props}
       />
     ),
@@ -108,7 +94,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
       return (
         <figure
-          className={cn(" bg-zinc-50 dark:bg-zinc-900", className)}
+          className={cn("bg-zinc-50 dark:bg-zinc-900", className)}
           {...props}
         />
       )
@@ -194,7 +180,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       /* eslint-disable  jsx-a11y/heading-has-content */
       <h2
         className={cn(
-          "font-heading scroll-m-20  text-2xl font-semibold tracking-tight border-b pb-1",
+          "font-heading scroll-m-20 border-b pb-1 text-2xl font-semibold tracking-tight",
           className,
         )}
         {...props}
@@ -204,7 +190,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       /* eslint-disable  jsx-a11y/heading-has-content */
       <h3
         className={cn(
-          "font-heading scroll-m-20 mt-4 text-xl font-semibold tracking-tight",
+          "font-heading mt-4 scroll-m-20 text-xl font-semibold tracking-tight",
           className,
         )}
         {...props}

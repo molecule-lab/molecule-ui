@@ -17,7 +17,7 @@ export function DocsNeighborsNavigationTop({
       {neighbors.previous && (
         <Link
           href={neighbors.previous.url}
-          className="bg-secondary p-1.5 rounded-md hover:bg-secondary/80"
+          className="bg-secondary hover:bg-secondary/80 rounded-md p-1.5"
         >
           <ArrowLeft className="size-4" />
         </Link>
@@ -25,7 +25,7 @@ export function DocsNeighborsNavigationTop({
       {neighbors.next && (
         <Link
           href={neighbors.next.url}
-          className="bg-secondary p-1.5 rounded-md hover:bg-secondary/80"
+          className="bg-secondary hover:bg-secondary/80 rounded-md p-1.5"
         >
           <ArrowRight className="size-4" />
         </Link>

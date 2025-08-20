@@ -45,13 +45,13 @@ export function BouncingDots({
 }: HTMLMotionProps<"div"> & BouncingDotsProps) {
   return (
     <div className={cn(bouncingDotsVariant({ messagePlacement }))}>
-      <div className={cn("flex gap-2 items-center justify-center")}>
+      <div className={cn("flex items-center justify-center gap-2")}>
         {Array(dots)
           .fill(undefined)
           .map((_, index) => (
             <motion.div
               key={index}
-              className={cn("w-3 h-3 bg-foreground rounded-full", className)}
+              className={cn("bg-foreground h-3 w-3 rounded-full", className)}
               animate={{ y: [0, -20, 0] }}
               transition={{
                 duration: 0.6,

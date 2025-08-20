@@ -433,4 +433,36 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "apple-watch-grid-demo",
+    type: "registry:example",
+    title: "Todo",
+    description: "todo",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/apple-watch-grid"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/apple-watch-grid-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/apple-watch-grid-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "accordion-demo",
+    type: "registry:example",
+    title: "Accordion Demo",
+    description: "Demo of the animated accordion",
+    dependencies: [],
+    registryDependencies: ["https://moleculeui.design/r/accodion-demo"],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/accordion-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/accordion-demo.tsx",
+      },
+    ],
+  },
 ]

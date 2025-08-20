@@ -86,12 +86,12 @@ function ComponentCode({
   return (
     <figure
       data-rehype-pretty-code-figure=""
-      className="[&>pre]:max-h-96 bg-zinc-50 dark:bg-zinc-900"
+      className="bg-zinc-50 dark:bg-zinc-900 [&>pre]:max-h-96"
     >
       {title && (
         <figcaption
           data-rehype-pretty-code-title=""
-          className="text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70 border-b "
+          className="text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 border-b [&_svg]:size-4 [&_svg]:opacity-70"
           data-language={language}
         >
           {title}

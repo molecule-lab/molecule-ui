@@ -1,0 +1,79 @@
+---
+title: Accordion
+description: A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.
+links:
+  doc: https://www.radix-ui.com/primitives/docs/components/accordion
+  api: https://www.radix-ui.com/docs/primitives/components/accordion#api-reference
+---
+
+<ComponentPreview name='accordion-demo' />
+
+## Installation
+
+<Tabs defaultValue='cli'>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+
+<TabsContent value='cli'>
+
+```bash
+npx shadcn@latest add "https://moleculeui.design/r/accordion"
+```
+
+</TabsContent>
+
+<TabsContent value='manual'>
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+
+```bash
+npm install @radix-ui/react-accordion motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  title="components/molecule-ui/accordion.tsx"
+  name="accordion"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<div>
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/molecule-ui/accordion"
+```
+
+```tsx
+<Accordion className="w-full" type="multiple">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>It is animated ?</AccordionTrigger>
+    <AccordionContent>
+      Yes, it is animated using motion
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+</div>

@@ -11,13 +11,13 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="hidden pl-4 md:p-2 md:flex gap-6 items-center text-sm font-medium ">
+    <div className="hidden items-center gap-6 pl-4 text-sm font-medium md:flex md:p-2">
       <Link
         href={"/"}
         aria-label={"Home"}
-        className={cn("flex items-center justify-center text-foreground")}
+        className={cn("text-foreground flex items-center justify-center")}
       >
-        <div className="flex gap-2 items-center font-bold text-lg">
+        <div className="flex items-center gap-2 text-lg font-bold">
           <Logo />
           Molecule UI
         </div>
@@ -28,7 +28,7 @@ export function MainNav() {
           href={item.url!}
           aria-label={item.name}
           className={cn(
-            "flex items-center justify-center transition-colors hover:text-foreground/80 text-foreground",
+            "hover:text-foreground/80 text-foreground flex items-center justify-center transition-colors",
             pathname?.startsWith(item.url!)
               ? "text-foreground"
               : "text-foreground/60",

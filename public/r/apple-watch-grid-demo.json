@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "apple-watch-grid-demo",
+  "type": "registry:example",
+  "title": "Todo",
+  "author": "Rushil Dhinoja",
+  "description": "todo",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://moleculeui.design/r/apple-watch-grid"
+  ],
+  "files": [
+    {
+      "path": "registry/example/apple-watch-grid-demo.tsx",
+      "content": "import { AppleWatchGrid } from \"@/registry/molecule-ui/apple-watch-grid\"\n\nexport function AppleWatchGridDemo() {\n  return <AppleWatchGrid />\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/apple-watch-grid-demo.tsx"
+    }
+  ]
+}

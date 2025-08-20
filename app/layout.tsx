@@ -23,7 +23,7 @@ export const metadata: Metadata = constructMetadata({
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="relative flex w-full flex-col justify-center overflow-x-hidden  scroll-smooth bg-background font-sans antialiased">
+      <body className="bg-background relative flex w-full flex-col justify-center overflow-x-hidden scroll-smooth font-sans antialiased">
         <ThemeProvider>
           <RootProvider search={{ enabled: false }}>{children}</RootProvider>
         </ThemeProvider>

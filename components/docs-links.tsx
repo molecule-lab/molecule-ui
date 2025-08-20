@@ -14,7 +14,11 @@ export function DocsLinks({ docLink, apiLink }: DocsLinksProps) {
       <div>
         {docLink && (
           <Badge asChild variant="secondary">
-            <Link className="text-xs flex gap-1 items-center" href={docLink}>
+            <Link
+              target="_blank"
+              className="flex items-center gap-1 text-xs"
+              href={docLink}
+            >
               Docs <MoveUpRight className="size-3" />
             </Link>
           </Badge>
@@ -23,7 +27,11 @@ export function DocsLinks({ docLink, apiLink }: DocsLinksProps) {
       <div>
         {apiLink && (
           <Badge asChild variant="secondary">
-            <Link className="text-xs flex gap-1 items-center" href={apiLink}>
+            <Link
+              target="_blank"
+              className="flex items-center gap-1 text-xs"
+              href={apiLink}
+            >
               Api <MoveUpRight className="size-3" />
             </Link>
           </Badge>

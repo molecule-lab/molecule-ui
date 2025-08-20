@@ -20,10 +20,10 @@ export default async function Page(props: {
   const neighbors = await findNeighbour(source.pageTree, page.url)
 
   return (
-    <main className="h-full relative lg:gap-10 xl:grid xl:grid-cols-[1fr_300px] ">
-      <div className="flex-1 flex flex-col gap-4 pt-12 min-w-0 overflow-hidden">
+    <main className="relative h-full lg:gap-10 xl:grid xl:grid-cols-[1fr_300px]">
+      <div className="flex min-w-0 flex-1 flex-col gap-4 overflow-hidden pt-12">
         <div className="flex flex-col gap-2">
-          <div className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl flex items-center justify-between">
+          <div className="flex scroll-m-20 items-center justify-between text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
             <div>{page.data.title}</div>
             <DocsNeighborsNavigationTop neighbors={neighbors} />
           </div>
@@ -36,7 +36,7 @@ export default async function Page(props: {
           />
         </div>
         <div></div>
-        <div className="flex flex-col gap-4  min-w-0">
+        <div className="flex min-w-0 flex-col gap-4">
           <MDXContent
             code={page.data.body}
             components={getMDXComponents({
@@ -47,7 +47,7 @@ export default async function Page(props: {
         <DocsFooter neighbors={neighbors} />
       </div>
       {page.data.toc && (
-        <div className="hidden border-l border-border py-6 pl-6 text-sm xl:block">
+        <div className="border-border hidden border-l py-6 pl-6 text-sm xl:block">
           <div className="sticky top-[90px] h-[calc(100vh-3.5rem)] space-y-4">
             <TableOfContents toc={page.data.toc} />
           </div>

@@ -50,7 +50,7 @@ export function Checkbox({
         onCheckedChange={(value) => setChecked(!!value)}
         disabled={disabled}
         className={cn(
-          "flex items-center justify-center border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[4px] border transition-all duration-200 outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 hover:shadow-sm hover:border-primary/20",
+          "border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:border-primary/20 flex size-4 shrink-0 items-center justify-center rounded-[4px] border transition-all duration-200 outline-none hover:shadow-sm focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         {...props}

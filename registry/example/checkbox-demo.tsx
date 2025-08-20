@@ -16,7 +16,7 @@ export function CheckboxExample() {
       <div className="flex items-center gap-2">
         <Checkbox
           defaultChecked
-          className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white "
+          className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white"
         />
         <div>Enable Notification</div>
       </div>

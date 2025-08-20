@@ -96,7 +96,7 @@ export function ProfileMenu({
       <motion.div
         ref={menuRef}
         className={cn(
-          "overflow-hidden rounded-md cursor-pointer absolute top-0 right-0 flex flex-col",
+          "absolute top-0 right-0 flex cursor-pointer flex-col overflow-hidden rounded-md",
           open && "bg-popover border",
           className,
         )}
@@ -125,7 +125,7 @@ export function ProfileMenuHeader({
   const { open } = useProfileMenuContext()
   return (
     <motion.div
-      className={cn("flex gap-2 items-center justify-between", className)}
+      className={cn("flex items-center justify-between gap-2", className)}
       animate={{
         padding: open ? "0.5rem" : 0,
       }}
@@ -242,7 +242,7 @@ export function ProfileMenuItem({
   return (
     <motion.div
       className={cn(
-        "flex items-center gap-3 px-1 py-1.5 text-sm hover:bg-accent rounded-md transition-colors cursor-pointer",
+        "hover:bg-accent flex cursor-pointer items-center gap-3 rounded-md px-1 py-1.5 text-sm transition-colors",
         className,
       )}
       transition={{ duration: 0.1, ease: "easeInOut" }}

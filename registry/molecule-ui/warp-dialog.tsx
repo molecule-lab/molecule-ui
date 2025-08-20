@@ -113,7 +113,7 @@ export function WarpDialogContent({
 
           <motion.div
             onClick={() => setOpen((prev) => !prev)}
-            className="fixed inset-0 flex items-center justify-center z-[1000]"
+            className="fixed inset-0 z-[1000] flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -171,7 +171,7 @@ function WarpAnimations() {
   return (
     <>
       <motion.div
-        className="absolute rounded-full h-1/2 w-1/2 blur-lg origin-center will-change-transform left-[25%] top-[100%]"
+        className="absolute top-[100%] left-[25%] h-1/2 w-1/2 origin-center rounded-full blur-lg will-change-transform"
         initial={{
           scale: 0,
           opacity: 1,
@@ -194,7 +194,7 @@ function WarpAnimations() {
         }}
       />
       <motion.div
-        className=" absolute blur-[100px] rounded-full bg-red-500/90 h-full w-full top-[-25%] left-[-50%]"
+        className="absolute top-[-25%] left-[-50%] h-full w-full rounded-full bg-red-500/90 blur-[100px]"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 0.9,
@@ -216,7 +216,7 @@ function WarpAnimations() {
         }}
       />
       <motion.div
-        className=" absolute blur-[100px] rounded-full bg-red-500/80 w-full h-full top-[25%] left-[50%]"
+        className="absolute top-[25%] left-[50%] h-full w-full rounded-full bg-red-500/80 blur-[100px]"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 0.9,
