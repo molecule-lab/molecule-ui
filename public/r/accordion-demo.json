@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion-demo",
   "type": "registry:example",
-  "title": "Todo",
+  "title": "Accordion Demo",
   "author": "Rushil Dhinoja",
-  "description": "todo",
+  "description": "Demo of the animated accordion",
   "dependencies": [],
   "registryDependencies": [
     "https://moleculeui.design/r/accodion-demo"
@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/example/accordion-demo.tsx",
-      "content": "import { Plus } from \"lucide-react\"\n\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"../molecule-ui/accordion\"\n\nexport function AccordionDemo() {\n  return (\n    <Accordion className=\"w-full\" type=\"multiple\">\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>What is Molecule UI</AccordionTrigger>\n        <AccordionContent>\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat\n          autem consectetur saepe architecto, alias tenetur. Voluptatem natus\n          accusamus id ea, doloribus maxime iure nostrum, eveniet reprehenderit\n          reiciendis deserunt in consequuntur.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Hello World</AccordionTrigger>\n        <AccordionContent>\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni\n          sapiente et fugit eum totam aperiam recusandae tenetur, odit commodi\n          quae ullam expedita cum ipsa enim minus. Ipsa adipisci illum dolorum!\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  )\n}\n",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/molecule-ui/accordion\"\n\nexport function AccordionDemo() {\n  return (\n    <Accordion className=\"w-full\" type=\"single\" collapsible>\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>How does it work?</AccordionTrigger>\n        <AccordionContent>\n          It works by analyzing your requirements, leveraging advanced AI\n          algorithms to understand context, and executing tasks based on your\n          instructions. It can integrate with your workflow, learn from\n          feedback, and continuously improve its performance.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>How secure is my data?</AccordionTrigger>\n        <AccordionContent>\n          We implement enterprise-grade security measures including end-to-end\n          encryption, secure data centers, and regular security audits. Your\n          data is protected according to industry best practices and compliance\n          standards.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Is there a free trial available?</AccordionTrigger>\n        <AccordionContent>\n          Yes, we offer a 14-day free trial that gives you full access to all\n          features. No credit card is required to start your trial, and you can\n          upgrade or cancel at any time.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/molecule-ui/example/accordion-demo.tsx"
     }

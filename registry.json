@@ -331,7 +331,7 @@
       "type": "registry:ui",
       "title": "Accordion",
       "author": "Rushil Dhinoja",
-      "description": "Todo",
+      "description": "A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.",
       "dependencies": [
         "motion",
         "@radix-ui/react-accordion"
@@ -837,9 +837,9 @@
     {
       "name": "accordion-demo",
       "type": "registry:example",
-      "title": "Todo",
+      "title": "Accordion Demo",
       "author": "Rushil Dhinoja",
-      "description": "todo",
+      "description": "Demo of the animated accordion",
       "dependencies": [],
       "registryDependencies": [
         "https://moleculeui.design/r/accodion-demo"

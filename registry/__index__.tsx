@@ -374,7 +374,8 @@ export const Index: Record<string, any> = {
   },
   accordion: {
     name: "accordion",
-    description: "Todo",
+    description:
+      "A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.",
     type: "registry:ui",
     registryDependencies: ["utils"],
     files: [
@@ -1045,7 +1046,7 @@ export const Index: Record<string, any> = {
   },
   "accordion-demo": {
     name: "accordion-demo",
-    description: "todo",
+    description: "Demo of the animated accordion",
     type: "registry:example",
     registryDependencies: ["https://moleculeui.design/r/accodion-demo"],
     files: [
