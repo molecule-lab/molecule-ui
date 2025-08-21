@@ -15,7 +15,8 @@
     "shadcn:build": "shadcn build",
     "format:fix": "prettier --write \"**/*.{ts,tsx,mdx,mts}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "template": "npx tsx ./scripts/template.mts"
   },
   "dependencies": {
     "@content-collections/core": "^0.9.1",
@@ -80,6 +81,8 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "prompts": "^2.4.2",
+    "slugify": "^1.6.6",
     "tailwindcss": "^4.1.10",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5.8.3"
