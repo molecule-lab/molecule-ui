@@ -16,7 +16,7 @@
     "format:fix": "prettier --write \"**/*.{ts,tsx,mdx,mts}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
     "prepare": "husky",
-    "template": "npx tsx ./scripts/template.mts"
+    "generate:component": "npx tsx ./scripts/generate-component.mts"
   },
   "dependencies": {
     "@content-collections/core": "^0.9.1",
