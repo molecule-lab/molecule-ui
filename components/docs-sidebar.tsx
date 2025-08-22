@@ -62,8 +62,11 @@ function SidebarItems({ items }: SidebarItemsProps) {
             key={item.url}
             href={item.url}
             isActive={pathname === item.url}
+            className="group"
           >
-            {item.name}
+            <div className="transition-all duration-200 group-hover:translate-x-0.5">
+              {item.name}
+            </div>
           </SidebarGroupLink>
         </SidebarGroupItem>
       )
