@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-demo",
+  "type": "registry:example",
+  "title": "Dialog Demo",
+  "author": "Rushil Dhinoja",
+  "description": "A demo component for a animated dialog built on top of radix-ui",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/example/dialog-demo.tsx",
+      "content": "import { Button } from \"@/components/ui/button\"\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/molecule-ui/dialog\"\n\nexport function DialogDemo() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Open Dialog</Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px]\">\n        <DialogHeader>\n          <DialogTitle>Edit profile</DialogTitle>\n          <DialogDescription>\n            Make changes to your profile here. Click save when you're done.\n          </DialogDescription>\n        </DialogHeader>\n\n        <DialogFooter>\n          <Button type=\"submit\">Save changes</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/molecule-ui/example/dialog-demo.tsx"
+    }
+  ]
+}

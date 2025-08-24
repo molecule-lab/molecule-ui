@@ -396,6 +396,30 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  dialog: {
+    name: "dialog",
+    description:
+      "A pop-up layered above the application window or dialog, which makes the background content inert.",
+    type: "registry:ui",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/molecule-ui/dialog.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/dialog.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/molecule-ui/dialog.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "swipe-row-demo": {
     name: "swipe-row-demo",
     description: "A preview component for swipe row",
@@ -1058,6 +1082,83 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/accordion-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "dialog-demo": {
+    name: "dialog-demo",
+    description:
+      "A demo component for a animated dialog built on top of radix-ui",
+    type: "registry:example",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/example/dialog-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/dialog-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/dialog-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "custom-close-button-dialog-demo": {
+    name: "custom-close-button-dialog-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/example/custom-close-button-dialog-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/custom-close-button-dialog-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/custom-close-button-dialog-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object",
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "without-animation-dialog-demo": {
+    name: "without-animation-dialog-demo",
+    description:
+      "A demo component for a animated dialog built on top of radix-ui without animation",
+    type: "registry:example",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/example/without-animation-dialog-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/without-animation-dialog-demo.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/example/without-animation-dialog-demo.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>

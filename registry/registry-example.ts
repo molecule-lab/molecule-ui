@@ -465,4 +465,57 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "dialog-demo",
+    type: "registry:example",
+    title: "Dialog Demo",
+    description:
+      "A demo component for a animated dialog built on top of radix-ui",
+    dependencies: [],
+    registryDependencies: [],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/dialog-demo.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/example/dialog-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "custom-close-button-dialog-demo",
+    type: "registry:example",
+    title:
+      "A demo component for a animated dialog built on top of radix-ui with custom close button",
+    description: "",
+    dependencies: [],
+    registryDependencies: [],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/custom-close-button-dialog-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/custom-close-button-dialog-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "without-animation-dialog-demo",
+    type: "registry:example",
+    title: "Without Animation Dialog Demo",
+    description:
+      "A demo component for a animated dialog built on top of radix-ui without animation",
+    dependencies: [],
+    registryDependencies: [],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/example/without-animation-dialog-demo.tsx",
+        type: "registry:ui",
+        target:
+          "components/molecule-ui/example/without-animation-dialog-demo.tsx",
+      },
+    ],
+  },
 ]

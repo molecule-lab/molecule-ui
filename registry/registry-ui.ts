@@ -272,4 +272,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "dialog",
+    type: "registry:ui",
+    title: "Dialog",
+    description:
+      "A pop-up layered above the application window or dialog, which makes the background content inert.",
+    dependencies: [],
+    registryDependencies: [],
+    author: "Rushil Dhinoja",
+    files: [
+      {
+        path: "registry/molecule-ui/dialog.tsx",
+        type: "registry:ui",
+        target: "components/molecule-ui/dialog.tsx",
+      },
+    ],
+  },
 ]
