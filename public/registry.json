@@ -348,6 +348,22 @@
       ]
     },
     {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "author": "Rushil Dhinoja",
+      "description": "A pop-up layered above the application window or dialog, which makes the background content inert.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/molecule-ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/dialog.tsx"
+        }
+      ]
+    },
+    {
       "name": "swipe-row-demo",
       "type": "registry:example",
       "title": "Swipe row demo",
@@ -849,6 +865,54 @@
           "path": "registry/example/accordion-demo.tsx",
           "type": "registry:ui",
           "target": "components/molecule-ui/example/accordion-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:example",
+      "title": "Dialog Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for a animated dialog built on top of radix-ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "custom-close-button-dialog-demo",
+      "type": "registry:example",
+      "title": "A demo component for a animated dialog built on top of radix-ui with custom close button",
+      "author": "Rushil Dhinoja",
+      "description": "",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/custom-close-button-dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/custom-close-button-dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "without-animation-dialog-demo",
+      "type": "registry:example",
+      "title": "Without Animation Dialog Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for a animated dialog built on top of radix-ui without animation",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/without-animation-dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/without-animation-dialog-demo.tsx"
         }
       ]
     },

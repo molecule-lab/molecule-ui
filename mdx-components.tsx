@@ -11,6 +11,7 @@ import { CodeBlockCommand } from "@/components/code-command-block"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { CopyButton } from "@/components/copy-button"
+import { Usage } from "@/components/usage"
 
 const generator = createGenerator()
 
@@ -41,6 +42,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Callout,
     ComponentPreview,
     ComponentSource,
+    Usage,
     Tabs: ({ ...props }) => <Tabs className="mb-6" {...props} />,
     TabsList: ({ ...props }) => (
       <TabsList
