@@ -39,8 +39,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate content-collections
-        run: pnpm build:registry
+      - name: build
+        run: pnpm build
 
       - run: pnpm lint
 
@@ -79,8 +79,5 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Generate content-collections
-        run: pnpm build:registry
 
       - run: pnpm format:check
