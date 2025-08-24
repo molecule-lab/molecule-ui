@@ -81,7 +81,7 @@ export async function generateMetadata(props: {
         {
           url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
             page.data.title,
-          )}&description=${encodeURIComponent(page.data.description || "")}`,
+          )}&description=${encodeURIComponent(page.data.description ?? "")}`,
         },
       ],
     },
@@ -93,7 +93,7 @@ export async function generateMetadata(props: {
         {
           url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
             page.data.title,
-          )}&description=${encodeURIComponent(page.data.description!)}`,
+          )}&description=${encodeURIComponent(page.data.description ?? "")}`,
         },
       ],
       creator: "@rushildhinoja17",
