@@ -103,10 +103,10 @@ function DialogOverlay({
     >
       <motion.div
         key="dialog-overlay"
-        initial={animated ? { opacity: 0, filter: "blur(4px)" } : {}}
-        animate={animated ? { opacity: 1, filter: "blur(0px)" } : {}}
-        exit={animated ? { opacity: 0, filter: "blur(4px)" } : {}}
-        transition={animated ? { duration: 0.2, ease: "easeInOut" } : {}}
+        initial={{ opacity: 0, filter: "blur(4px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        exit={{ opacity: 0, filter: "blur(4px)" }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
       />
     </DialogPrimitive.Overlay>
   )
