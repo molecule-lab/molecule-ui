@@ -96,13 +96,22 @@ async function buildRegistryJsonFile() {
 
   rimraf.sync(path.join(process.cwd(), `registry.json`))
   rimraf.sync(path.join(process.cwd(), `public/registry.json`))
+  rimraf.sync(path.join(process.cwd(), `public/r/registry.json`))
 
   const registryJson = JSON.stringify(fixedRegistry, null, 2)
 
   await fs.writeFile(path.join(process.cwd(), `registry.json`), registryJson)
-  await fs.writeFile(
-    path.join(process.cwd(), `public/registry.json`),
-    registryJson,
+
+  await fs.cp(
+    path.join(process.cwd(), "registry.json"),
+    path.join(process.cwd(), "public/registry.json"),
+    { recursive: true },
+  )
+
+  await fs.cp(
+    path.join(process.cwd(), "registry.json"),
+    path.join(process.cwd(), "public/r/registry.json"),
+    { recursive: true },
   )
 }
 

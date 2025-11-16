@@ -1,0 +1,934 @@
+{
+  "name": "Molecule UI",
+  "homepage": "https://moleculeui.design",
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [],
+      "cssVars": {}
+    },
+    {
+      "name": "swipe-row",
+      "type": "registry:ui",
+      "title": "Swipe Row",
+      "author": "Rushil Dhinoja",
+      "description": "A swipe row for providing actions of swipe of left and right",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/swipe-row.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/swipe-row.tsx"
+        }
+      ]
+    },
+    {
+      "name": "discussion",
+      "type": "registry:ui",
+      "title": "Discussion",
+      "author": "Rushil Dhinoja",
+      "description": "A component for displaying nested discussions or comment threads.",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/discussion.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/discussion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinning-circle",
+      "type": "registry:ui",
+      "title": "Spinning Circle",
+      "author": "Rushil Dhinoja",
+      "description": "A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/spinning-circle.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/spinning-circle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "morphing-square",
+      "type": "registry:ui",
+      "title": "Morphing Square",
+      "author": "Rushil Dhinoja",
+      "description": "A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/morphing-square.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/morphing-square.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbital-loader",
+      "type": "registry:ui",
+      "title": "Orbital Loader",
+      "author": "Rushil Dhinoja",
+      "description": "A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/orbital-loader.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/orbital-loader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typewriter-loader",
+      "type": "registry:ui",
+      "title": "Typewriter Loader",
+      "author": "Rushil Dhinoja",
+      "description": "A customizable typewriter loader component for indicating loading states in your application. Features smooth typing animations and customizable text content.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/typewriter-loader.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/typewriter-loader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-menu",
+      "type": "registry:ui",
+      "title": "Profile Menu",
+      "author": "Rushil Dhinoja",
+      "description": "An animated collapsible profile menu component with smooth transitions and customizable content sections.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/profile-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/profile-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "author": "Rushil Dhinoja",
+      "description": "An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bouncing-dots",
+      "type": "registry:ui",
+      "title": "Bouncing Dots",
+      "author": "Rushil Dhinoja",
+      "description": "An animated loading indicator featuring three bouncing dots with customizable colors and spacing.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/bouncing-dots.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/bouncing-dots.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader",
+      "type": "registry:ui",
+      "title": "Wave Loader",
+      "author": "Rushil Dhinoja",
+      "description": "An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states.",
+      "dependencies": [
+        "motion",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/wave-loader.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/wave-loader.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-input",
+      "type": "registry:ui",
+      "title": "Voice Input",
+      "author": "Rushil Dhinoja",
+      "description": "An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/voice-input.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/voice-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expandable-button",
+      "type": "registry:ui",
+      "title": "Expandable Button",
+      "author": "Rushil Dhinoja",
+      "description": " A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/expandable-button.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/expandable-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button",
+      "type": "registry:ui",
+      "title": "Liquid Glass Button",
+      "author": "Rushil Dhinoja",
+      "description": "A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/liquid-glass-button.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/liquid-glass-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "warp-dialog",
+      "type": "registry:ui",
+      "title": "Warp Dialog",
+      "author": "Rushil Dhinoja",
+      "description": "A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.",
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/warp-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/warp-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate",
+      "type": "registry:ui",
+      "title": "Word Rotate",
+      "author": "Rushil Dhinoja",
+      "description": "A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/word-rotate.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/word-rotate.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "author": "Rushil Dhinoja",
+      "description": "A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.",
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-accordion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/molecule-ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "author": "Rushil Dhinoja",
+      "description": "A pop-up layered above the application window or dialog, which makes the background content inert.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/molecule-ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-demo",
+      "type": "registry:example",
+      "title": "Swipe row demo",
+      "author": "Rushil Dhinoja",
+      "description": "A preview component for swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-left-demo",
+      "type": "registry:example",
+      "title": "Swipe row left demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for adding actions only to left swipe in swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-left-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-left-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-right-demo",
+      "type": "registry:example",
+      "title": "Swipe row right demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for adding actions only to right swipe in swipe row",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-right-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-right-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "swipe-row-list-demo",
+      "type": "registry:example",
+      "title": "Swipe row list demo",
+      "author": "Rushil Dhinoja",
+      "description": "A group of Swipe Row representing a list view",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/swipe-row",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/example/swipe-row-list-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/swipe-row-list-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "discussion-demo",
+      "type": "registry:example",
+      "title": "Discussion demo",
+      "author": "Rushil Dhinoja",
+      "description": "Preview component for discussion demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "scroll-area",
+        "https://moleculeui.design/r/discussion"
+      ],
+      "files": [
+        {
+          "path": "registry/example/discussion-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/discussion-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinning-circle-demo",
+      "type": "registry:example",
+      "title": "Spinning circle demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a spinning circle loading indicator",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/spinning-circle"
+      ],
+      "files": [
+        {
+          "path": "registry/example/spinning-circle-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/spinning-circle-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinning-circle-with-message-demo",
+      "type": "registry:example",
+      "title": "Spinning circle with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a spinning circle loading indicator with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/spinning-circle"
+      ],
+      "files": [
+        {
+          "path": "registry/example/spinning-circle-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/spinning-circle-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "morphing-square-demo",
+      "type": "registry:example",
+      "title": "Morphing square demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a morphing square loading indicator",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/morphing-square"
+      ],
+      "files": [
+        {
+          "path": "registry/example/morphing-square-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/morphing-square-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "morphing-square-with-message-demo",
+      "type": "registry:example",
+      "title": "Morphing square with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a morphing square loading indicator with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/morphing-square"
+      ],
+      "files": [
+        {
+          "path": "registry/example/morphing-square-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/morphing-square-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbital-loader-demo",
+      "type": "registry:example",
+      "title": "Orbital loader demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a orbital loading indicator",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/orbital-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/orbital-loader-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/orbital-loader-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbital-loader-with-message-demo",
+      "type": "registry:example",
+      "title": "Orbital loader with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a orbital loading indicator with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/orbital-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/orbital-loader-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/orbital-loader-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typewriter-loader-demo",
+      "type": "registry:example",
+      "title": "Typewriter loader demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a typewriter loading indicator demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/typewriter-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/typewriter-loader-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/typewriter-loader-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "typewriter-loader-with-custom-text-demo",
+      "type": "registry:example",
+      "title": "Typewriter loader with custom text demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing a typewriter loading indicator with custom text demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/typewriter-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/typewriter-loader-with-custom-text-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/typewriter-loader-with-custom-text-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "profile-menu-demo",
+      "type": "registry:example",
+      "title": "Profile Menu Demo",
+      "author": "Rushil Dhinoja",
+      "description": "Demo for the animated profile menu",
+      "dependencies": [],
+      "registryDependencies": [
+        "separator",
+        "avatar",
+        "https://moleculeui.design/r/profile-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/example/profile-menu-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/profile-menu-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "title": "Animated Checkbox Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the animated checkbox",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/example/checkbox-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/checkbox-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bouncing-dots-demo",
+      "type": "registry:example",
+      "title": "Bouncing dots demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the bouncing dots loader component",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/bouncing-dots"
+      ],
+      "files": [
+        {
+          "path": "registry/example/bouncing-dots-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/bouncing-dots-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bouncing-dots-with-message-demo",
+      "type": "registry:example",
+      "title": "Bouncing dots with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the bouncing dots loader component with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/bouncing-dots"
+      ],
+      "files": [
+        {
+          "path": "registry/example/bouncing-dots-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/bouncing-dots-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader-demo",
+      "type": "registry:example",
+      "title": "Wave loader demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the wave loader component",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/wave-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/wave-loader-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/wave-loader-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wave-loader-with-message-demo",
+      "type": "registry:example",
+      "title": "Wave loader with message demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the wave loader component with message",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/wave-loader"
+      ],
+      "files": [
+        {
+          "path": "registry/example/wave-loader-with-message-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/wave-loader-with-message-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-input-demo",
+      "type": "registry:example",
+      "title": "Voice input demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo of the animated voice input component",
+      "registryDependencies": [
+        "https://moleculeui.design/r/voice-input"
+      ],
+      "files": [
+        {
+          "path": "registry/example/voice-input-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/voice-input-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-button-demo",
+      "type": "registry:example",
+      "title": "Liquid glass button demo",
+      "author": "Rushil Dhinoja",
+      "description": "demo",
+      "registryDependencies": [
+        "https://moleculeui.design/r/liquid-glass-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/liquid-glass-button-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/liquid-glass-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expandable-button-demo",
+      "type": "registry:example",
+      "title": "Expandable Button Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demonstration of the expandable button component with an inbox icon that smoothly transitions between collapsed and expanded states.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/expandable-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/expandable-button-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/expandable-button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "expandable-button-group-demo",
+      "type": "registry:example",
+      "title": "Expandable Button Group Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demonstration of multiple expandable buttons working together as a group where only one button can be expanded at a time, perfect for creating animated navigation tabs or menu systems.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://moleculeui.design/r/expandable-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/expandable-button-group-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/expandable-button-group-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "warp-dialog-demo",
+      "type": "registry:example",
+      "title": "Warp dialog demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demonstration of the warp dialog component showcasing its 3D perspective animations with a welcome message and action buttons.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/warp-dialog",
+        "\"button\""
+      ],
+      "files": [
+        {
+          "path": "registry/example/warp-dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/warp-dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate-demo",
+      "type": "registry:example",
+      "title": "Word rotate demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component showcasing the word rotate text animation effect that cycles through different words smoothly.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/word-rotate"
+      ],
+      "files": [
+        {
+          "path": "registry/example/word-rotate-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/word-rotate-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "apple-watch-grid-demo",
+      "type": "registry:example",
+      "title": "Todo",
+      "author": "Rushil Dhinoja",
+      "description": "todo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/apple-watch-grid"
+      ],
+      "files": [
+        {
+          "path": "registry/example/apple-watch-grid-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/apple-watch-grid-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:example",
+      "title": "Accordion Demo",
+      "author": "Rushil Dhinoja",
+      "description": "Demo of the animated accordion",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://moleculeui.design/r/accodion-demo"
+      ],
+      "files": [
+        {
+          "path": "registry/example/accordion-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/accordion-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:example",
+      "title": "Dialog Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for a animated dialog built on top of radix-ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "custom-close-button-dialog-demo",
+      "type": "registry:example",
+      "title": "A demo component for a animated dialog built on top of radix-ui with custom close button",
+      "author": "Rushil Dhinoja",
+      "description": "",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/custom-close-button-dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/custom-close-button-dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "without-animation-dialog-demo",
+      "type": "registry:example",
+      "title": "Without Animation Dialog Demo",
+      "author": "Rushil Dhinoja",
+      "description": "A demo component for a animated dialog built on top of radix-ui without animation",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/example/without-animation-dialog-demo.tsx",
+          "type": "registry:ui",
+          "target": "components/molecule-ui/example/without-animation-dialog-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}
