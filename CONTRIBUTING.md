@@ -109,7 +109,7 @@ To add a new component to MoleculeUI you just need to run `pnpm generate:compone
    <TabsContent value='cli'>
 
    ```bash
-   npx shadcn@latest add "https://moleculeui.design/r/accordion"
+   npx shadcn@latest add @moleculeui/accordion
    ```
 
    </TabsContent>
