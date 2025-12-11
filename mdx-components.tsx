@@ -3,6 +3,7 @@ import { createGenerator } from "fumadocs-typescript"
 import { AutoTypeTable } from "fumadocs-typescript/ui"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import type { MDXComponents } from "mdx/types"
+import path from "path"
 
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -13,7 +14,9 @@ import { ComponentSource } from "@/components/component-source"
 import { CopyButton } from "@/components/copy-button"
 import { Usage } from "@/components/usage"
 
-const generator = createGenerator()
+const generator = createGenerator({
+  tsconfigPath: path.join(process.cwd(), "tsconfig.json"),
+})
 
 const CustomLink = (props: any) => {
   const href = props.href
