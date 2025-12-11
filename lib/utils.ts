@@ -6,8 +6,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+const DEFAULT_SITE_URL = "https://moleculeui.design"
+
+function getBaseUrl() {
+  const base = process.env.NEXT_PUBLIC_APP_URL?.trim()
+
+  if (!base) {
+    return DEFAULT_SITE_URL
+  }
+
+  return base.endsWith("/") ? base.slice(0, -1) : base
+}
+
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`
+  return `${getBaseUrl()}${path.startsWith("/") ? path : `/${path}`}`
 }
 
 export function constructMetadata({
@@ -52,7 +64,7 @@ export function constructMetadata({
       creator: "@rushildhinoja17",
     },
     icons: "/favicon.ico",
-    metadataBase: new URL("https://moleculeui.design"),
+    metadataBase: new URL(getBaseUrl()),
     authors: [
       {
         name: "rushil dhinoja",

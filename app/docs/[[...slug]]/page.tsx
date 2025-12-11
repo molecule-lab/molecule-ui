@@ -5,6 +5,7 @@ import { findNeighbour } from "fumadocs-core/server"
 import { createRelativeLink } from "fumadocs-ui/mdx"
 
 import { source } from "@/lib/source"
+import { absoluteUrl } from "@/lib/utils"
 import { DocsFooter } from "@/components/docs-footer"
 import { DocsLinks } from "@/components/docs-links"
 import { DocsNeighborsNavigationTop } from "@/components/docs-neighbors-naviation-top"
@@ -68,34 +69,33 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
+  const description =
+    page.data.description ||
+    "A modern React component library focused on intuitive interactions and seamless user experiences."
+  const ogImage = absoluteUrl(
+    `/og?title=${encodeURIComponent(page.data.title)}&description=${encodeURIComponent(
+      description,
+    )}`,
+  )
+
   return {
     title: `${page.data.title} | Molecule UI`,
-    description: page.data.description,
-    url: page.url,
+    description,
+    alternates: {
+      canonical: absoluteUrl(page.url),
+    },
     openGraph: {
       title: page.data.title,
-      description: page.data.description,
+      description,
       type: "article",
-      // url: absoluteUrl(page.url),
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
-            page.data.title,
-          )}&description=${encodeURIComponent(page.data.description || "")}`,
-        },
-      ],
+      url: absoluteUrl(page.url),
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.data.title,
-      description: page.data.description,
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURIComponent(
-            page.data.title,
-          )}&description=${encodeURIComponent(page.data.description!)}`,
-        },
-      ],
+      description,
+      images: [{ url: ogImage }],
       creator: "@rushildhinoja17",
     },
   }

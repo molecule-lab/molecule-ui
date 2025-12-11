@@ -6,7 +6,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { RootProvider } from "fumadocs-ui/provider"
 
-import { constructMetadata } from "@/lib/utils"
+import { absoluteUrl, constructMetadata } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({
@@ -17,7 +17,7 @@ export const metadata: Metadata = constructMetadata({
   title: "Molecule UI",
   description:
     "A modern React component library focused on intuitive interactions and seamless user experiences.",
-  image: `${process.env.NEXT_PUBLIC_APP_URL}/og`,
+  image: absoluteUrl("/og"),
 })
 
 export default function Layout({ children }: { children: ReactNode }) {
