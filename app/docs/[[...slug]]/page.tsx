@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation"
 import { getMDXComponents } from "@/mdx-components"
-import { MDXContent } from "@content-collections/mdx/react"
-import { findNeighbour } from "fumadocs-core/server"
+import fm from "front-matter"
+import { findNeighbour } from "fumadocs-core/page-tree"
 import { createRelativeLink } from "fumadocs-ui/mdx"
+import { z } from "zod"
 
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
@@ -16,7 +17,25 @@ export default async function Page(props: {
 }) {
   const params = await props.params
   const page = source.getPage(params.slug)
-  if (!page) notFound()
+  if (!page) {
+    notFound()
+  }
+
+  const doc = page.data
+  const MDX = doc.body
+
+  const raw = await page.data.getText("raw")
+  const { attributes } = fm(raw)
+  const { links } = z
+    .object({
+      links: z
+        .object({
+          doc: z.string().optional(),
+          api: z.string().optional(),
+        })
+        .optional(),
+    })
+    .parse(attributes)
 
   const neighbors = await findNeighbour(source.pageTree, page.url)
 
@@ -31,15 +50,11 @@ export default async function Page(props: {
           <div className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
             {page.data.description}
           </div>
-          <DocsLinks
-            apiLink={page.data.links?.api}
-            docLink={page.data.links?.doc}
-          />
+          <DocsLinks apiLink={links?.api} docLink={links?.doc} />
         </div>
         <div></div>
         <div className="flex min-w-0 flex-col gap-4">
-          <MDXContent
-            code={page.data.body}
+          <MDX
             components={getMDXComponents({
               a: createRelativeLink(source, page),
             })}
@@ -47,10 +62,10 @@ export default async function Page(props: {
         </div>
         <DocsFooter neighbors={neighbors} />
       </div>
-      {page.data.toc && (
+      {doc.toc && (
         <div className="border-border hidden border-l py-6 pl-6 text-sm xl:block">
           <div className="sticky top-[90px] h-[calc(100vh-3.5rem)] space-y-4">
-            <TableOfContents toc={page.data.toc} />
+            <TableOfContents toc={doc.toc} />
           </div>
         </div>
       )}

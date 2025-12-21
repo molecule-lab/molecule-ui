@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { FileIcon } from "lucide-react"
 
-import { source } from "@/lib/source"
+import type { PageTree } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,12 +17,16 @@ import {
   CommandList,
 } from "@/components/ui/command"
 
+interface SearchProps extends DialogProps {
+  tree: PageTree
+}
+
 interface CommandGroupItemProps {
-  items: typeof source.pageTree.children
+  items: PageTree["children"]
   runCommand: (command: () => unknown) => unknown
 }
 
-export function Search({ ...props }: DialogProps) {
+export function Search({ tree, ...props }: SearchProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const runCommand = React.useCallback((command: () => unknown) => {
@@ -71,7 +75,7 @@ export function Search({ ...props }: DialogProps) {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          {source.pageTree.children.map((root) => (
+          {tree.children.map((root) => (
             <CommandGroup
               key={root.$id}
               heading={

@@ -1,10 +1,10 @@
-import { createMDXSource } from "@fumadocs/content-collections"
-import { allDocs, allMetas } from "content-collections"
+import { docs } from "@/.source"
 import { loader } from "fumadocs-core/source"
-
-const activeDocs = allDocs.filter((doc) => doc.isActive !== false)
 
 export const source = loader({
   baseUrl: "/docs",
-  source: createMDXSource(activeDocs, allMetas),
+  source: docs.toFumadocsSource(),
 })
+
+// Export type for use in client components
+export type PageTree = typeof source.pageTree

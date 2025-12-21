@@ -580,9 +580,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/spinning-circle-with-message-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/spinning-circle-with-message-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -631,9 +630,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/morphing-square-with-message-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/morphing-square-with-message-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -681,9 +679,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/orbital-loader-with-message-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/orbital-loader-with-message-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -732,9 +729,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/typewriter-loader-with-custom-text-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/typewriter-loader-with-custom-text-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -833,9 +829,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/bouncing-dots-with-message-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/bouncing-dots-with-message-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -883,9 +878,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/wave-loader-with-message-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/wave-loader-with-message-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -931,9 +925,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/liquid-glass-button-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/liquid-glass-button-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -982,9 +975,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/expandable-button-group-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/expandable-button-group-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1129,9 +1121,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/custom-close-button-dialog-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/custom-close-button-dialog-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1156,9 +1147,8 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/example/without-animation-dialog-demo.tsx"
-      )
+      const mod =
+        await import("@/registry/example/without-animation-dialog-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

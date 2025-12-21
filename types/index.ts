@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react"
+import { ReactNode } from "react"
 
 export type Item = {
   $id?: string
@@ -13,5 +13,5 @@ export type Item = {
   url: string
   external?: boolean
   description?: ReactNode
-  icon?: ReactElement
+  icon?: ReactNode
 }
