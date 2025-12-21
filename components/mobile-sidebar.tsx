@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 import { Menu } from "lucide-react"
 
-import { source } from "@/lib/source"
+import type { PageTree } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import {
   Popover,
@@ -13,11 +13,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
+interface MobileSidebarProps {
+  tree: PageTree
+}
+
 interface MobileSidebarGroupProps {
   onMobileLinkClick: (isOpen: boolean) => void
-  items: typeof source.pageTree.children
+  items: PageTree["children"]
 }
-export function MobileSidebar() {
+
+export function MobileSidebar({ tree }: MobileSidebarProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -39,7 +44,7 @@ export function MobileSidebar() {
                 Menu
               </div>
             </div> */}
-            {source.pageTree.children.map((root) => {
+            {tree.children.map((root) => {
               return (
                 <div key={root.$id} className="flex flex-col gap-4">
                   <div className="text-muted-foreground text-sm font-medium">

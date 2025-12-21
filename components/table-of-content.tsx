@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { type ReactNode } from "react"
 
 function useActiveItem(itemIds: string[]) {
   const [activeId, setActiveId] = React.useState<string | null>(null)
@@ -40,19 +40,16 @@ function useActiveItem(itemIds: string[]) {
 export function TableOfContents({
   toc,
 }: {
-  toc: { url: string; depth: number; title: string }[]
+  toc: { url: string; depth: number; title: ReactNode }[]
 }) {
   const itemIds = React.useMemo(
     () => toc.map((item) => item.url.replace("#", "")),
     [toc],
   )
-
   const activeHeading = useActiveItem(itemIds)
-
   if (!toc?.length) {
     return null
   }
-
   return (
     <div className="flex flex-col gap-2">
       <div className="text-muted-foreground bg-background sticky top-0 h-6 font-medium">

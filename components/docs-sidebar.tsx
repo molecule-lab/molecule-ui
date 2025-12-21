@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 
-import { source } from "@/lib/source"
+import type { PageTree } from "@/lib/source"
 import {
   Sidebar,
   SidebarContent,
@@ -14,12 +14,12 @@ import {
 } from "@/components/sidebar"
 
 interface SidebarProps {
-  tree: typeof source.pageTree
+  tree: PageTree
   asChild?: boolean
 }
 
 interface SidebarItemsProps {
-  items: typeof source.pageTree.children
+  items: PageTree["children"]
 }
 
 export function DocsSidebar({ tree }: SidebarProps) {

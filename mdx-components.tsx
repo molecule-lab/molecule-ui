@@ -1,9 +1,9 @@
+import path from "path"
 import Link from "next/link"
 import { createGenerator } from "fumadocs-typescript"
 import { AutoTypeTable } from "fumadocs-typescript/ui"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import type { MDXComponents } from "mdx/types"
-import path from "path"
 
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"

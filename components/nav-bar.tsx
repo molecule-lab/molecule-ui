@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import type { PageTree } from "@/lib/source"
 import { Button } from "@/components/ui/button"
 import { GithubLink } from "@/components/github-link"
 import { Twitter } from "@/components/icons/twitter"
@@ -8,16 +9,20 @@ import { MobileSidebar } from "@/components/mobile-sidebar"
 import { Search } from "@/components/search"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-export function Navbar() {
+interface NavbarProps {
+  tree: PageTree
+}
+
+export function Navbar({ tree }: NavbarProps) {
   return (
     <header className="bg-background sticky top-0 z-50 flex h-14 w-full items-center border-b">
       <div className="container flex h-full items-center gap-4">
-        <MobileSidebar />
+        <MobileSidebar tree={tree} />
         <div className="flex flex-1 items-center justify-between">
           <MainNav />
           <div className="flex flex-1 items-center gap-2 md:flex-none md:justify-between">
             <div className="flex-1/2">
-              <Search />
+              <Search tree={tree} />
             </div>
             <GithubLink />
             <Button asChild size="icon" variant="ghost">
