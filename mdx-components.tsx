@@ -6,13 +6,29 @@ import defaultMdxComponents from "fumadocs-ui/mdx"
 import type { MDXComponents } from "mdx/types"
 
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Callout } from "@/components/callout"
+import {
+  Changelog,
+  ChangelogContent,
+  ChangelogDate,
+  ChangelogDescription,
+  ChangelogMeta,
+  ChangelogTitle,
+  ChangelogVersion,
+} from "@/components/changelog"
 import { CodeBlockCommand } from "@/components/code-command-block"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/molecule-ui/accordion"
 import { Usage } from "@/components/usage"
 
 const generator = createGenerator({
@@ -47,6 +63,18 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ComponentPreview,
     ComponentSource,
     ComponentsList,
+    Changelog,
+    ChangelogDate,
+    ChangelogContent,
+    ChangelogTitle,
+    ChangelogVersion,
+    ChangelogMeta,
+    ChangelogDescription,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+    Badge,
     Usage,
     Tabs: ({ ...props }) => <Tabs className="mb-6" {...props} />,
     TabsList: ({ ...props }) => (

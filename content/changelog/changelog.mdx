@@ -1,0 +1,40 @@
+---
+title: Changelog
+---
+
+<Changelog>
+    <ChangelogMeta>
+        <ChangelogDate>22nd December 2025</ChangelogDate>
+        <ChangelogVersion>v1.0.0-alpha.1</ChangelogVersion>
+    </ChangelogMeta>
+    <ChangelogContent> 
+        <div className='flex flex-col gap-2'>
+            <div className='flex gap-2'>
+                <Badge variant='secondary'>v1</Badge>
+                <Badge variant='secondary'>UI</Badge>
+                <Badge variant='secondary'>UX</Badge>
+            </div>
+            <ChangelogTitle>Initial Release</ChangelogTitle>
+            <ChangelogDescription>First initial release of Molecule UI</ChangelogDescription>
+           
+        </div>
+        <div>
+        <Accordion className="w-full" defaultValue={['features']} type="multiple"  collapsible={true}>
+            <AccordionItem value="features">
+                <AccordionTrigger>Features</AccordionTrigger>
+                <AccordionContent>
+                    <ul className="list-disc list-outside pl-4 text-sm space-y-2">
+                        <li>Added components Accordion, Checkbox, Dialog, Discussion, Expandable Button, Profile Menu, Swipe Row, Voice Input, Warp Dialog.</li>
+                        <li>Added loaders Bouncing Dots, Morphing Square, Orbital Loader, Spinning Circle, Typewriter, Wave Loader.</li>
+                        <li>Added typography Word Rotate</li>
+                        <li>Molecule UI is part of official Shadcn UI registries for easy download and use of the components.</li>
+                    </ul>
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
+        </div>
+    </ChangelogContent>
+</Changelog>
+
+
+
