@@ -5,6 +5,7 @@ import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 import { Menu } from "lucide-react"
 
+import { nav } from "@/config/nav"
 import type { PageTree } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import {
@@ -39,11 +40,18 @@ export function MobileSidebar({ tree }: MobileSidebarProps) {
           sideOffset={14}
         >
           <div className="flex flex-col gap-8 overflow-auto px-6 py-6">
-            {/* <div className='flex flex-col gap-4'>
-              <div className='text-muted-foreground text-sm font-medium'>
+            <div className="flex flex-col gap-4">
+              <div className="text-muted-foreground text-sm font-medium">
                 Menu
               </div>
-            </div> */}
+            </div>
+            <div className="flex flex-col gap-4">
+              {nav.map((item) => (
+                <MobileLink key={item.url} href={item.url}>
+                  {item.name}
+                </MobileLink>
+              ))}
+            </div>
             {tree.children.map((root) => {
               return (
                 <div key={root.$id} className="flex flex-col gap-4">

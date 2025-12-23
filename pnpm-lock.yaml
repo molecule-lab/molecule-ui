@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@radix-ui/react-accordion':
-        specifier: ^1.2.11
+        specifier: ^1.2.12
         version: 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-avatar':
         specifier: ^1.1.10
@@ -84,7 +84,7 @@ importers:
         specifier: ^0.525.0
         version: 0.525.0(react@19.2.3)
       motion:
-        specifier: ^12.19.2
+        specifier: ^12.23.26
         version: 12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       next:
         specifier: 16.0.10
@@ -111,7 +111,7 @@ importers:
         specifier: ^3.7.0
         version: 3.20.0
       tailwind-merge:
-        specifier: ^3.3.1
+        specifier: ^3.4.0
         version: 3.4.0
       ts-morph:
         specifier: ^27.0.2
