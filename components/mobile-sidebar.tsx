@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Menu } from "lucide-react"
 
 import { nav } from "@/config/nav"
+import { trackEvent } from "@/lib/events"
 import type { PageTree } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import {
@@ -47,7 +48,11 @@ export function MobileSidebar({ tree }: MobileSidebarProps) {
             </div>
             <div className="flex flex-col gap-4">
               {nav.map((item) => (
-                <MobileLink key={item.url} href={item.url}>
+                <MobileLink
+                  key={item.url}
+                  href={item.url}
+                  navItemName={item.name}
+                >
                   {item.name}
                 </MobileLink>
               ))}
@@ -105,17 +110,29 @@ function MobileLink({
   onOpenChange,
   className,
   children,
+  navItemName,
   ...props
 }: LinkProps & {
   onOpenChange?: (open: boolean) => void
   children: React.ReactNode
   className?: string
+  navItemName?: string
 }) {
   const router = useRouter()
   return (
     <Link
       href={href}
       onClick={() => {
+        if (navItemName) {
+          trackEvent({
+            name: "nav_click",
+            properties: {
+              nav_item: navItemName,
+              url: href.toString(),
+              source: "mobile",
+            },
+          })
+        }
         router.push(href.toString())
         onOpenChange?.(false)
       }}

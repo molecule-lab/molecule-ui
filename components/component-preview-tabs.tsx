@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -11,14 +12,29 @@ export function ComponentPreviewTabs({
   hideCode = false,
   component,
   source,
+  componentName,
   ...props
 }: React.ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
   hideCode?: boolean
   component: React.ReactNode
   source: React.ReactNode
+  componentName?: string
 }) {
   const [tab, setTab] = React.useState("preview")
+
+  const handleTabChange = (value: string) => {
+    setTab(value)
+    if (componentName) {
+      trackEvent({
+        name: "component_tab_change",
+        properties: {
+          component: componentName,
+          tab: value,
+        },
+      })
+    }
+  }
 
   return (
     <div
@@ -28,7 +44,7 @@ export function ComponentPreviewTabs({
       <Tabs
         className="relative mr-auto w-full"
         value={tab}
-        onValueChange={setTab}
+        onValueChange={handleTabChange}
       >
         <div className="flex items-center justify-between">
           {!hideCode && (

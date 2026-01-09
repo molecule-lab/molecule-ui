@@ -37,6 +37,7 @@ export function ComponentPreview({
       hideCode={hideCode}
       component={<Component />}
       source={<ComponentSource name={name} collapsible={false} />}
+      componentName={name}
       {...props}
     />
   )

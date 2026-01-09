@@ -1,3 +1,4 @@
+import { track } from "@vercel/analytics"
 import { z } from "zod"
 
 const eventSchema = z.object({
@@ -15,6 +16,9 @@ const eventSchema = z.object({
     "copy_chart_data",
     "copy_color",
     "set_layout",
+    "nav_click",
+    "copy_component_code",
+    "component_tab_change",
   ]),
   // declare type AllowedPropertyValues = string | number | boolean | null
   properties: z
@@ -27,6 +31,6 @@ export type Event = z.infer<typeof eventSchema>
 export function trackEvent(input: Event): void {
   const event = eventSchema.parse(input)
   if (event) {
-    // va.track(event.name, event.properties);
+    track(event.name, event.properties)
   }
 }
