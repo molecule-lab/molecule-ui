@@ -1,0 +1,71 @@
+# Molecule UI
+
+> A comprehensive collection of beautifully designed, accessible, and customizable React components built with Radix UI and Framer Motion.
+
+**Author**: [Rushil Dhinoja](https://rushildhinoja.com)
+
+**Keywords**: react, components, ui library, radix ui, framer motion, accessible, customizable, animations, tailwindcss, typescript, nextjs, molecule ui, design system
+
+This file provides LLM-friendly entry points to documentation and examples.
+
+## Components
+
+- [Accordion](https://moleculeui.design/docs/components/accordion): A collapsible content component with smooth animations, built on Radix UI primitives and enhanced with Framer Motion for fluid transitions.
+- [Bouncing Dots](https://moleculeui.design/docs/components/bouncing-dots): An animated loading indicator featuring three bouncing dots with customizable colors and spacing.
+- [Checkbox](https://moleculeui.design/docs/components/checkbox): An animated checkbox component with smooth transitions and hover effects built on Radix UI primitives.
+- [Dialog](https://moleculeui.design/docs/components/dialog): A pop-up layered above the application window or dialog, which makes the background content inert.
+- [Discussion](https://moleculeui.design/docs/components/discussion): A component for displaying nested discussions or comment threads.
+- [Expandable Button](https://moleculeui.design/docs/components/expandable-button):  A button that smoothly transitions between collapsed and expanded states using spring animations. Shows only an icon when collapsed and reveals text alongside the icon when expanded, perfect for responsive layouts and space-saving interfaces.
+- [Liquid Glass Button](https://moleculeui.design/docs/components/liquid-glass-button): A glassmorphic button component with backdrop blur effects and liquid-like visual styling for modern interfaces.
+- [Morphing Square](https://moleculeui.design/docs/components/morphing-square): A customizable morphing square loader component for indicating loading states in your application. Features smooth shape transitions and optional loading messages.
+- [Orbital Loader](https://moleculeui.design/docs/components/orbital-loader): A customizable orbital loader component for indicating loading states in your application. Features smooth orbital animations and optional loading messages.
+- [Profile Menu](https://moleculeui.design/docs/components/profile-menu): An animated collapsible profile menu component with smooth transitions and customizable content sections.
+- [Spinning Circle](https://moleculeui.design/docs/components/spinning-circle): A customizable spinning circle loader component for indicating loading states in your application. Features smooth animations and optional loading messages.
+- [Swipe Row](https://moleculeui.design/docs/components/swipe-row): A swipe row for providing actions of swipe of left and right
+- [Typewriter Loader](https://moleculeui.design/docs/components/typewriter-loader): A customizable typewriter loader component for indicating loading states in your application. Features smooth typing animations and customizable text content.
+- [Voice Input](https://moleculeui.design/docs/components/voice-input): An interactive voice recording interface with animated visual feedback, timer display, and customizable start/stop callbacks.
+- [Warp Dialog](https://moleculeui.design/docs/components/warp-dialog): A visually striking dialog component with 3D warp animations and smooth transitions. Features perspective transformations, animated backgrounds, and spring-based motion effects for an immersive user experience.
+- [Wave Loader](https://moleculeui.design/docs/components/wave-loader): An animated loading indicator featuring vertical bars that scale up and down in a wave-like pattern to indicate loading states.
+- [Word Rotate](https://moleculeui.design/docs/components/word-rotate): A text animation component that smoothly rotates through an array of words with customizable duration and motion effects.
+
+## Examples
+
+- [Swipe row demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/swipe-row-demo.tsx): Example usage
+- [Swipe row left demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/swipe-row-left-demo.tsx): Example usage
+- [Swipe row right demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/swipe-row-right-demo.tsx): Example usage
+- [Swipe row list demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/swipe-row-list-demo.tsx): Example usage
+- [Discussion demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/discussion-demo.tsx): Example usage
+- [Spinning circle demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/spinning-circle-demo.tsx): Example usage
+- [Spinning circle with message demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/spinning-circle-with-message-demo.tsx): Example usage
+- [Morphing square demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/morphing-square-demo.tsx): Example usage
+- [Morphing square with message demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/morphing-square-with-message-demo.tsx): Example usage
+- [Orbital loader demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/orbital-loader-demo.tsx): Example usage
+- [Orbital loader with message demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/orbital-loader-with-message-demo.tsx): Example usage
+- [Typewriter loader demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/typewriter-loader-demo.tsx): Example usage
+- [Typewriter loader with custom text demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/typewriter-loader-with-custom-text-demo.tsx): Example usage
+- [Profile Menu Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/profile-menu-demo.tsx): Example usage
+- [Animated Checkbox Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/checkbox-demo.tsx): Example usage
+- [Bouncing dots demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/bouncing-dots-demo.tsx): Example usage
+- [Bouncing dots with message demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/bouncing-dots-with-message-demo.tsx): Example usage
+- [Wave loader demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/wave-loader-demo.tsx): Example usage
+- [Wave loader with message demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/wave-loader-with-message-demo.tsx): Example usage
+- [Voice input demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/voice-input-demo.tsx): Example usage
+- [Liquid glass button demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/liquid-glass-button-demo.tsx): Example usage
+- [Expandable Button Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/expandable-button-demo.tsx): Example usage
+- [Expandable Button Group Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/expandable-button-group-demo.tsx): Example usage
+- [Warp dialog demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/warp-dialog-demo.tsx): Example usage
+- [Word rotate demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/word-rotate-demo.tsx): Example usage
+- [Todo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/apple-watch-grid-demo.tsx): Example usage
+- [Accordion Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/accordion-demo.tsx): Example usage
+- [Dialog Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/dialog-demo.tsx): Example usage
+- [A demo component for a animated dialog built on top of radix-ui with custom close button](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/custom-close-button-dialog-demo.tsx): Example usage
+- [Without Animation Dialog Demo](https://github.com/molecule-lab/molecule-ui/blob/main/registry/example/without-animation-dialog-demo.tsx): Example usage
+
+## Resources
+
+- [Documentation](https://moleculeui.design/docs): Full component documentation
+- [Repository](https://github.com/molecule-lab/molecule-ui): Source code and issues
+- [Changelog](https://moleculeui.design/changelog): Latest updates and releases
+- [Twitter](https://twitter.com/moleculeui): Follow for updates
+- [Discord](https://discord.gg/moleculeui): Community and support
+- [Sitemap](https://moleculeui.design/sitemap.xml): Indexable pages
