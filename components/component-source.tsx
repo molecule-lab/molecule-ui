@@ -55,6 +55,7 @@ export async function ComponentSource({
           highlightedCode={highlightedCode}
           language={lang}
           title={title}
+          componentName={name}
         />
       </div>
     )
@@ -67,6 +68,7 @@ export async function ComponentSource({
         highlightedCode={highlightedCode}
         language={lang}
         title={title}
+        componentName={name}
       />
     </CodeCollapsibleWrapper>
   )
@@ -77,11 +79,13 @@ function ComponentCode({
   highlightedCode,
   language,
   title,
+  componentName,
 }: {
   code: string
   highlightedCode: string
   language: string
   title: string | undefined
+  componentName?: string
 }) {
   return (
     <figure
@@ -97,7 +101,11 @@ function ComponentCode({
           {title}
         </figcaption>
       )}
-      <CopyButton value={code} />
+      <CopyButton
+        value={code}
+        event="copy_component_code"
+        componentName={componentName}
+      />
       <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />
     </figure>
   )

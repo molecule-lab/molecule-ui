@@ -24,11 +24,13 @@ export function CopyButton({
   className,
   variant = "ghost",
   event,
+  componentName,
   ...props
 }: React.ComponentProps<typeof Button> & {
   value: string
   src?: string
   event?: Event["name"]
+  componentName?: string
 }) {
   const [hasCopied, setHasCopied] = React.useState(false)
 
@@ -56,7 +58,7 @@ export function CopyButton({
                 ? {
                     name: event,
                     properties: {
-                      code: value,
+                      ...(componentName && { component: componentName }),
                     },
                   }
                 : undefined,
