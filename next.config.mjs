@@ -16,6 +16,18 @@ const config = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: "/docs/llms",
+        destination: "/llms.txt",
+      },
+      {
+        source: "/llms-full",
+        destination: "/llms-full.txt",
+      },
+    ]
+  },
 }
 const withMDX = createMDX({})
 export default withMDX(config)

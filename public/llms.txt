@@ -2,7 +2,7 @@
 
 > A comprehensive collection of beautifully designed, accessible, and customizable React components built with Radix UI and Framer Motion.
 
-**Author**: [Rushil Dhinoja](https://rushildhinoja.com)
+**Author**: [Rushil Dhinoja](https://rushildhinoja.me)
 
 **Keywords**: react, components, ui library, radix ui, framer motion, accessible, customizable, animations, tailwindcss, typescript, nextjs, molecule ui, design system
 
@@ -67,5 +67,5 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [Repository](https://github.com/molecule-lab/molecule-ui): Source code and issues
 - [Changelog](https://moleculeui.design/changelog): Latest updates and releases
 - [Twitter](https://twitter.com/moleculeui): Follow for updates
-- [Discord](https://discord.gg/moleculeui): Community and support
+- [Discord](undefined): Community and support
 - [Sitemap](https://moleculeui.design/sitemap.xml): Indexable pages
