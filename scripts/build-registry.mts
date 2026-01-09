@@ -5,6 +5,7 @@ import { rimraf } from "rimraf"
 import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
 
+import { siteConfig } from "../config/site"
 /* eslint-disable no-relative-import-paths/no-relative-import-paths */
 import { componentRegistry } from "../registry/index"
 
@@ -27,6 +28,10 @@ const registry = {
     ...componentRegistry,
   ]),
 } satisfies Registry
+
+type RegistryItem = Registry["items"][number]
+
+type FileEntry = string | { path: string; type?: string; target?: string }
 
 async function buildRegistryIndex() {
   let index = `
@@ -115,6 +120,171 @@ async function buildRegistryJsonFile() {
   )
 }
 
+async function readRegistryFilesContents(item: RegistryItem): Promise<string> {
+  if (!item.files?.length) return ""
+
+  const paths = item.files
+    .map((f: FileEntry) => (typeof f === "string" ? f : f?.path))
+    .filter(Boolean)
+    .sort() as string[]
+
+  // Read all files in parallel
+  const contents = await Promise.all(
+    paths.map(async (filePath) => {
+      try {
+        const content = await fs.readFile(
+          path.join(process.cwd(), filePath),
+          "utf8",
+        )
+        return `--- file: ${filePath} ---\n${content.endsWith("\n") ? content : content + "\n"}`
+      } catch {
+        return null // Skip missing files
+      }
+    }),
+  )
+
+  // Join non-null contents with blank lines between them
+  return contents.filter(Boolean).join("\n")
+}
+
+function getComponentExamples() {
+  const examplesByComponent = new Map<string, string[]>()
+
+  registry.items
+    .filter((item) => item.type === "registry:example")
+    .forEach((example) => {
+      example.registryDependencies?.forEach((dep) => {
+        const componentName = dep.split("/").pop()
+        if (componentName) {
+          if (!examplesByComponent.has(componentName)) {
+            examplesByComponent.set(componentName, [])
+          }
+          examplesByComponent.get(componentName)!.push(example.name)
+        }
+      })
+    })
+
+  return examplesByComponent
+}
+
+async function generateLlmsContent() {
+  const components = registry.items
+    .filter((item) => item.type === "registry:ui")
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((component) => {
+      const title = component.title || component.name
+      const description = component.description || `The ${title} component.`
+      return `- [${title}](${siteConfig.url}/docs/components/${component.name}): ${description}`
+    })
+
+  const exampleSet = new Set<string>()
+  const examplesList = registry.items
+    .filter((item) => item.type === "registry:example")
+    .filter((example) => {
+      if (exampleSet.has(example.name)) return false
+      exampleSet.add(example.name)
+      return true
+    })
+    .map((example) => {
+      const title = example.title || example.name
+      const firstFile = example.files?.[0]?.path || ""
+      const url = firstFile
+        ? `${siteConfig.links.github}/blob/main/${firstFile}`
+        : siteConfig.links.github
+      return `- [${title}](${url}): Example usage`
+    })
+
+  return [
+    `# ${siteConfig.name}`,
+    "",
+    `> ${siteConfig.description}`,
+    "",
+    `**Author**: [${siteConfig.author.name}](${siteConfig.author.url})`,
+    "",
+    `**Keywords**: ${siteConfig.keywords.join(", ")}`,
+    "",
+    "This file provides LLM-friendly entry points to documentation and examples.",
+    "",
+    "## Components",
+    "",
+    ...components,
+    "",
+    "## Examples",
+    "",
+    ...examplesList,
+    "",
+    "## Resources",
+    "",
+    `- [Documentation](${siteConfig.links.docs}): Full component documentation`,
+    `- [Repository](${siteConfig.links.github}): Source code and issues`,
+    `- [Changelog](${siteConfig.links.changelog}): Latest updates and releases`,
+    `- [Twitter](${siteConfig.links.twitter}): Follow for updates`,
+    `- [Discord](${siteConfig.links.discord}): Community and support`,
+    `- [Sitemap](${siteConfig.url}/sitemap.xml): Indexable pages`,
+  ].join("\n")
+}
+
+async function generateLlmsFullContent(
+  examplesByComponent: Map<string, string[]>,
+) {
+  const components = registry.items
+    .filter((item) => item.type === "registry:ui")
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+  const componentContents = await Promise.all(
+    components.map(async (component) => {
+      const title = component.title || component.name
+      const description = component.description || `The ${title} component.`
+
+      let content = [
+        `===== COMPONENT: ${component.name} =====`,
+        `Title: ${title}`,
+        `Description: ${description}`,
+        "",
+        await readRegistryFilesContents(component),
+      ].join("\n")
+
+      // Add examples for this component
+      const relatedExamples = examplesByComponent.get(component.name) || []
+      for (const exampleName of relatedExamples) {
+        const example = registry.items.find((e) => e.name === exampleName)
+        if (example) {
+          const exTitle = example.title || example.name
+          content += [
+            "",
+            "",
+            `===== EXAMPLE: ${exampleName} =====`,
+            `Title: ${exTitle}`,
+            "",
+            await readRegistryFilesContents(example),
+          ].join("\n")
+        }
+      }
+
+      return content
+    }),
+  )
+
+  return componentContents.join("\n\n\n")
+}
+
+async function buildLlmsFiles() {
+  const examplesByComponent = getComponentExamples()
+
+  const [minContent, fullContent] = await Promise.all([
+    generateLlmsContent(),
+    generateLlmsFullContent(examplesByComponent),
+  ])
+
+  const publicDir = path.join(process.cwd(), "public")
+  await fs.mkdir(publicDir, { recursive: true })
+
+  await Promise.all([
+    fs.writeFile(path.join(publicDir, "llms.txt"), minContent, "utf8"),
+    fs.writeFile(path.join(publicDir, "llms-full.txt"), fullContent, "utf8"),
+  ])
+}
+
 async function buildRegistry() {
   return new Promise((resolve, reject) => {
     const process = exec(`pnpm shadcn:build`)
@@ -138,10 +308,16 @@ try {
   await buildRegistryJsonFile()
   console.log("✅ Registry JSON file built successfully")
 
+  console.log("🧠 Building llms files...")
+  await buildLlmsFiles()
+  console.log("✅ llms.txt and llms-full.txt built successfully")
+
   console.log("🏗️ Building registry...")
   await buildRegistry()
   console.log("✅ Registry build completed")
 } catch (error) {
+  console.error("❌ Build failed with error:")
+  console.error(error)
   if (error instanceof Error) {
     console.error("Error stack:", error.stack)
   }
